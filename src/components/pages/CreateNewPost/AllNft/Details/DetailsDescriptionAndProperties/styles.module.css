@@ -1,0 +1,102 @@
+.wrapper {
+}
+.header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+
+  padding: 18px;
+}
+.heading {
+  font-family: "Roboto";
+  font-style: normal;
+  font-weight: 500;
+  font-size: 22px;
+  line-height: 125%;
+  color: #ffffff;
+}
+.arrow {
+  color: #fff;
+  font-size: 20px;
+  cursor: pointer;
+}
+.infoContainer,
+.description {
+  padding: 22px 18px;
+
+  border-top: 1px solid rgba(250, 250, 250, 0.2);
+  border-bottom: 1px solid rgba(250, 250, 250, 0.2);
+}
+.infoContainer {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 18px;
+}
+.description {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+.info {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+.propertyContainer {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(154px, 1fr));
+  gap: 12px;
+  padding: 18px;
+  border-top: 1px solid rgba(250, 250, 250, 0.2);
+}
+.propertyBox {
+  background: rgba(66, 204, 215, 0.11);
+  border: 1px solid #42ccd7;
+  border-radius: 10px;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  align-items: center;
+  padding: 10px 8px;
+}
+.text {
+  font-family: "Roboto";
+  font-style: normal;
+  font-weight: 500;
+  font-size: 16px;
+  line-height: 140%;
+
+  color: #fafafa;
+}
+.title {
+  color: rgba(250, 250, 250, 0.72);
+}
+.address {
+  color: #42ccd7;
+}
+@media only screen and (max-width: 520px) {
+  .info,
+  .titleContainer {
+    grid-template-columns: 1fr 0.8fr 1fr;
+  }
+  .text {
+    font-size: 13px;
+  }
+  .header,
+  .infoContainer {
+    padding: 18px 15px;
+  }
+}
+@media only screen and (max-width: 400px) {
+  .info,
+  .titleContainer {
+    grid-template-columns: 1fr 0.7fr 1fr;
+  }
+  .text {
+    font-size: 12px;
+  }
+  .header,
+  .infoContainer {
+    padding: 18px 12px;
+  }
+}

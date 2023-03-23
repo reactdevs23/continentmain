@@ -1,0 +1,375 @@
+.chatRoom {
+  display: flex;
+  justify-content: flex-start;
+  align-items: flex-start;
+  flex-direction: column;
+  gap: 20px;
+  width: 100%;
+  height: 100%;
+}
+.chatHeader {
+  display: flex;
+  align-items: center;
+  justify-content: flex-start;
+  width: 100%;
+  gap: 10px;
+  cursor: pointer;
+  border-bottom: 1px solid #fafafa33;
+  padding: 30px 40px;
+}
+.chatHeader img,
+.placeHolderImg {
+  width: 40px;
+  object-fit: contain;
+  aspect-ratio: 1/1;
+  border-radius: 50%;
+}
+.placeHolderImg {
+  background-color: #fafafa;
+}
+.rightHeader {
+  display: flex;
+  justify-content: flex-start;
+  align-items: flex-start;
+  flex-direction: column;
+  gap: 4px;
+}
+.rightHeader h3 {
+  color: var(--primary-color);
+  font-size: 16px;
+  font-weight: 400;
+}
+.rightHeader p {
+  color: #fafafab8;
+  font-size: 14px;
+  font-weight: 500;
+}
+.chatMsgs,
+.settingDiv {
+  display: flex;
+  justify-content: flex-start;
+  align-items: flex-start;
+  flex-direction: column;
+  width: 100%;
+  gap: 20px;
+  padding-inline: 40px;
+  overflow-y: auto;
+}
+
+.sentMsg {
+  display: flex;
+  justify-content: center;
+  align-items: flex-end;
+  flex-direction: column;
+  gap: 10px;
+  align-self: flex-end;
+}
+.sentMsg .chatMsgDiv {
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+  gap: 8px;
+  padding: 4px 8px;
+  background-color: #ffffff1a;
+  border-radius: 8px;
+}
+.sentMsg .chatImgDiv {
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+  gap: 8px;
+  padding: 4px 8px;
+  background-color: transparent;
+}
+
+.sentMsg p {
+  color: var(--primary-color);
+}
+.sentMsg span {
+  color: #fafafab8;
+  font-size: 14px;
+  align-self: flex-end;
+}
+.recievedMsg {
+  display: flex;
+  justify-content: center;
+  align-items: flex-start;
+  flex-direction: column;
+  gap: 10px;
+  align-self: flex-start;
+}
+.recievedMsg .chatMsgDiv {
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+  gap: 8px;
+  padding: 4px 8px;
+  background: var(--primary-bg);
+  border: 1px solid rgba(250, 250, 250, 0.2);
+  border-radius: 8px;
+}
+.recievedMsg .chatImgDiv {
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+  gap: 8px;
+  padding: 4px 8px;
+}
+.recievedMsg p {
+  color: var(--primary-color);
+}
+.recievedMsg span {
+  color: #fafafab8;
+  font-size: 14px;
+  align-self: flex-end;
+}
+.backRow {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  width: 100%;
+}
+.backRow svg {
+  cursor: pointer;
+  width: 25px;
+  object-fit: contain;
+}
+.backRow button,
+.partcipantsHead button {
+  color: #41c6da;
+  background-color: transparent;
+  border: none;
+  font-size: 16px;
+  font-weight: 600;
+  cursor: pointer;
+}
+.centerDetails {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  gap: 20px;
+  width: 100%;
+  margin: 20px 0px;
+}
+.centerDetails > p {
+  font-size: 16px;
+  color: white;
+}
+.groupPhotoDiv {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  gap: 15px;
+}
+.groupPhotoDiv button,
+.descDisplayed button,
+.changeDesc button {
+  background-color: transparent;
+  color: #41c6da;
+  font-size: 16px;
+  cursor: pointer;
+  border: 0;
+  font-weight: 600;
+}
+.groupPhoto {
+  width: 100px;
+  height: 90px;
+  background-color: white;
+  clip-path: polygon(25% 0%, 75% 0%, 100% 50%, 75% 100%, 25% 100%, 0% 50%);
+}
+.desc {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 15px;
+  width: 100%;
+  background-color: transparent;
+  color: white;
+  font-size: 16px;
+  font-weight: 600;
+  cursor: pointer;
+}
+.desc svg {
+  width: 25px;
+  object-fit: contain;
+}
+.participantsDiv {
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+  flex-direction: column;
+  gap: 20px;
+  padding: 20px 0px;
+  width: 100%;
+  max-width: 450px;
+  margin-inline: auto;
+  border-block: 1px solid #fafafa26;
+}
+.partcipantsHead {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  width: 100%;
+}
+.partcipantsHead p {
+  color: white;
+  font-weight: 600;
+  font-size: 16px;
+}
+.partcipant {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  width: 100%;
+}
+.partcipant > div {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 8px;
+}
+.partcipant > div img {
+  width: 40px;
+  object-fit: contain;
+  aspect-ratio: 1/1;
+  border-radius: 50%;
+}
+.partcipant > div p {
+  font-size: 16px;
+  color: white;
+}
+.partcipant button,
+.deleteBtn button {
+  color: #fe595a;
+  background-color: transparent;
+  border: none;
+  font-size: 16px;
+  font-weight: 600;
+  cursor: pointer;
+}
+.deleteBtn {
+  width: 100%;
+  display: flex;
+  justify-content: flex-start;
+  max-width: 450px;
+  margin-inline: auto;
+}
+.descDisplayed {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  gap: 10px;
+  text-align: center;
+  color: white;
+  max-width: 442px;
+  width: 100%;
+}
+.changeDesc {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  gap: 20px;
+  width: 100%;
+  max-width: 440px;
+}
+.changeDesc textarea,
+.descDisplayed textarea {
+  width: 100%;
+  height: 150px;
+  border: 1px solid white;
+  border-radius: 5px;
+  background-color: transparent;
+  color: white;
+  padding-top: 10px;
+  padding-left: 10px;
+}
+.overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  background-color: black;
+  opacity: 0.6;
+  z-index: 90;
+  width: 100%;
+  height: 100%;
+}
+.smallModal {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  gap: 20px;
+  background-color: var(--primary-bg);
+  padding: 32px 24px 24px;
+  box-shadow: 0px 4px 5px rgba(0, 0, 0, 0.7);
+  border-radius: 10px;
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  z-index: 91;
+  text-align: center;
+}
+.smallModal p {
+  line-height: 140%;
+  color: #fafafa;
+}
+.btnDiv {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 20px;
+}
+.invertBtn {
+  font-family: "Roboto";
+  font-style: normal;
+  font-weight: 500;
+  font-size: 18px;
+  line-height: 140%;
+  text-align: center;
+  color: var(--primary-color);
+  background-color: transparent;
+  border-radius: 10px;
+  border: 1px solid white;
+  padding: 10px 45px;
+  cursor: pointer;
+  transition: all 0.3s ease-in-out;
+}
+.invertBtn:hover {
+  background-color: white;
+  color: black;
+}
+.button {
+  font-family: "Roboto";
+  font-style: normal;
+  font-weight: 500;
+  font-size: 18px;
+  line-height: 140%;
+  text-align: center;
+  color: var(--primary-color);
+  background: linear-gradient(
+    89.99deg,
+    #224dbd 0.66%,
+    #3069ff 61.01%,
+    #42ccd7 99.99%
+  );
+  border-radius: 10px;
+  padding: 10px 45px;
+  cursor: pointer;
+}
+.chatImg {
+  height: 114px;
+  object-fit: contain;
+  border-radius: 8px;
+}
+@media screen and (max-width: 1280px) {
+  .chatMsgs,
+  .settingDiv,
+  .chatHeader {
+    padding-inline: 20px;
+  }
+}
