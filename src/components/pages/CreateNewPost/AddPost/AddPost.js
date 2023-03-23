@@ -52,10 +52,10 @@ const AddPost = ({ setModal, setDisCardPost }) => {
                   className={`${styles.text} ${styles.textArea} ${styles.editText}`}
                 ></textarea>
               </div>
-              <div className={styles.tagPeople}>
+              {/* <div className={styles.tagPeople}>
                 <BiUser className={styles.userIcon} />
                 <p className={`${styles.text} `}>Tag people</p>
-              </div>
+              </div> */}
               <div className={styles.listForSaleContainer}>
                 <div className={styles.listForSale}>
                   <img src={walletMoney} alt="#" className={styles.edit} />

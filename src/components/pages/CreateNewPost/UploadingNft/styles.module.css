@@ -8,6 +8,7 @@
   display: flex;
   align-items: center;
   justify-content: space-between;
+  padding-bottom: 4px;
 }
 .imageAndName,
 .cancelContainer {
@@ -39,27 +40,4 @@
 }
 .close {
   cursor: pointer;
-}
-.animatingContainer {
-  width: 100%;
-  height: 5px;
-  background: rgba(255, 255, 255, 0.15);
-  border-radius: 200px;
-  margin-top: 8px;
-}
-.animation {
-  height: 100%;
-  width: 50%;
-  background: linear-gradient(
-    89.99deg,
-    #224dbd 0.66%,
-    #3069ff 61.01%,
-    #42ccd7 99.99%
-  );
-  border-radius: 200px;
-}
-.myAnimation {
-  width: 50%;
-  transition: 1s;
-  transition-delay: 0.5s;
 }

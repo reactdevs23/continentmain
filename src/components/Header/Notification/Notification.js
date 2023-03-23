@@ -24,9 +24,9 @@ const Notification = ({ data }) => {
                     sent you a friend request.
                   </span>
                 )}
-                {el.message && (
+                {/* {el.message && (
                   <span className={styles.text}> sent a message.</span>
-                )}
+                )} */}
                 {el.purchased && (
                   <span className={styles.text}> purchased your NFT.</span>
                 )}

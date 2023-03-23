@@ -5,21 +5,23 @@ import styles from "./styles.module.css";
 
 const AllNft = ({ buttonActiveFunc, data }) => {
   const [showDetails, setShowDetails] = useState("");
+  const [selectedNft, setSelectedNft] = useState(null);
 
   useEffect(() => {
-    buttonActiveFunc(showDetails);
-  }, [showDetails]);
+    buttonActiveFunc(selectedNft);
+  }, [selectedNft]);
   return (
     <>
       <div className={styles.allNft}>
         {data.map((el, index) => (
           <div
             className={`${styles.imageContainer} ${
-              showDetails === index + 1 && styles.active
+              selectedNft === index + 1 && styles.active
             }`}
             key={index}
             onClick={() => {
-              setShowDetails(index + 1);
+              setSelectedNft(index + 1);
+              setShowDetails(true);
             }}
           >
             <img src={el.img} alt="#" className={styles.image} />
@@ -27,7 +29,11 @@ const AllNft = ({ buttonActiveFunc, data }) => {
         ))}
       </div>
 
-      <Details setShowDetails={setShowDetails} showDetails={showDetails} />
+      <Details
+        setShowDetails={setShowDetails}
+        showDetails={showDetails}
+        setSelectedNft={setSelectedNft}
+      />
     </>
   );
 };

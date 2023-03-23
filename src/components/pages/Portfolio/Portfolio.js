@@ -10,24 +10,24 @@ import HexagonImage from "../../Hexagon/Hexagon";
 
 const Portfolio = () => {
   const [nfts, setNfts] = useState(true);
-  const [tokens, setTokens] = useState(false);
-  const [transaction, setTransaction] = useState(false);
+  // const [tokens, setTokens] = useState(false);
+  // const [transaction, setTransaction] = useState(false);
   const activeNft = () => {
     setNfts(true);
-    setTokens(false);
-    setTransaction(false);
+    // setTokens(false);
+    // setTransaction(false);
   };
-  const activeTokens = () => {
-    setTokens(true);
-    setNfts(false);
+  // const activeTokens = () => {
+  //   setTokens(true);
+  //   setNfts(false);
 
-    setTransaction(false);
-  };
-  const activeTransaction = () => {
-    setTransaction(true);
-    setNfts(false);
-    setTokens(false);
-  };
+  //   setTransaction(false);
+  // };
+  // const activeTransaction = () => {
+  //   setTransaction(true);
+  //   setNfts(false);
+  //   setTokens(false);
+  // };
   return (
     <div className={`${styles.wrapper} marginTop`}>
       <div className={`${styles.pageContainer} wrapper `}>
@@ -48,7 +48,7 @@ const Portfolio = () => {
               <p className={styles.price}>100,00 US$</p>
             </div>
           </div>
-          <div className={styles.actionContainer}>
+          {/* <div className={styles.actionContainer}>
             <button className={`${styles.button} ${styles.activeButton}`}>
               <MdSwapVert className={styles.icon} /> Swap
             </button>{" "}
@@ -56,7 +56,7 @@ const Portfolio = () => {
               <RiShareCircleFill className={`${styles.icon} ${styles.share}`} />{" "}
               Send
             </button>{" "}
-          </div>
+          </div> */}
         </div>
         <div className={styles.postCategoryContainer}>
           <div className={styles.postCategory}>
@@ -66,7 +66,7 @@ const Portfolio = () => {
             >
               <span className={styles.text}>NFTs</span>
             </div>{" "}
-            <div
+            {/* <div
               className={`${styles.post} ${tokens && styles.activePost}`}
               onClick={activeTokens}
             >
@@ -77,7 +77,7 @@ const Portfolio = () => {
               onClick={activeTransaction}
             >
               <span className={styles.text}>Transactions</span>
-            </div>
+            </div> */}
           </div>
         </div>{" "}
         <Nfts />

@@ -58,13 +58,7 @@ const Header = () => {
       time: "1h",
       img: testImg,
     },
-    {
-      user: user,
-      name: "bitcoinmaxi ",
-      message: true,
-      time: "1h",
-      img: testImg,
-    },
+
     {
       user: user,
       name: "bitcoinmaxi ",

@@ -298,7 +298,7 @@ const Nfts = () => {
             <div className={styles.detailsContainer}>
               <p className={styles.name}>{el.name}</p>
 
-              <Link to={`nfts/${i}`}>
+              <Link to={`/nfts/${i}`}>
                 <p className={styles.id}>
                   {el.name} #{el.id}
                 </p>

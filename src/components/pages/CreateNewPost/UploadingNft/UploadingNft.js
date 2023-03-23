@@ -2,6 +2,7 @@ import React from "react";
 import { CgClose } from "react-icons/cg";
 import { testImg } from "../../../../images/image";
 import { useDataContext } from "../../../Context";
+import ProgressBar from "../ProgressBar/ProgressBar";
 import styles from "./styles.module.css";
 
 const UploadingNft = () => {
@@ -24,13 +25,7 @@ const UploadingNft = () => {
           />
         </div>
       </div>
-      <div className={styles.animatingContainer}>
-        <div
-          className={`${styles.animation} ${
-            !cancelUploading && styles.myAnimation
-          }`}
-        ></div>
-      </div>
+      <ProgressBar progress={50} />
     </div>
   );
 };

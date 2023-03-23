@@ -9,7 +9,7 @@ import Message from "./components/pages/Messages/Message";
 import Posts from "./components/pages/Home/Posts/Posts";
 
 import PostDetails from "./components/pages/Home/Posts/PostDetails/PostDetails";
-
+import EditProfile from "./components/pages/EditProfile/EditProfile";
 import { useDataContext } from "./components/Context";
 import CreateNewPost from "./components/pages/CreateNewPost/CreateNewPost";
 
@@ -28,8 +28,9 @@ function App() {
             <Route path="/portfolio" element={<Portfolio />}></Route>
             <Route path="nfts/:id" element={<NftDetails />}></Route>
             <Route path="/profile" element={<MyProfile />}></Route>
+            <Route path="/editprofile" element={<EditProfile />}></Route>
             {/* <Route path="/userProfile" element={<UserProfile />}></Route>
-            <Route path="/editprofile" element={<EditProfile />}></Route> */}
+             */}
             <Route path="/messages/:id" element={<Message />} />
           </Routes>
         </div>

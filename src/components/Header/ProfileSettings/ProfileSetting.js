@@ -31,10 +31,14 @@ const ProfileSetting = ({ setModal }) => {
           <BiUser className={styles.icon} />
           <p className={styles.text}>Profile</p>
         </Link>
-        <div className={styles.iconAndItem} onClick={() => setModal(false)}>
+        <Link
+          to="/editProfile"
+          className={styles.iconAndItem}
+          onClick={() => setModal(false)}
+        >
           <FiSettings className={styles.icon} />
           <p className={styles.text}>Settings</p>
-        </div>
+        </Link>
         <div className={styles.iconAndItem} onClick={() => setModal(false)}>
           <BiLogOut className={styles.icon} />
           <p className={styles.text}>Log out</p>

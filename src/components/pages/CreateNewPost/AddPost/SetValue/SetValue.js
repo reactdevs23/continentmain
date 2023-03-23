@@ -1,12 +1,12 @@
 import React, { useState } from "react";
-import { BsChevronUp, BsChevronDown } from "react-icons/bs";
+// import { BsChevronUp, BsChevronDown } from "react-icons/bs";
 import styles from "./styles.module.css";
 
 const SetValue = () => {
   const [value, setValue] = useState(0);
-  const [valueType, setValueType] = useState(0);
-  const [dropdwon, setDropDown] = useState(false);
-  const valueTypes = ["Eth", "usdc", "usdt"];
+  // const [valueType, setValueType] = useState(0);
+  // const [dropdwon, setDropDown] = useState(false);
+  // const valueTypes = ["Eth", "usdc", "usdt"];
 
   return (
     <div className={styles.wrapper}>
@@ -20,8 +20,8 @@ const SetValue = () => {
             onChange={(e) => setValue(e.target.value)}
           />
           <div className={styles.valueTypeContainer}>
-            <p className={styles.valueText}>{valueTypes[valueType]}</p>
-            {dropdwon ? (
+            <p className={styles.valueText}>Eth</p>
+            {/* {dropdwon ? (
               <BsChevronUp
                 className={styles.arrow}
                 onClick={() => setDropDown((prev) => !prev)}
@@ -31,8 +31,8 @@ const SetValue = () => {
                 className={styles.arrow}
                 onClick={() => setDropDown((prev) => !prev)}
               />
-            )}
-            {dropdwon && (
+            )} */}
+            {/* {dropdwon && (
               <div className={styles.allValueText}>
                 {valueTypes.map((el, i) => (
                   <p
@@ -47,7 +47,7 @@ const SetValue = () => {
                   </p>
                 ))}
               </div>
-            )}
+            )} */}
           </div>
         </div>
         <p className={styles.usdValue}>${(2338.6 * value).toFixed(2)} USD</p>
