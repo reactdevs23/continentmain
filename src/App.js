@@ -1,8 +1,6 @@
 import { Routes, Route } from "react-router-dom";
 
-//
 import Header from "./components/Header/Header";
-// import HexagonImage from "./components/Hexagon/Hexagon";
 
 import MyProfile from "./components/pages/MyProfile/MyProfile";
 
