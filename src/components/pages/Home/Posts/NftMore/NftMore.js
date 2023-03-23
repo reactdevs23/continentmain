@@ -65,7 +65,7 @@ const NftMore = ({ setNftMore, author }) => {
             <AiOutlineArrowRight className={styles.arrow} />
           </p>
         </div>{" "}
-        {!author && (
+        {/* {!author && (
           <div
             className={styles.socialContainer}
             onClick={() => setReportModal((prev) => !prev)}
@@ -78,7 +78,7 @@ const NftMore = ({ setNftMore, author }) => {
               <AiOutlineArrowRight className={styles.arrow} />
             </p>
           </div>
-        )}
+        )} */}
         {author && (
           <div
             className={styles.socialContainer}
@@ -93,7 +93,7 @@ const NftMore = ({ setNftMore, author }) => {
             </p>
           </div>
         )}
-        {!author && (
+        {/* {!author && (
           <div
             className={styles.socialContainer}
             onClick={() => setNftMore(false)}
@@ -106,7 +106,7 @@ const NftMore = ({ setNftMore, author }) => {
               <AiOutlineArrowRight className={styles.arrow} />
             </p>
           </div>
-        )}
+        )} */}
       </div>
       {editProfileModal && (
         <Modal setModal={setEditProfileModal}>
