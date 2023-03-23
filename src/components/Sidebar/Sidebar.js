@@ -7,9 +7,11 @@ import {
   explore,
   profile,
 } from "../../images/image.js";
+import { useDataContext } from "../Context.js";
 import styles from "./styles.module.css";
 
-const Sidebar = ({ showSidebar }) => {
+const Sidebar = ({ showSidebar, setShowSidebar }) => {
+  const { setUploadingProgress } = useDataContext();
   const navItems = [
     { icon: home, navItem: "Home", to: "/" },
     { icon: wallet, navItem: "Wallet", to: "/wallet" },
@@ -27,6 +29,7 @@ const Sidebar = ({ showSidebar }) => {
               ? [styles.navItemContainer, styles.navActive].join(" ")
               : styles.navItemContainer
           }
+          onClick={() => setShowSidebar(false)}
           key={i}
         >
           {" "}
@@ -34,7 +37,11 @@ const Sidebar = ({ showSidebar }) => {
           <p className={styles.navItem}>{el.navItem}</p>
         </NavLink>
       ))}
-      <Link to="/createNewPost" className={styles.button}>
+      <Link
+        to="/createNewPost"
+        className={styles.button}
+        onClick={() => setUploadingProgress(40)}
+      >
         New Post
       </Link>
     </div>

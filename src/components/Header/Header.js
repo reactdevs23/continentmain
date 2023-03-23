@@ -231,7 +231,7 @@ const Header = () => {
       {showProfileSetting && (
         <ProfileSetting setModal={setShowProfileSetting} />
       )}
-      <Sidebar showSidebar={showSidebar} />
+      <Sidebar showSidebar={showSidebar} setShowSidebar={setShowSidebar} />
     </>
   );
 };

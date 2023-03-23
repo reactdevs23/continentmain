@@ -48,7 +48,7 @@ const Notification = ({ data }) => {
                 {" "}
                 <button className={styles.button}>Accept</button>{" "}
                 <button className={`${styles.button} ${styles.remove}`}>
-                  Remove
+                  Delete
                 </button>
               </div>
             )}
