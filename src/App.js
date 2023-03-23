@@ -13,8 +13,8 @@ import EditProfile from "./components/pages/EditProfile/EditProfile";
 import { useDataContext } from "./components/Context";
 import CreateNewPost from "./components/pages/CreateNewPost/CreateNewPost";
 
-import Portfolio from "./components/pages/Portfolio/Portfolio";
-import NftDetails from "./components/pages/Portfolio/Posts/NftDetails/NftDetails";
+import Wallet from "./components/pages/Wallet/Wallet";
+import NftDetails from "./components/pages/Wallet/Posts/NftDetails/NftDetails";
 function App() {
   const { posts } = useDataContext();
   return (
@@ -25,9 +25,9 @@ function App() {
           <Routes>
             <Route path="/" element={<Posts data={posts} />}></Route>
             <Route path="/createNewPost" element={<CreateNewPost />}></Route>
-            <Route path="/portfolio" element={<Portfolio />}></Route>
+            <Route path="/portfolio" element={<Wallet />}></Route>
             <Route path="nfts/:id" element={<NftDetails />}></Route>
-            <Route path="/profile" element={<MyProfile />}></Route>
+            <Route path="/wallet" element={<MyProfile />}></Route>
             <Route path="/editprofile" element={<EditProfile />}></Route>
             {/* <Route path="/userProfile" element={<UserProfile />}></Route>
              */}

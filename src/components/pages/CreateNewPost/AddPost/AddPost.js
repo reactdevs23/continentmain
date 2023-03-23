@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-import { BiUser } from "react-icons/bi";
+
 import { RxArrowLeft } from "react-icons/rx";
 import { useNavigate } from "react-router-dom";
 import { nftPhoto, user, edit, walletMoney } from "../../../../images/image";
@@ -52,10 +52,7 @@ const AddPost = ({ setModal, setDisCardPost }) => {
                   className={`${styles.text} ${styles.textArea} ${styles.editText}`}
                 ></textarea>
               </div>
-              {/* <div className={styles.tagPeople}>
-                <BiUser className={styles.userIcon} />
-                <p className={`${styles.text} `}>Tag people</p>
-              </div> */}
+
               <div className={styles.listForSaleContainer}>
                 <div className={styles.listForSale}>
                   <img src={walletMoney} alt="#" className={styles.edit} />

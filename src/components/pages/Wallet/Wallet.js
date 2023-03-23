@@ -8,7 +8,7 @@ import Nfts from "./Posts/Nfts/NFts";
 import styles from "./styles.module.css";
 import HexagonImage from "../../Hexagon/Hexagon";
 
-const Portfolio = () => {
+const Wallet = () => {
   const [nfts, setNfts] = useState(true);
   // const [tokens, setTokens] = useState(false);
   // const [transaction, setTransaction] = useState(false);
@@ -48,15 +48,6 @@ const Portfolio = () => {
               <p className={styles.price}>100,00 US$</p>
             </div>
           </div>
-          {/* <div className={styles.actionContainer}>
-            <button className={`${styles.button} ${styles.activeButton}`}>
-              <MdSwapVert className={styles.icon} /> Swap
-            </button>{" "}
-            <button className={`${styles.button} ${styles.activeButton}`}>
-              <RiShareCircleFill className={`${styles.icon} ${styles.share}`} />{" "}
-              Send
-            </button>{" "}
-          </div> */}
         </div>
         <div className={styles.postCategoryContainer}>
           <div className={styles.postCategory}>
@@ -66,18 +57,6 @@ const Portfolio = () => {
             >
               <span className={styles.text}>NFTs</span>
             </div>{" "}
-            {/* <div
-              className={`${styles.post} ${tokens && styles.activePost}`}
-              onClick={activeTokens}
-            >
-              <span className={styles.text}>Tokens</span>
-            </div>
-            <div
-              className={`${styles.post} ${transaction && styles.activePost}`}
-              onClick={activeTransaction}
-            >
-              <span className={styles.text}>Transactions</span>
-            </div> */}
           </div>
         </div>{" "}
         <Nfts />
@@ -86,4 +65,4 @@ const Portfolio = () => {
   );
 };
 
-export default Portfolio;
+export default Wallet;

@@ -6,7 +6,7 @@ import ProgressBar from "../ProgressBar/ProgressBar";
 import styles from "./styles.module.css";
 
 const UploadingNft = () => {
-  const { cancelUploading, setCancelUploading } = useDataContext();
+  const { setCancelUploading } = useDataContext();
   return (
     <div className={`${styles.uploadingWrapper} `}>
       <div className={styles.uploading}>
