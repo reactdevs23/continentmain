@@ -39,7 +39,7 @@ const NftDetails = ({ data }) => {
             </div>
           </div>
           <div className={styles.detailsContainer}>
-            <div className={styles.priceContainer}>
+            {/* <div className={styles.priceContainer}>
               <div className={styles.keyAndValue}>
                 <p className={styles.key}>Est. Value</p>
                 <div className={styles.valueContainer}>
@@ -57,7 +57,7 @@ const NftDetails = ({ data }) => {
 
                 <span className={styles.value}>1</span>
               </div>{" "}
-            </div>{" "}
+            </div>{" "} */}
             <Details />
             <Description />
             <Properties />

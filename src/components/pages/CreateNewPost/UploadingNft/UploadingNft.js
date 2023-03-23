@@ -25,7 +25,7 @@ const UploadingNft = () => {
           />
         </div>
       </div>
-      <ProgressBar progress={50} />
+      <ProgressBar />
     </div>
   );
 };

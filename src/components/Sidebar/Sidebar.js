@@ -12,7 +12,7 @@ import styles from "./styles.module.css";
 const Sidebar = ({ showSidebar }) => {
   const navItems = [
     { icon: home, navItem: "Home", to: "/" },
-    { icon: wallet, navItem: "Wallet", to: "/portfolio" },
+    { icon: wallet, navItem: "Wallet", to: "/wallet" },
     { icon: marketplace, navItem: "Marketplace", to: "/marketplace" },
     { icon: explore, navItem: "Explore", to: "/explore" },
     { icon: profile, navItem: "Profile", to: "/profile" },

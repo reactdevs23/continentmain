@@ -1,0 +1,262 @@
+.overlay {
+  position: fixed;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  background-color: black;
+  opacity: 0.6;
+  z-index: 88;
+  cursor: pointer;
+}
+.close {
+  position: absolute;
+  top: 20px;
+  right: 20px;
+  cursor: pointer;
+  z-index: 90;
+  color: #fff;
+  font-size: 32px;
+}
+.wrapper {
+  display: grid;
+  grid-template-columns: 1.3fr 1fr;
+  background: #20284d;
+
+  box-shadow: 0px 4px 5px rgba(0, 0, 0, 0.7);
+  border-radius: 20px;
+  position: absolute;
+  z-index: 90;
+  top: 200px;
+  left: 50%;
+  transform: translateX(-50%);
+
+  width: 100%;
+  max-width: 1143px;
+  max-height: 675px;
+}
+.postImage {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: center;
+  border-radius: 20px 0 0 20px;
+}
+
+.header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 10px 20px;
+}
+.userContainer {
+  display: flex;
+  align-items: center;
+  gap: 5px;
+}
+
+.userImg {
+  width: 49px;
+  height: 44.1px;
+  display: block;
+}
+.text {
+  font-family: "Roboto";
+  font-style: normal;
+  font-weight: 700;
+  font-size: 16px;
+  line-height: 140%;
+  color: var(--primary-color);
+}
+.subText {
+  font-weight: 400;
+}
+.more {
+  color: var(--primary-color);
+  font-size: 24px;
+}
+.informationContainer {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  align-items: flex-start;
+  gap: 10px;
+  padding: 10px 20px;
+  border-top: 1px solid rgba(250, 250, 250, 0.2);
+  border-bottom: 1px solid rgba(250, 250, 250, 0.2);
+}
+.idAndbutton {
+  display: flex;
+  align-items: center;
+  gap: 15px;
+}
+.button {
+  font-family: "Roboto";
+  font-style: normal;
+  font-weight: 500;
+  font-size: 16px;
+  line-height: 140%;
+  color: #42ccd7;
+  cursor: pointer;
+}
+.aboutPost {
+  display: flex;
+  align-items: center;
+
+  gap: 10px;
+}
+.time {
+  font-family: "Roboto";
+  font-style: normal;
+  font-weight: 400;
+  font-size: 14px;
+  line-height: 140%;
+  color: rgba(250, 250, 250, 0.7);
+}
+.owner {
+  font-family: "Roboto";
+  font-style: normal;
+  font-weight: 400;
+  font-size: 14px;
+  line-height: 140%;
+  color: rgba(250, 250, 250, 0.7);
+}
+.ethContainer {
+  background: linear-gradient(
+    89.99deg,
+    #224dbd 0.66%,
+    #3069ff 61.01%,
+    #42ccd7 99.99%
+  );
+  border-radius: 10px;
+  padding: 5px 8px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 7px;
+}
+.eth {
+  font-family: "Roboto";
+  font-style: normal;
+  font-weight: 500;
+  font-size: 15px;
+  line-height: 120%;
+
+  color: #fafafa;
+}
+.ethIcon {
+  width: 11.4px;
+  height: 19.2px;
+}
+.likeCommentSend {
+  display: flex;
+  align-items: center;
+  gap: 20px;
+  padding: 10px 20px;
+  border-top: 1px solid rgba(250, 250, 250, 0.2);
+  border-bottom: 1px solid rgba(250, 250, 250, 0.2);
+}
+.like,
+.comment {
+  display: flex;
+  align-items: center;
+  gap: 3px;
+}
+.icon {
+  width: 20px;
+  height: 17.8px;
+  cursor: pointer;
+}
+
+.number {
+  font-family: "Roboto";
+  font-style: normal;
+  font-weight: 400;
+  font-size: 16px;
+  line-height: 140%;
+  color: rgba(250, 250, 250, 0.72);
+}
+.commentsWrapper {
+  padding: 10px 20px;
+  min-height: 300px;
+  max-height: 300px;
+  overflow-y: scroll;
+}
+.postInputContainer {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 10px 20px;
+}
+.postInput {
+  font-family: "Roboto";
+  font-style: normal;
+  font-weight: 400;
+  font-size: 13px;
+  line-height: 120%;
+
+  color: var(--primary-color);
+  background: none;
+  border: none;
+  outline: none;
+  padding: 10px;
+  padding-right: 18px;
+  width: 100%;
+}
+.postButton {
+  font-family: "Roboto";
+  font-style: normal;
+  font-weight: 500;
+  font-size: 16px;
+  line-height: 100%;
+  color: #fafafa;
+  background: #2f67fa;
+  border-radius: 14px;
+  padding: 8px 15px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+}
+
+@media only screen and (max-width: 1280px) {
+  .wrapper {
+    grid-template-columns: 1.2fr 1fr;
+  }
+}
+@media only screen and (max-width: 1199px) {
+  .wrapper {
+    grid-template-columns: 1fr;
+
+    max-width: 500px;
+    max-height: 2000px;
+
+    top: 100px;
+    transform: translateX(-50%);
+  }
+  .postImage {
+    border-radius: 20px 20px 0 0;
+  }
+}
+@media only screen and (max-width: 400px) {
+  .text {
+    font-size: 14px;
+  }
+  .informationContainer {
+    padding: 18px 10px;
+  }
+  .commentsWrapper {
+    padding: 10px 10px;
+  }
+  .icon {
+    width: 18px;
+    height: 15.4px;
+    cursor: pointer;
+  }
+  .number {
+    font-size: 12px;
+  }
+  .postButton {
+    font-size: 13px;
+  }
+}

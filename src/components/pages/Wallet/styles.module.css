@@ -1,16 +1,32 @@
 .pageContainer {
   padding-bottom: 30px;
 }
+.title {
+  font-family: "Roboto";
+  font-style: normal;
+  font-weight: 700;
+  font-size: 32px;
+  line-height: 130%;
+
+  display: flex;
+  align-items: center;
+  letter-spacing: -0.02em;
+
+  color: #ffffff;
+  padding-top: 65px;
+  padding-bottom: 35px;
+}
 .profileHeader {
   display: grid;
   grid-template-columns: 1fr 280px;
   align-items: start;
   gap: 50px;
-  padding-top: 65px;
+
   padding-bottom: 50px;
   z-index: 1;
   position: relative;
 }
+
 .profileHeader::before {
   content: "";
   position: absolute;

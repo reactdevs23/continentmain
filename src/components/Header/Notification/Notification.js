@@ -44,7 +44,13 @@ const Notification = ({ data }) => {
             </div>
 
             {el.friendRequest && (
-              <button className={styles.button}>Accept</button>
+              <div className={styles.buttonContainer}>
+                {" "}
+                <button className={styles.button}>Accept</button>{" "}
+                <button className={`${styles.button} ${styles.remove}`}>
+                  Remove
+                </button>
+              </div>
             )}
 
             {el.img && <img src={el.img} alt="#" className={styles.image} />}

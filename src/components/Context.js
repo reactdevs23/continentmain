@@ -7,6 +7,7 @@ export const ContextProvider = ({ children }) => {
   const [userName, setUserName] = useState("");
   const [existingUserName, setExistingUserName] = useState("juanbautista.eth");
   const [cancelUploading, setCancelUploading] = useState(true);
+  const [uploadingProgress, setUploadingProgress] = useState(40);
   const posts = [
     {
       id: 7789,
@@ -132,6 +133,8 @@ export const ContextProvider = ({ children }) => {
         posts,
         cancelUploading,
         setCancelUploading,
+        uploadingProgress,
+        setUploadingProgress,
       }}
     >
       {children}

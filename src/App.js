@@ -25,9 +25,9 @@ function App() {
           <Routes>
             <Route path="/" element={<Posts data={posts} />}></Route>
             <Route path="/createNewPost" element={<CreateNewPost />}></Route>
-            <Route path="/portfolio" element={<Wallet />}></Route>
+            <Route path="/wallet" element={<Wallet />}></Route>
             <Route path="nfts/:id" element={<NftDetails />}></Route>
-            <Route path="/wallet" element={<MyProfile />}></Route>
+            <Route path="/profile" element={<MyProfile />}></Route>
             <Route path="/editprofile" element={<EditProfile />}></Route>
             {/* <Route path="/userProfile" element={<UserProfile />}></Route>
              */}

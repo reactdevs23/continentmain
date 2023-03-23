@@ -13,8 +13,9 @@ const AddPost = ({ setModal, setDisCardPost }) => {
   const [addCaption, setAddCaption] = useState("");
   const [notForSale, setNotForSale] = useState(true);
   const [listForSale, setListForSale] = useState(false);
+
   const navigate = useNavigate();
-  const { setCancelUploading } = useDataContext();
+  const { setCancelUploading, setUploadingProgress } = useDataContext();
   const handleNotForSale = () => {
     setNotForSale(true);
     setListForSale(false);
@@ -78,6 +79,7 @@ const AddPost = ({ setModal, setDisCardPost }) => {
                   className={styles.invertBtn}
                   onClick={() => {
                     setDisCardPost(true);
+                    setUploadingProgress(40);
                   }}
                 >
                   Cancel
@@ -88,6 +90,7 @@ const AddPost = ({ setModal, setDisCardPost }) => {
                     navigate("/");
                     setModal(false);
                     setCancelUploading(false);
+                    setUploadingProgress(100);
                   }}
                 >
                   Share

@@ -11,10 +11,11 @@ const SetValue = () => {
       <div className={styles.inputContainerAndUsdValue}>
         <div className={styles.inputContainer}>
           <input
-            type="number"
+            type="text"
+            pattern="[0-9]*"
             className={styles.input}
             value={value}
-            onChange={(e) => setValue(e.target.value)}
+            onChange={(e) => setValue(e.target.value.replace(/[^0-9]/g, ""))}
           />
           <div className={styles.valueTypeContainer}>
             <p className={styles.valueText}>Eth</p>

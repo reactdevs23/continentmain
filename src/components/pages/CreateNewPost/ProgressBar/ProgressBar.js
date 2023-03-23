@@ -1,8 +1,10 @@
 import React from "react";
+import { useDataContext } from "../../../Context";
 import styles from "./styles.module.css";
 
-const ProgressBar = ({ progress }) => {
-  const progressPercentage = progress + "%";
+const ProgressBar = () => {
+  const { uploadingProgress } = useDataContext();
+  const progressPercentage = uploadingProgress + "%";
 
   const progressStyle = {
     width: progressPercentage,

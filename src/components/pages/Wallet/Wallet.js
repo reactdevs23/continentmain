@@ -10,27 +10,16 @@ import HexagonImage from "../../Hexagon/Hexagon";
 
 const Wallet = () => {
   const [nfts, setNfts] = useState(true);
-  // const [tokens, setTokens] = useState(false);
-  // const [transaction, setTransaction] = useState(false);
+
   const activeNft = () => {
     setNfts(true);
-    // setTokens(false);
-    // setTransaction(false);
   };
-  // const activeTokens = () => {
-  //   setTokens(true);
-  //   setNfts(false);
 
-  //   setTransaction(false);
-  // };
-  // const activeTransaction = () => {
-  //   setTransaction(true);
-  //   setNfts(false);
-  //   setTokens(false);
-  // };
   return (
     <div className={`${styles.wrapper} marginTop`}>
       <div className={`${styles.pageContainer} wrapper `}>
+        {" "}
+        <h4 className={styles.title}>Portfolio</h4>
         <div className={styles.profileHeader}>
           <div className={styles.userInfo}>
             <div className={styles.user}>

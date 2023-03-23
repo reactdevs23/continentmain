@@ -18,11 +18,13 @@ import Modal from "../../Modal/Modal";
 import AddPost from "./AddPost/AddPost";
 import DisCardPost from "./DiscardPost/DiscardPost";
 import ProgressBar from "./ProgressBar/ProgressBar";
+import { useDataContext } from "../../Context";
 
 const CreateNewPost = () => {
   const [buttonActive, setButtonActive] = useState(false);
   const [addingPost, setAddingPost] = useState(false);
   const [disCardPost, setDisCardPost] = useState(false);
+  const { setUploadingProgress } = useDataContext();
   const buttonActiveFunc = (nftSelected) => {
     setButtonActive(nftSelected);
   };
@@ -57,7 +59,7 @@ const CreateNewPost = () => {
     <>
       <div className="wrapper">
         <div className={`${styles.createNewPostContainer} marginTop `}>
-          <ProgressBar progress={50} />
+          <ProgressBar />
           <h4 className={styles.title}>Create new post</h4>
           <p className={styles.text}>Choose your wallet:</p>
           <div className={styles.chooseWalletWrapper}>
@@ -70,6 +72,7 @@ const CreateNewPost = () => {
                 onClick={() => {
                   if (buttonActive) {
                     setAddingPost(true);
+                    setUploadingProgress(70);
                   }
                 }}
               >
