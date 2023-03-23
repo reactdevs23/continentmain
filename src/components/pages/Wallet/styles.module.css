@@ -222,8 +222,3 @@
     z-index: -1;
   }
 }
-@media only screen and (max-width: 520px) {
-  .postCategoryContainer {
-    flex-direction: column;
-  }
-}
