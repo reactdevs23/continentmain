@@ -1,6 +1,7 @@
 import styles from "./ChatRoomSidebar.module.css";
 import { user } from "../../../../images/image";
 import { NavLink } from "react-router-dom";
+import HexagonImage from "../../../Hexagon/Hexagon";
 const ChatRoomSidebar = ({
   typing,
   latestMsg = "",
@@ -25,12 +26,20 @@ const ChatRoomSidebar = ({
     >
       {group ? (
         <div className={styles.groupImages}>
-          <img src={img} alt="" />
-          <img src={img} alt="" />
-          <img src={img} alt="" />
+          <div className={styles.groupImage}>
+            <HexagonImage src={img} />
+          </div>
+          <div className={styles.groupImage}>
+            <HexagonImage src={img} />
+          </div>
+          <div className={styles.groupImage}>
+            <HexagonImage src={img} />
+          </div>
         </div>
       ) : (
-        <img src={img} alt="" />
+        <div className={styles.groupImage}>
+          <HexagonImage src={img} />
+        </div>
       )}
 
       <div className={styles.rightRoom}>

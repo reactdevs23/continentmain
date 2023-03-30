@@ -41,6 +41,17 @@
   max-height: 90vh;
   overflow-y: auto;
 }
+.editText {
+  font-weight: 400;
+}
+.textArea {
+  width: 100%;
+  height: 100%;
+  border: none;
+  outline: none;
+  background: transparent;
+  resize: none;
+}
 .image {
   width: 100%;
   height: 100%;

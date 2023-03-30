@@ -1,12 +1,12 @@
-import React, { useState } from "react";
+import React from "react";
 import HexagonImage from "../../../../../Hexagon/Hexagon";
-import { lovefill, love } from "../../../../../../images/image";
-
+import { love } from "../../../../../../images/image";
+//lovefill,
 import styles from "./styles.module.css";
 import { useDataContext } from "../../../../../Context";
 
 const Comment = ({ userImg, userName, time, comment, likes }) => {
-  const [like, setLike] = useState(false);
+  // const [like, setLike] = useState(false);
   const { numberFormating } = useDataContext();
   return (
     <div className={styles.commentContainer}>
@@ -29,10 +29,11 @@ const Comment = ({ userImg, userName, time, comment, likes }) => {
       </div>
       <div className={styles.like}>
         <img
-          src={like ? lovefill : love}
+          // src={like ? lovefill : love}
+          src={love}
           alt="#"
           className={styles.icon}
-          onClick={() => setLike((prev) => !prev)}
+          // onClick={() => setLike((prev) => !prev)}
         />
 
         <span className={styles.number}>{numberFormating(likes)}</span>

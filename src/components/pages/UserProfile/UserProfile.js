@@ -1,6 +1,7 @@
 import React, { useState } from "react";
 import { copy, friends, collection, user } from "../../../images/image";
 import Banner from "../../Banner/Banner";
+import HexagonImage from "../../Hexagon/Hexagon";
 import ForSale from "./Posts/ForSale/ForSale";
 import NftPosts from "./Posts/NftPosts";
 import styles from "./styles.module.css";
@@ -14,7 +15,9 @@ const UserProfile = () => {
       <div className={`${styles.pageContainer} wrapper`}>
         <div className={styles.profileHeader}>
           <div className={styles.userInfo}>
-            <img src={user} alt="#" className={styles.user} />
+            <div className={styles.user}>
+              <HexagonImage src={user} />
+            </div>
             <p className={styles.name}>juanbautista.eth</p>
             <div className={styles.addressContainer}>
               <span className={`${styles.text} ${styles.address}`}>

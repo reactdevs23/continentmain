@@ -1,10 +1,11 @@
 import React, { useState } from "react";
+import { NavLink } from "react-router-dom";
 import { BsChevronDown } from "react-icons/bs";
 import { BiEditAlt } from "react-icons/bi";
 import { user, banner } from "../../../images/image";
 import Input from "../../Input/Input";
+import HexagonImage from "../../Hexagon/Hexagon";
 import styles from "./styles.module.css";
-import { NavLink } from "react-router-dom";
 
 const EditProfile = () => {
   const [values, setValues] = useState({
@@ -36,8 +37,8 @@ const EditProfile = () => {
   };
   const tabs = [
     { navItem: "Edit profile", to: "/editProfile" },
-    { navItem: "Notifications", to: "/notifications" },
-    { navItem: "Edit profile", to: "/accountsupport" },
+    // { navItem: "Notifications", to: "/notifications" },
+    // { navItem: "Edit profile", to: "/accountsupport" },
   ];
   return (
     <div className={`${styles.profileWrapper} `}>
@@ -52,7 +53,11 @@ const EditProfile = () => {
       <form className={`${styles.profile} `}>
         <div>
           <p className={styles.text}>Profile NFT</p>
-          <img src={user} alt="#" className={styles.user} />
+
+          <div className={styles.user}>
+            {" "}
+            <HexagonImage src={user} />
+          </div>
         </div>
         <div className={styles.bannerContainer}>
           <p className={styles.text}>Banner photo</p>

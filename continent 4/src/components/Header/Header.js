@@ -196,9 +196,7 @@ const Header = () => {
           </Link>
           <div className={styles.userContainer}>
             <div className={styles.userContainer}>
-              <div className={styles.userImage}>
-                <HexagonImage src={user} />
-              </div>
+              <img src={user} alt="#" className={styles.userImage} />
               {showProfileSetting ? (
                 <BsChevronUp
                   className={styles.arrow}

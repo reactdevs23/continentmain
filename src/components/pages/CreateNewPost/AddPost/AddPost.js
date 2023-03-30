@@ -5,7 +5,7 @@ import { useNavigate } from "react-router-dom";
 import { nftPhoto, user, edit, walletMoney } from "../../../../images/image";
 import HexagonImage from "../../../Hexagon/Hexagon";
 import CheckBox from "./Checkbox/CheckBox";
-import SetValue from "./SetValue/SetValue";
+import SetPrice from "./SetPrice/SetPrice";
 import { useDataContext } from "../../../Context";
 import styles from "./styles.module.css";
 
@@ -72,7 +72,7 @@ const AddPost = ({ setModal, setDisCardPost }) => {
                   />
                 </div>
 
-                {listForSale && <SetValue />}
+                {listForSale && <SetPrice />}
               </div>
               <div className={styles.btnDiv}>
                 <button

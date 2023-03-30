@@ -5,6 +5,7 @@ import React, { useEffect, useState } from "react";
 import GroupPhoto from "../GroupPhoto/GroupPhoto";
 import AddMemberModal from "../AddMemberModal/AddMemberModal";
 import Waveform from "../Waveform/Waveform";
+import HexagonImage from "../../../Hexagon/Hexagon";
 import { testImg, user } from "../../../../images/image";
 
 const ChatRoom = ({ isRecording, DUMMY_MSGS, setShowInput }) => {
@@ -100,9 +101,14 @@ const ChatRoom = ({ isRecording, DUMMY_MSGS, setShowInput }) => {
           className={styles.chatHeader}
         >
           {selectedGroupPhoto?.img ? (
-            <img src={selectedGroupPhoto.img} alt="" />
+            <div className={styles.placeHolderImg}>
+              {" "}
+              <HexagonImage src={selectedGroupPhoto.img} />
+            </div>
           ) : (
-            <div className={styles.placeHolderImg}></div>
+            <div className={styles.placeHolderImg}>
+              <HexagonImage />
+            </div>
           )}
           <div className={styles.rightHeader}>
             <h3>{id == 3 || id == 4 ? "Group Name" : "juanbautista.eth"}</h3>
@@ -134,13 +140,13 @@ const ChatRoom = ({ isRecording, DUMMY_MSGS, setShowInput }) => {
               <p>{adminUser ? "GroupName" : "Group Name"}</p>
               <div className={styles.groupPhotoDiv}>
                 {selectedGroupPhoto?.img ? (
-                  <img
-                    className={styles.groupPhoto}
-                    src={selectedGroupPhoto.img}
-                    alt="group"
-                  />
+                  <div className={styles.groupPhoto}>
+                    <HexagonImage src={selectedGroupPhoto.img} />
+                  </div>
                 ) : (
-                  <div className={styles.groupPhoto}></div>
+                  <div className={styles.groupPhoto}>
+                    <HexagonImage />
+                  </div>
                 )}
                 {adminUser ? (
                   <button onClick={() => setGroupPhotoModalToggle(true)}>
@@ -311,7 +317,9 @@ const Member = ({ img, name, admin, removeMemberModal, mainAdmin }) => {
   return (
     <div className={styles.partcipant}>
       <div>
-        <img src={img} alt="" />
+        <div className={styles.participantImage}>
+          <HexagonImage src={img} />
+        </div>
         <p>
           {name} {mainAdmin && "(admin)"}
         </p>

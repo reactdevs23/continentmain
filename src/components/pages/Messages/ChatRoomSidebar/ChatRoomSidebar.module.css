@@ -17,24 +17,24 @@
   isolation: isolate;
   margin-right: 20px;
 }
-.groupImages img:nth-child(2) {
+.groupImages .groupImage:nth-child(2) {
   position: absolute;
   left: 25%;
   top: 50%;
   transform: translateY(-50%);
   z-index: -1;
 }
-.groupImages img:nth-child(3) {
+.groupImages .groupImage:nth-child(3) {
   position: absolute;
   left: 45%;
   top: 50%;
   transform: translateY(-50%);
   z-index: -2;
 }
-.chatRoom > img,
-.groupImages img {
+
+.groupImage {
   min-width: 45px;
-  max-width: 45px;
+  max-width: 48px;
   border-radius: 50%;
   object-fit: contain;
 }

@@ -11,6 +11,7 @@ import ShareModal from "./ShareModal/ShareModal";
 
 import Modal from "../../Modal/Modal";
 import Banner from "../../Banner/Banner";
+import HexagonImage from "../../Hexagon/Hexagon";
 
 const MyProfile = () => {
   const [nftPosts, setNftPosts] = useState(true);
@@ -22,13 +23,15 @@ const MyProfile = () => {
       <div className={`${styles.pageContainer} wrapper`}>
         <div className={styles.profileHeader}>
           <div className={styles.userInfo}>
-            <img src={user} alt="#" className={styles.user} />
+            <div className={styles.user}>
+              <HexagonImage src={user} />
+            </div>
             <p className={styles.name}>juanbautista.eth</p>
             <div className={styles.addressContainer}>
               <span className={`${styles.text} ${styles.address}`}>
                 0xe0c6...1db9
               </span>
-              <BiChevronDown className={styles.downArrow} />
+              {/* <BiChevronDown className={styles.downArrow} /> */}
             </div>
             <p className={styles.text}>
               Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do

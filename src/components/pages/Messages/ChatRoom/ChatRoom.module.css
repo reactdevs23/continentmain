@@ -17,16 +17,12 @@
   border-bottom: 1px solid #fafafa33;
   padding: 30px 40px;
 }
-.chatHeader img,
+
 .placeHolderImg {
-  width: 40px;
-  object-fit: contain;
-  aspect-ratio: 1/1;
-  border-radius: 50%;
+  width: 45px;
+  height: 45px;
 }
-.placeHolderImg {
-  background-color: #fafafa;
-}
+
 .rightHeader {
   display: flex;
   justify-content: flex-start;
@@ -175,9 +171,7 @@
 }
 .groupPhoto {
   width: 100px;
-  height: 90px;
-  background-color: white;
-  clip-path: polygon(25% 0%, 75% 0%, 100% 50%, 75% 100%, 25% 100%, 0% 50%);
+  height: 103px;
 }
 .desc {
   display: flex;
@@ -230,11 +224,9 @@
   align-items: center;
   gap: 8px;
 }
-.partcipant > div img {
+.partcipant .participantImage {
   width: 40px;
-  object-fit: contain;
-  aspect-ratio: 1/1;
-  border-radius: 50%;
+  height: 38px;
 }
 .partcipant > div p {
   font-size: 16px;

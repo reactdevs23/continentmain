@@ -4,8 +4,8 @@ import { AiOutlineArrowRight } from "react-icons/ai";
 import {
   share,
   copy,
-  // report,
-  // close,
+  report,
+  close,
   edit,
   deleteIcon,
 } from "../../../../../images/image";
@@ -65,6 +65,20 @@ const NftMore = ({ setNftMore, author }) => {
             <AiOutlineArrowRight className={styles.arrow} />
           </p>
         </div>{" "}
+        {/* {!author && (
+          <div
+            className={styles.socialContainer}
+            onClick={() => setReportModal((prev) => !prev)}
+          >
+            <p className={styles.socials}>
+              <p className={styles.nameAndIcon}>
+                <img src={report} alt="#" className={styles.socialIcon} />
+                <span className={styles.name}>Report</span>
+              </p>
+              <AiOutlineArrowRight className={styles.arrow} />
+            </p>
+          </div>
+        )} */}
         {author && (
           <div
             className={styles.socialContainer}
@@ -79,6 +93,20 @@ const NftMore = ({ setNftMore, author }) => {
             </p>
           </div>
         )}
+        {/* {!author && (
+          <div
+            className={styles.socialContainer}
+            onClick={() => setNftMore(false)}
+          >
+            <p className={styles.socials}>
+              <p className={styles.nameAndIcon}>
+                <img src={close} alt="#" className={styles.socialIcon} />
+                <span className={styles.name}>Cancel</span>
+              </p>
+              <AiOutlineArrowRight className={styles.arrow} />
+            </p>
+          </div>
+        )} */}
       </div>
       {editProfileModal && (
         <Modal setModal={setEditProfileModal}>

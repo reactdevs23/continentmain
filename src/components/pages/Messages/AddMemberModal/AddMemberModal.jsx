@@ -1,6 +1,7 @@
 import { useEffect, useState } from "react";
 import styles from "./AddMemberModal.module.css";
 import { user } from "../../../../images/image";
+import HexagonImage from "../../../Hexagon/Hexagon";
 
 const AddMemberModal = ({ setModal }) => {
   const [dummyPeople, setDummyPeople] = useState([
@@ -132,7 +133,9 @@ const AddMemberModal = ({ setModal }) => {
                   className={styles.suggestedPerson}
                 >
                   <div className={styles.leftSuggest}>
-                    <img src={elem.img} alt="" />
+                    <div className={styles.suggestMembesImage}>
+                      <HexagonImage src={elem.img} />
+                    </div>
                     <p>{elem.name}</p>
                   </div>
                   <button

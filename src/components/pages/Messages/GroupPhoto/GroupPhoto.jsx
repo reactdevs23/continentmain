@@ -10,6 +10,7 @@ const GroupPhoto = ({ setModal, setSelectedGroupPhoto }) => {
       <div className={styles.modalWrapp}>
         <div className={styles.modalHeader}>
           <h3>Select Group Picture</h3>
+
           <svg
             onClick={() => setModal(false)}
             xmlns="http://www.w3.org/2000/svg"
