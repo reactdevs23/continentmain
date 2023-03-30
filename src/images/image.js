@@ -53,6 +53,7 @@ import walletMoney from "./walletMoney.svg";
 import deleteIcon from "./delete.svg";
 import profile from "./profile.svg";
 import walletIcon from "./walletIcon.svg";
+import commentNft from "./NFT photo.png";
 
 export {
   logo,
@@ -110,4 +111,5 @@ export {
   nftPhoto,
   profile,
   walletIcon,
+  commentNft,
 };

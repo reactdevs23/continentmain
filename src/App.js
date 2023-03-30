@@ -15,6 +15,7 @@ import CreateNewPost from "./components/pages/CreateNewPost/CreateNewPost";
 
 import Wallet from "./components/pages/Wallet/Wallet";
 import NftDetails from "./components/pages/Wallet/Posts/NftDetails/NftDetails";
+import UserProfile from "./components/pages/UserProfile/UserProfile";
 function App() {
   const { posts } = useDataContext();
   return (

@@ -2,11 +2,12 @@ import React, { useState } from "react";
 
 import { MdOutlineClose } from "react-icons/md";
 import {
-  postImage,
+  commentNft,
   user,
   ethIcon,
   comment,
   send,
+  love,
 } from "../../../../../images/image";
 import Comment from "./Comment/Comment";
 import Modal from "../../../../Modal/Modal";
@@ -24,84 +25,72 @@ const CommentsAndDetails = ({ data, setModal }) => {
       userName: "degen.eth",
       comment: "Great project! ",
       time: "1h ",
-      likes: 1,
     },
     {
       userImg: user,
       userName: "degen.eth",
       comment: "Great project! ",
       time: "1h ",
-      likes: 1,
     },
     {
       userImg: user,
       userName: "degen.eth",
       comment: "Great project! ",
       time: "1h ",
-      likes: 1,
     },
     {
       userImg: user,
       userName: "degen.eth",
       comment: "Great project! ",
       time: "1h ",
-      likes: 1,
     },
     {
       userImg: user,
       userName: "degen.eth",
       comment: "Great project! ",
       time: "1h ",
-      likes: 1,
     },
     {
       userImg: user,
       userName: "degen.eth",
       comment: "Great project! ",
       time: "1h ",
-      likes: 1,
     },
     {
       userImg: user,
       userName: "degen.eth",
       comment: "Great project! ",
       time: "1h ",
-      likes: 1,
     },
     {
       userImg: user,
       userName: "degen.eth",
       comment: "Great project! ",
       time: "1h ",
-      likes: 1,
     },
     {
       userImg: user,
       userName: "degen.eth",
       comment: "Great project! ",
       time: "1h ",
-      likes: 1,
     },
     {
       userImg: user,
       userName: "degen.eth",
       comment: "Great project! ",
       time: "1h ",
-      likes: 1,
     },
     {
       userImg: user,
       userName: "degen.eth",
       comment: "Great project! ",
       time: "1h ",
-      likes: 1,
     },
     {
       userImg: user,
       userName: "degen.eth",
       comment: "Great project! ",
       time: "1h ",
-      likes: 1,
     },
   ];
 
@@ -120,7 +109,7 @@ const CommentsAndDetails = ({ data, setModal }) => {
   return (
     <>
       <div className={styles.wrapper}>
-        <img src={postImage} alt="#" className={styles.postImage} />
+        <img src={commentNft} alt="#" className={styles.postImage} />
         <div className={styles.postDetails}>
           <div className={styles.header}>
             <div className={styles.userContainer}>
@@ -157,6 +146,17 @@ const CommentsAndDetails = ({ data, setModal }) => {
             ))}
           </div>{" "}
           <div className={styles.likeCommentSend}>
+            <div className={styles.like}>
+              <img
+                // src={like ? lovefill : love}
+                src={love}
+                alt="#"
+                className={styles.icon}
+                // onClick={() => setLike((prev) => !prev)}
+              />
+
+              <span className={styles.number}>{numberFormating(1)}</span>
+            </div>
             <div className={styles.comment}>
               <img src={comment} alt="#" className={styles.icon} />
               <span className={styles.number}>

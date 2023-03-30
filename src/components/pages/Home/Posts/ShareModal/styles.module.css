@@ -95,7 +95,7 @@
   justify-content: flex-start;
   align-items: flex-start;
   flex-direction: column;
-  gap: 20px;
+  gap: 15px;
   width: 100%;
   max-height: 500px;
   overflow-y: auto;
@@ -119,11 +119,9 @@
   align-items: center;
   gap: 10px;
 }
-.leftSuggest img {
+.userImage {
   width: 40px;
   height: 40px;
-  object-fit: contain;
-  border: 50%;
 }
 .leftSuggest p {
   color: white;

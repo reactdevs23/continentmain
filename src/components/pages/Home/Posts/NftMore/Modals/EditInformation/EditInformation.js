@@ -1,6 +1,7 @@
 import React, { useState } from "react";
 // import { BiUser } from "react-icons/bi";
 import { MdOutlineClose } from "react-icons/md";
+
 import {
   nftPhoto,
   user,
@@ -16,6 +17,7 @@ const EditInformation = ({ setModal }) => {
   const [addNftINfo, setAddNftINfo] = useState("Look at my new NFT!");
   const [notForSale, setNotForSale] = useState(true);
   const [listForSale, setListForSale] = useState(false);
+
   const handleNotForSale = () => {
     setNotForSale(true);
     setListForSale(false);
@@ -76,14 +78,21 @@ const EditInformation = ({ setModal }) => {
                 {listForSale && <SetPrice />}
               </div>
               <div className={styles.btnDiv}>
-                <button className={styles.invertBtn}>Cancel</button>
+                <button
+                  onClick={() => {
+                    setModal(false);
+                  }}
+                  className={styles.invertBtn}
+                >
+                  Cancel
+                </button>
                 <button
                   className={styles.button}
                   onClick={() => {
                     setModal(false);
                   }}
                 >
-                  Share
+                  Save Changes
                 </button>
               </div>
             </div>
