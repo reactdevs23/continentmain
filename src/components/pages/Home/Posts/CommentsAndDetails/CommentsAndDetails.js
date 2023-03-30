@@ -12,6 +12,7 @@ import Comment from "./Comment/Comment";
 import Modal from "../../../../Modal/Modal";
 import ShareModal from "../../../MyProfile/ShareModal/ShareModal";
 import styles from "./styles.module.css";
+import HexagonImage from "../../../../Hexagon/Hexagon";
 
 const CommentsAndDetails = ({ data, setModal }) => {
   const [postText, setPostText] = useState("");
@@ -123,7 +124,10 @@ const CommentsAndDetails = ({ data, setModal }) => {
         <div className={styles.postDetails}>
           <div className={styles.header}>
             <div className={styles.userContainer}>
-              <img src={user} alt="#" className={styles.userImg} />{" "}
+              {" "}
+              <div className={styles.userImg}>
+                <HexagonImage src={user} />
+              </div>
               <p className={styles.text}>{data.userName}</p>
             </div>
           </div>
