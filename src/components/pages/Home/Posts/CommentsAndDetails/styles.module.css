@@ -20,7 +20,7 @@
 }
 .wrapper {
   display: grid;
-  grid-template-columns: 1.3fr 1fr;
+  grid-template-columns: 1.2fr 1fr;
   background: #20284d;
 
   box-shadow: 0px 4px 5px rgba(0, 0, 0, 0.7);
@@ -32,7 +32,7 @@
   transform: translateX(-50%);
 
   width: 100%;
-  max-width: 1143px;
+  max-width: 991px;
   max-height: 675px;
 }
 .postImage {

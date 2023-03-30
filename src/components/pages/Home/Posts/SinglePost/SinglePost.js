@@ -15,7 +15,7 @@ import ShareWithModal from "../ShareModal/ShareWithModal";
 
 import NftMore from "../NftMore/NftMore";
 import CommentsAndDetails from "../CommentsAndDetails/CommentsAndDetails";
-
+import HexagonImage from "../../../../Hexagon/Hexagon";
 import styles from "./styles.module.css";
 import Modal from "../../../../Modal/Modal";
 import PostBuy from "../PostBuy/PostBuy";
@@ -33,7 +33,11 @@ const SinglePost = ({ data, i }) => {
       <div className={styles.post}>
         <div className={styles.header}>
           <div className={styles.userContainer}>
-            <img src={user} alt="#" className={styles.userImg} />{" "}
+            <div className={styles.userImg}>
+              {" "}
+              <HexagonImage src={user} />
+            </div>
+
             <p className={`${styles.text} ${styles.userName}`}>
               {data.userName}
             </p>
