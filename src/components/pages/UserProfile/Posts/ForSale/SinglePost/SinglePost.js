@@ -3,6 +3,9 @@ import { BiDotsVerticalRounded } from "react-icons/bi";
 import BuyNow from "../BuyNow/BuyNow";
 import { eth } from "../../../../../../images/image";
 import Modal from "../../../../../Modal/Modal";
+import DelistModal from "./DelistModal/DelistModal";
+
+import EditInformation from "./EditInformation/EditInformation";
 import styles from "./SinglePost.module.css";
 import { Link } from "react-router-dom";
 
@@ -15,8 +18,13 @@ const SinglePost = ({
   owner,
   purchasePrice,
 }) => {
-  const [activeDetails, setActiveDetails] = useState(null);
+  const [buyNowModal, setBuyNowModal] = useState(false);
   const [moreButton, setMoreButton] = useState(false);
+  const [delistModal, setDelistModal] = useState(false);
+  const [editInformationModal, setEditInformationModal] = useState(false);
+  const handleDelist = () => {
+    setDelistModal(true);
+  };
   return (
     <div className={styles.post}>
       <img src={img} alt="#" className={styles.image} />{" "}
@@ -38,6 +46,7 @@ const SinglePost = ({
                 className={styles.moreButton}
                 onClick={() => {
                   setMoreButton((prev) => !prev);
+                  handleDelist();
                 }}
               >
                 Deslist NFT
@@ -46,6 +55,7 @@ const SinglePost = ({
                 className={styles.moreButton}
                 onClick={() => {
                   setMoreButton((prev) => !prev);
+                  setEditInformationModal((prev) => !prev);
                 }}
               >
                 Edit Price
@@ -55,23 +65,28 @@ const SinglePost = ({
         </div>
         <div
           className={styles.valueContainer}
-          onClick={() => setActiveDetails(true)}
+          onClick={() => setBuyNowModal(true)}
         >
           <span className={styles.value}>{value}</span>
           <img src={eth} alt="#" className={styles.ethIcon} />
         </div>
         <p className={styles.lastSale}>Las sale: {lastSale} ETH</p>
       </div>
-      {activeDetails && (
+      {buyNowModal && (
         <BuyNow
           img={img}
-          id="7996"
           name={name}
           owner={owner}
           value={value}
           purchasePrice={purchasePrice}
-          setModal={setActiveDetails}
+          setModal={setBuyNowModal}
         />
+      )}
+      {delistModal && <DelistModal setModal={setDelistModal} />}
+      {editInformationModal && (
+        <Modal setModal={setEditInformationModal}>
+          <EditInformation setModal={setEditInformationModal} />
+        </Modal>
       )}
     </div>
   );

@@ -1,12 +1,13 @@
 import React, { useState } from "react";
 import { BiDotsVerticalRounded } from "react-icons/bi";
-import BuyNow from "./BuyNow/BuyNow";
+import BuyNow from "../BuyNow/BuyNow";
 import { eth } from "../../../../../../images/image";
-
-import styles from "./SinglePost.module.css";
-import DelistModal from "./DelistModal/DelistModal";
 import Modal from "../../../../../Modal/Modal";
+import DelistModal from "./DelistModal/DelistModal";
+
 import EditInformation from "./EditInformation/EditInformation";
+import styles from "./SinglePost.module.css";
+import { Link } from "react-router-dom";
 
 const SinglePost = ({
   img,
@@ -29,10 +30,10 @@ const SinglePost = ({
       <img src={img} alt="#" className={styles.image} />{" "}
       <div className={styles.detailsContainer}>
         <div className={styles.header}>
-          <p className={styles.id}>
+          <Link to="postDetails" className={styles.id}>
             {" "}
             {name} #{id}
-          </p>
+          </Link>
           <BiDotsVerticalRounded
             className={styles.more}
             onClick={() => setMoreButton((prev) => !prev)}

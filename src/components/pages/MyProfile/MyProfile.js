@@ -1,11 +1,11 @@
 import React, { useState } from "react";
 import { Link } from "react-router-dom";
-import { BiChevronDown } from "react-icons/bi";
+
 import { user } from "../../../images/image";
 import { BsShare } from "react-icons/bs";
-import Header from "../../Header/Header";
+
 import ForSale from "./Posts/ForSale/ForSale";
-import NftPosts from "./Posts/NftPosts";
+import NftPosts from "./Posts/NftPost/NftPosts";
 import styles from "./styles.module.css";
 import ShareModal from "./ShareModal/ShareModal";
 
@@ -14,9 +14,13 @@ import Banner from "../../Banner/Banner";
 import HexagonImage from "../../Hexagon/Hexagon";
 
 const MyProfile = () => {
+  const [profileImage, setProfileImage] = useState("");
   const [nftPosts, setNftPosts] = useState(true);
   const [shareModal, setShareModal] = useState(false);
-
+  const showProfileImage = (event) => {
+    const imgSrc = event.target.getAttribute("src");
+    setProfileImage(imgSrc);
+  };
   return (
     <>
       <Banner />
@@ -24,7 +28,7 @@ const MyProfile = () => {
         <div className={styles.profileHeader}>
           <div className={styles.userInfo}>
             <div className={styles.user}>
-              <HexagonImage src={user} />
+              <HexagonImage src={user} onClick={showProfileImage} />
             </div>
             <p className={styles.name}>juanbautista.eth</p>
             <div className={styles.addressContainer}>
@@ -80,6 +84,17 @@ const MyProfile = () => {
             <button className={styles.button}>Visit marketplace</button>
           )}
         </div>{" "}
+        {profileImage && (
+          <>
+            <div className={styles.profileImage}>
+              <HexagonImage src={profileImage} />
+            </div>
+            <div
+              className={styles.overlay}
+              onClick={() => setProfileImage("")}
+            ></div>
+          </>
+        )}
         {nftPosts ? <NftPosts /> : <ForSale />}
         {shareModal && (
           <Modal setModal={setShareModal}>
