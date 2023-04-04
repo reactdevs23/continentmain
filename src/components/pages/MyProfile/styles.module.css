@@ -3,7 +3,7 @@
 }
 .profileHeader {
   display: grid;
-  grid-template-columns: 1fr 177px;
+  grid-template-columns: 1fr 320px;
   align-items: start;
   gap: 50px;
   padding-top: 65px;
@@ -95,6 +95,7 @@
 .actionContainer {
   display: flex;
   align-items: center;
+  justify-content: flex-end;
   gap: 8px;
   position: relative;
 }
@@ -193,12 +194,6 @@
   transition: 0.3s ease;
 }
 @media only screen and (max-width: 991px) {
-  .profileImage {
-    width: 250px;
-    height: 250px;
-  }
-}
-@media only screen and (max-width: 767px) {
   .profileHeader {
     grid-template-columns: 1fr;
     padding: 30px 0;
@@ -206,13 +201,9 @@
   .profileHeader::before {
     display: none;
   }
-  .user {
-    position: inherit;
-
-    transform: translate(0px);
-  }
   .actionContainer {
     max-width: 400px;
+    justify-content: flex-start;
   }
   .actionContainer::before {
     content: "";
@@ -227,7 +218,17 @@
     filter: blur(300.176px);
     z-index: -1;
   }
+  .profileImage {
+    width: 250px;
+    height: 250px;
+  }
+  .user {
+    position: inherit;
+
+    transform: translate(0px);
+  }
 }
+
 @media only screen and (max-width: 520px) {
   .postCategoryContainer {
     flex-direction: column;

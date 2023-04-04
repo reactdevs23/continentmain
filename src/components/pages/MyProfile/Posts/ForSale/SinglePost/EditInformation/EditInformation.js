@@ -2,12 +2,7 @@ import React, { useState } from "react";
 // import { BiUser } from "react-icons/bi";
 import { MdOutlineClose } from "react-icons/md";
 
-import {
-  nftPhoto,
-  user,
-  edit,
-  walletMoney,
-} from "../../../../../../../images/image";
+import { nftPhoto, user, walletMoney } from "../../../../../../../images/image";
 import HexagonImage from "../../../../../../Hexagon/Hexagon";
 import CheckBox from "./Checkbox/CheckBox";
 import SetPrice from "./SetPrice/SetPrice";

@@ -10,7 +10,7 @@ import {
   love,
 } from "../../../../../images/image";
 import Comment from "./Comment/Comment";
-import Modal from "../../../../Modal/Modal";
+
 import ShareModal from "../ShareModal/ShareWithModal";
 import styles from "./styles.module.css";
 import HexagonImage from "../../../../Hexagon/Hexagon";
@@ -125,7 +125,7 @@ const CommentsAndDetails = ({ setModal }) => {
               className={styles.more}
               onClick={() => setNftMore((prev) => !prev)}
             />
-            {nftMore && <NftMore author={true} setNftMore={setNftMore} />}
+            {nftMore && <NftMore setNftMore={setNftMore} />}
           </div>
           <div className={styles.informationContainer}>
             <div className={styles.information}>

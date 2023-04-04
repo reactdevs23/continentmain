@@ -45,19 +45,19 @@ const SinglePost = ({
                 className={styles.moreButton}
                 onClick={() => {
                   setMoreButton((prev) => !prev);
-                  handleDelist();
-                }}
-              >
-                Cancel Listing
-              </p>
-              <p
-                className={styles.moreButton}
-                onClick={() => {
-                  setMoreButton((prev) => !prev);
                   setEditInformationModal((prev) => !prev);
                 }}
               >
                 Edit Price
+              </p>{" "}
+              <p
+                className={styles.moreButton}
+                onClick={() => {
+                  setMoreButton((prev) => !prev);
+                  handleDelist();
+                }}
+              >
+                Cancel Listing
               </p>
             </div>
           )}

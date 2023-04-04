@@ -1,11 +1,10 @@
 import React, { useState } from "react";
 import { CopyToClipboard } from "react-copy-to-clipboard";
-import { Routes, Route } from "react-router-dom";
 
 import {
   copy,
-  friends,
-  collection,
+  // friends,
+  // collection,
   user,
   mutualCollection,
 } from "../../../images/image";
@@ -14,12 +13,11 @@ import HexagonImage from "../../Hexagon/Hexagon";
 import ForSale from "./Posts/ForSale/ForSale";
 import NftPosts from "./Posts/NftPost/NftPosts";
 import styles from "./styles.module.css";
-import NewMsgModal from "./MutualFriendModal/MutualFriendModal";
+
 import MutualFriendModal from "./MutualFriendModal/MutualFriendModal";
 import MutualCollectionModal from "./MutualCollectionModal/MutualCollectionModal";
 
 const UserProfile = () => {
-  const [addFriend, setAddFriend] = useState(false);
   const [profileImage, setProfileImage] = useState("");
   const [nftPosts, setNftPosts] = useState(true);
   const [friend, setFriend] = useState(false);
@@ -155,7 +153,7 @@ const UserProfile = () => {
               className={`${styles.post} ${nftPosts && styles.activePost}`}
               onClick={() => setNftPosts(true)}
             >
-              <span className={styles.text}>NFTs post</span>
+              <span className={styles.text}>NFT post</span>
             </div>{" "}
             <div
               className={`${styles.post} ${!nftPosts && styles.activePost}`}
