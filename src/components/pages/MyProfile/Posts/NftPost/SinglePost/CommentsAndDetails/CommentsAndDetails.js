@@ -125,7 +125,7 @@ const CommentsAndDetails = ({ setModal }) => {
               className={styles.more}
               onClick={() => setNftMore((prev) => !prev)}
             />
-            {nftMore && <NftMore setNftMore={setNftMore} />}
+            {nftMore && <NftMore author={true} setNftMore={setNftMore} />}
           </div>
           <div className={styles.informationContainer}>
             <div className={styles.information}>

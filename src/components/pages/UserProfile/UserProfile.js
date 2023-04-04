@@ -153,7 +153,7 @@ const UserProfile = () => {
               className={`${styles.post} ${nftPosts && styles.activePost}`}
               onClick={() => setNftPosts(true)}
             >
-              <span className={styles.text}>NFT post</span>
+              <span className={styles.text}>NFT Posts</span>
             </div>{" "}
             <div
               className={`${styles.post} ${!nftPosts && styles.activePost}`}
