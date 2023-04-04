@@ -14,7 +14,7 @@ import {
 import Sidebar from "../Sidebar/Sidebar";
 import styles from "./styles.module.css";
 import searchStyles from "./search.module.css";
-import { Link } from "react-router-dom";
+import { Link, NavLink } from "react-router-dom";
 import HexagonImage from "../Hexagon/Hexagon";
 import Notifications from "./Notification/Notification";
 import ProfileSetting from "./ProfileSettings/ProfileSetting";
@@ -106,7 +106,7 @@ const Header = ({ hideNavbar }) => {
                 <FiSearch className={styles.search} />
                 <input
                   type="text"
-                  placeholder="Search items, collections, and accounts"
+                  placeholder="Search accounts"
                   className={styles.input}
                   value={searchValue}
                   onChange={(e) => {
@@ -175,31 +175,39 @@ const Header = ({ hideNavbar }) => {
             </div>
             <div className={styles.userProfile}>
               <p
-                className={`${
-                  notifications.length !== 0 && styles.notification
-                }`}
+                className={`${notifications.length !== 0 && styles.notification}
+                ${showNotification && styles.notificationIcon}`}
               >
                 {" "}
                 <img
                   src={notification}
                   alt=""
-                  className={`${styles.icon} `}
+                  className={`${styles.icon}
+                 
+                    `}
                   onClick={() => {
                     setShowNotification((prev) => !prev);
                     setShowProfileSetting(false);
                   }}
                 />
               </p>
-              <Link
+              <NavLink
+                className={({ isActive }) =>
+                  isActive
+                    ? [styles.icon, styles.iconActive].join(" ")
+                    : styles.icon
+                }
                 to={"/messages/1"}
-                className={styles.icon}
                 onClick={() => {
                   setShowNotification(false);
                   setShowProfileSetting(false);
                 }}
               >
-                <img src={messenger} alt="" />
-              </Link>
+                <p className={styles.messageIcon}>
+                  {" "}
+                  <img src={messenger} alt="" />
+                </p>
+              </NavLink>
               <div className={styles.userContainer}>
                 <div className={styles.userContainer}>
                   <div className={styles.userImage}>

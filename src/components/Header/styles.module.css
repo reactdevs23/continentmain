@@ -59,7 +59,59 @@
   display: grid;
   place-items: center;
   cursor: pointer;
+  transition: box-shadow 0.2s ease-in-out;
 }
+
+.messageIcon {
+  background: transparent;
+  box-sizing: border-box;
+  position: relative;
+  z-index: 2;
+  display: block;
+}
+.iconActive .messageIcon::before {
+  content: "";
+  position: absolute;
+  width: 80%;
+  height: 80%;
+  top: 50%;
+  background: #41c6da;
+  opacity: 0.9;
+
+  filter: blur(10px);
+  z-index: -1;
+
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+.notificationIcon {
+  position: relative;
+  z-index: 2;
+}
+.notificationIcon::after {
+  content: "";
+  position: absolute;
+  width: 80%;
+  height: 80%;
+  top: 50%;
+  background: #41c6da;
+  opacity: 0.9;
+
+  filter: blur(10px);
+  z-index: -1;
+
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+/* .messageIcon,
+.notificationIcon:hover,
+.messageIcon,
+.notificationIcon:focus {
+  box-shadow: 0px 0px 15px #41c6da;
+  background-color: transparent;
+
+  border-radius: 10px;
+}  */
 .notification {
   position: relative;
 }
