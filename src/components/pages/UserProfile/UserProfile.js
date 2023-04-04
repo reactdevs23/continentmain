@@ -162,9 +162,6 @@ const UserProfile = () => {
               <span className={styles.text}>For sale</span>
             </div>
           </div>
-          {!nftPosts && (
-            <button className={styles.button}>Visit marketplace</button>
-          )}
         </div>{" "}
         {profileImage && (
           <>

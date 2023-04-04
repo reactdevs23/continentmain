@@ -23,7 +23,7 @@ const Header = ({ hideNavbar }) => {
   const [showSidebar, setShowSidebar] = useState(false);
   const [searchValue, setSearchValue] = useState("");
   const [searchQuery, setSearchQuery] = useState("");
-  const [filteredCollection, setFilteredCollections] = useState([]);
+  // const [filteredCollection, setFilteredCollections] = useState([]);
   const [filteredAccount, setFilteredAccounts] = useState([]);
   const [showNotification, setShowNotification] = useState(false);
   const [showProfileSetting, setShowProfileSetting] = useState(false);
@@ -73,26 +73,26 @@ const Header = ({ hideNavbar }) => {
       img: testImg,
     },
   ];
-  const collections = [
-    { img: moonbirds, name: "Moonbirds", items: 10000, price: 7.62 },
-    { img: moonbirds, name: "Boonbirds", items: 10000, price: 7.62 },
-    { img: moonbirds, name: "Moonbirds", items: 10000, price: 7.62 },
-    { img: moonbirds, name: "Boonbirds", items: 10000, price: 7.62 },
-    { img: moonbirds, name: "Foonbirds", items: 10000, price: 7.62 },
-  ];
+  // const collections = [
+  //   { img: moonbirds, name: "Moonbirds", items: 10000, price: 7.62 },
+  //   { img: moonbirds, name: "Boonbirds", items: 10000, price: 7.62 },
+  //   { img: moonbirds, name: "Moonbirds", items: 10000, price: 7.62 },
+  //   { img: moonbirds, name: "Boonbirds", items: 10000, price: 7.62 },
+  //   { img: moonbirds, name: "Foonbirds", items: 10000, price: 7.62 },
+  // ];
   const accounts = [
-    { img: user, name: "MoonB" },
-    { img: user, name: "DoonB" },
-    { img: user, name: "ToonB" },
+    { img: user, name: "Moonbirds" },
+    { img: user, name: "Boonbirds" },
+    { img: user, name: "Foonbirds" },
   ];
   const filterData = (query) => {
-    const filteredcollections = collections.filter((item) => {
-      return item.name.toLowerCase().includes(query.toLowerCase());
-    });
+    // const filteredcollections = collections.filter((item) => {
+    //   return item.name.toLowerCase().includes(query.toLowerCase());
+    // });
     const filteredAccounts = accounts.filter((item) => {
       return item.name.toLowerCase().includes(query.toLowerCase());
     });
-    setFilteredCollections(filteredcollections);
+    // setFilteredCollections(filteredcollections);
     setFilteredAccounts(filteredAccounts);
   };
   return (
@@ -118,10 +118,10 @@ const Header = ({ hideNavbar }) => {
                 {searchQuery && (
                   <div className={searchStyles.searchingContainer}>
                     {" "}
-                    {filteredCollection && (
+                    {/* {filteredCollection && (
                       <h2 className={searchStyles.searchTitle}>Collections</h2>
-                    )}
-                    {filteredCollection.map((item, i) => (
+                    )} */}
+                    {/* {filteredCollection.map((item, i) => (
                       <div className={searchStyles.details} key={i}>
                         <div className={searchStyles.imgAndName}>
                           <img
@@ -146,7 +146,7 @@ const Header = ({ hideNavbar }) => {
                         </div>
                         <p className={searchStyles.items}>{item.price} ETH</p>
                       </div>
-                    ))}
+                    ))} */}
                     {filteredAccount && (
                       <h2 className={searchStyles.searchTitle}>Accounts</h2>
                     )}
