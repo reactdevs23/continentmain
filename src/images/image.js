@@ -54,6 +54,14 @@ import deleteIcon from "./delete.svg";
 import profile from "./profile.svg";
 import walletIcon from "./walletIcon.svg";
 import commentNft from "./NFT photo.png";
+import mutualCollection from "./mutualCollection.png";
+import spinner from "./spinner.svg";
+import collection1 from "./collections/collection1.png";
+import collection2 from "./collections/collection2.png";
+import collection3 from "./collections/collection3.png";
+import collection4 from "./collections/collection4.png";
+import collection5 from "./collections/colloection5.png";
+import collection6 from "./collections/collection6.png";
 
 export {
   logo,
@@ -112,4 +120,12 @@ export {
   profile,
   walletIcon,
   commentNft,
+  mutualCollection,
+  spinner,
+  collection1,
+  collection2,
+  collection3,
+  collection4,
+  collection5,
+  collection6,
 };

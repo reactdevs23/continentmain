@@ -1,0 +1,94 @@
+import React, { useState } from "react";
+import { BiDotsVerticalRounded } from "react-icons/bi";
+import BuyNow from "./BuyNow/BuyNow";
+import { eth } from "../../../../../../images/image";
+
+import styles from "./SinglePost.module.css";
+import DelistModal from "./DelistModal/DelistModal";
+import Modal from "../../../../../Modal/Modal";
+import EditInformation from "./EditInformation/EditInformation";
+
+const SinglePost = ({
+  img,
+  name,
+  id,
+  value,
+  lastSale,
+  owner,
+  purchasePrice,
+}) => {
+  const [buyNowModal, setBuyNowModal] = useState(false);
+  const [moreButton, setMoreButton] = useState(false);
+  const [delistModal, setDelistModal] = useState(false);
+  const [editInformationModal, setEditInformationModal] = useState(false);
+  const handleDelist = () => {
+    setDelistModal(true);
+  };
+  return (
+    <div className={styles.post}>
+      <img src={img} alt="#" className={styles.image} />{" "}
+      <div className={styles.detailsContainer}>
+        <div className={styles.header}>
+          <p className={styles.id}>
+            {" "}
+            {name} #{id}
+          </p>
+          <BiDotsVerticalRounded
+            className={styles.more}
+            onClick={() => setMoreButton((prev) => !prev)}
+          />
+
+          {/* moreButton */}
+          {moreButton && (
+            <div className={styles.moreButtonContainer}>
+              <p
+                className={styles.moreButton}
+                onClick={() => {
+                  setMoreButton((prev) => !prev);
+                  handleDelist();
+                }}
+              >
+                Deslist NFT
+              </p>
+              <p
+                className={styles.moreButton}
+                onClick={() => {
+                  setMoreButton((prev) => !prev);
+                  setEditInformationModal((prev) => !prev);
+                }}
+              >
+                Edit Price
+              </p>
+            </div>
+          )}
+        </div>
+        <div
+          className={styles.valueContainer}
+          onClick={() => setBuyNowModal(true)}
+        >
+          <span className={styles.value}>{value}</span>
+          <img src={eth} alt="#" className={styles.ethIcon} />
+        </div>
+        <p className={styles.lastSale}>Las sale: {lastSale} ETH</p>
+      </div>
+      {buyNowModal && (
+        <BuyNow
+          img={img}
+          name={name}
+          owner={owner}
+          value={value}
+          purchasePrice={purchasePrice}
+          setModal={setBuyNowModal}
+        />
+      )}
+      {delistModal && <DelistModal setModal={setDelistModal} />}
+      {editInformationModal && (
+        <Modal setModal={setEditInformationModal}>
+          <EditInformation setModal={setEditInformationModal} />
+        </Modal>
+      )}
+    </div>
+  );
+};
+
+export default SinglePost;

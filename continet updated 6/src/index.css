@@ -1,0 +1,148 @@
+@import url("https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500;700;900&family=Work+Sans:wght@400;500;600;700&display=swap");
+
+body {
+  margin: 0;
+  font-family: "Roboto";
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  min-height: 100vh;
+  background-color: #000;
+}
+
+code {
+  font-family: source-code-pro, Menlo, Monaco, Consolas, "Courier New",
+    monospace;
+}
+*,
+::before,
+::after {
+  -webkit-box-sizing: border-box;
+  -moz-box-sizing: border-box;
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+  text-decoration: none;
+  outline: none;
+}
+
+:root {
+  /* background-color */
+  --primary-bg: #0c1232;
+  --button-bg: linear-gradient(
+    89.99deg,
+    #224dbd 0.66%,
+    #3069ff 61.01%,
+    #42ccd7 99.99%
+  );
+  /* text-color */
+  --primary-color: #fafafa;
+
+  /* font-family */
+  --primary-font: "Roboto", sans-serif;
+  --secondary-font: "Akira Expanded", sans-serif;
+}
+
+body,
+html {
+  font-family: var(--primary-font);
+  scroll-behavior: smooth;
+  overflow-x: hidden;
+  background: linear-gradient(
+    293.96deg,
+    #12193b -26.79%,
+    #141a42 36.61%,
+    #000000 100%
+  );
+}
+@font-face {
+  font-family: "Akira Expanded";
+
+  src: url(./font/Akira\ Expanded\ Demo.otf);
+}
+button {
+  border: none;
+  outline: none;
+  background: none;
+}
+.seoTitle {
+  text-decoration: underline;
+}
+.container {
+  /* max-width: 1440px; */
+  width: 100%;
+  margin: 0 auto;
+}
+.rightSide {
+  padding-left: 265px;
+  /* background: url("./images/stars.png"); */
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: center;
+}
+.wrapper {
+  width: 90%;
+  margin: 0 auto;
+}
+.marginTop {
+  margin-top: 101px;
+}
+.shadow {
+  background: #343ab9;
+  opacity: 0.6;
+  filter: blur(140.176px);
+  width: 100%;
+  max-width: 318px;
+  aspect-ratio: 1/1;
+  position: absolute;
+  border-radius: 50%;
+  z-index: 1;
+  pointer-events: none;
+}
+/* ===== Scrollbar CSS ===== */
+/* Firefox */
+.grScrollbar {
+  scrollbar-width: thin;
+  scrollbar-color: #224dbd rgba(250, 250, 250, 0.2);
+}
+
+/* Chrome, Edge, and Safari */
+.grScrollbar::-webkit-scrollbar {
+  width: 5px;
+}
+
+.grScrollbar::-webkit-scrollbar-track {
+  background: rgba(250, 250, 250, 0.2);
+}
+
+.grScrollbar::-webkit-scrollbar-thumb {
+  background: linear-gradient(
+    180.6deg,
+    #224dbd 6.54%,
+    #3069ff 45.43%,
+    #42ccd7 94.5%
+  );
+  border-radius: 100vh;
+  border: none;
+}
+/* Chrome,
+Safari,
+Edge,
+Opera */
+input::-webkit-outer-spin-button,
+input::-webkit-inner-spin-button {
+  -webkit-appearance: none;
+  margin: 0;
+}
+
+/* Firefox */
+input[type="number"] {
+  -moz-appearance: textfield;
+}
+@media only screen and (max-width: 991px) {
+  .rightSide {
+    padding: 0;
+  }
+  .marginTop {
+    margin-top: 165px;
+  }
+}

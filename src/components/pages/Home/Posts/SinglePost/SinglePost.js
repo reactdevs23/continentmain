@@ -1,6 +1,14 @@
 import React, { useState } from "react";
 import { Link } from "react-router-dom";
 import { BiDotsVerticalRounded } from "react-icons/bi";
+
+import { useDataContext } from "../../../../Context";
+import ShareWithModal from "../ShareModal/ShareWithModal";
+import NftMore from "../NftMore/NftMore";
+import CommentsAndDetails from "../CommentsAndDetails/CommentsAndDetails";
+import HexagonImage from "../../../../Hexagon/Hexagon";
+
+import PostBuy from "../PostBuy/PostBuy";
 import {
   user,
   love,
@@ -9,16 +17,7 @@ import {
   send,
   ethIcon,
 } from "../../../../../images/image";
-import { useDataContext } from "../../../../Context";
-
-import ShareWithModal from "../ShareModal/ShareWithModal";
-
-import NftMore from "../NftMore/NftMore";
-import CommentsAndDetails from "../CommentsAndDetails/CommentsAndDetails";
-import HexagonImage from "../../../../Hexagon/Hexagon";
 import styles from "./styles.module.css";
-import Modal from "../../../../Modal/Modal";
-import PostBuy from "../PostBuy/PostBuy";
 
 const SinglePost = ({ data, i }) => {
   const [like, setLike] = useState(false);
@@ -117,11 +116,7 @@ const SinglePost = ({ data, i }) => {
       {showCommentsModal && (
         <CommentsAndDetails data={data} setModal={setShowCommentsModal} />
       )}
-      {showBuyModal && (
-        <Modal setModal={setShowBuyModal}>
-          <PostBuy setModal={setShowBuyModal} {...data} />
-        </Modal>
-      )}
+      {showBuyModal && <PostBuy setModal={setShowBuyModal} {...data} />}
     </>
   );
 };

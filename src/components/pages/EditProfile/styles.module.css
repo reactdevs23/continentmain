@@ -75,6 +75,7 @@
 .user {
   width: 90px;
   height: 90px;
+  cursor: pointer;
 }
 
 .defaultAddressContainer {

@@ -1,0 +1,106 @@
+.commentContainer {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  padding: 5px 0;
+}
+
+.aboutPost {
+  display: flex;
+  align-items: center;
+
+  gap: 10px;
+}
+.userImage {
+  width: 32px;
+  height: 32px;
+}
+
+.commentAndUserName {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 12px;
+}
+.text {
+  font-family: "Roboto";
+  font-style: normal;
+  font-weight: 700;
+  font-size: 16px;
+  line-height: 140%;
+  color: var(--primary-color);
+}
+.comment {
+  font-weight: 400;
+}
+
+.timeAndReply {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+.time {
+  font-family: "Roboto";
+  font-style: normal;
+  font-weight: 400;
+  font-size: 14px;
+  line-height: 140%;
+  color: rgba(250, 250, 250, 0.7);
+}
+.replayButton {
+  font-family: "Roboto";
+  font-style: normal;
+  font-weight: 400;
+  font-size: 14px;
+  line-height: 140%;
+  color: rgba(250, 250, 250, 0.7);
+  border: none;
+  outline: none;
+  background: none;
+  cursor: pointer;
+}
+.like {
+  display: flex;
+  align-items: center;
+  gap: 2px;
+}
+.icon {
+  width: 20px;
+  height: 17.8px;
+  cursor: pointer;
+}
+.number {
+  font-family: "Roboto";
+  font-style: normal;
+  font-weight: 400;
+  font-size: 16px;
+  line-height: 140%;
+  color: rgba(250, 250, 250, 0.72);
+  margin-top: 1px;
+}
+@media only screen and (max-width: 400px) {
+  .aboutPost {
+    gap: 6px;
+  }
+  .commentAndUserName {
+    gap: 6px;
+  }
+  .text {
+    font-size: 14px;
+  }
+
+  .icon {
+    width: 18px;
+    height: 15.4px;
+    cursor: pointer;
+  }
+  .number {
+    font-size: 12px;
+  }
+  .time {
+    font-size: 12px;
+  }
+  .replayButton {
+    font-size: 12px;
+  }
+}

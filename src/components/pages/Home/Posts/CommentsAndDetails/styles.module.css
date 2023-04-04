@@ -85,6 +85,11 @@
   border-top: 1px solid rgba(250, 250, 250, 0.2);
   border-bottom: 1px solid rgba(250, 250, 250, 0.2);
 }
+.information {
+  display: flex;
+  flex-direction: column;
+  gap: 5px;
+}
 .idAndbutton {
   display: flex;
   align-items: center;

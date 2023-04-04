@@ -2,12 +2,15 @@ import React, { useState } from "react";
 import { NavLink } from "react-router-dom";
 import { BsChevronDown } from "react-icons/bs";
 import { BiEditAlt } from "react-icons/bi";
-import { user, banner } from "../../../images/image";
+import { banner, nft } from "../../../images/image";
 import Input from "../../Input/Input";
 import HexagonImage from "../../Hexagon/Hexagon";
 import styles from "./styles.module.css";
+import SelectProfilePicture from "./SelectProfilePicture/SelectProfilePicture";
 
 const EditProfile = () => {
+  const [selectedProfilePic, setSelectedProfilePic] = useState("");
+  const [showProfilePhotosModal, setShowProfilePhotosModal] = useState(false);
   const [values, setValues] = useState({
     username: "juanbautista.eth",
     defaultAddress: "0x765dA497beAF1C7D83476C0e77B6CABA672dEfb9",
@@ -41,113 +44,132 @@ const EditProfile = () => {
     // { navItem: "Edit profile", to: "/accountsupport" },
   ];
   return (
-    <div className={`${styles.profileWrapper} `}>
-      {" "}
-      <div className={styles.tabsContainer}>
-        {tabs.map((el, i) => (
-          <NavLink to={el.to} key={i} className={styles.text}>
-            {el.navItem}
-          </NavLink>
-        ))}
-      </div>
-      <form className={`${styles.profile} `}>
-        <div>
-          <p className={styles.text}>Profile NFT</p>
-
-          <div className={styles.user}>
-            {" "}
-            <HexagonImage src={user} />
-          </div>
+    <>
+      <div className={`${styles.profileWrapper} `}>
+        {" "}
+        <div className={styles.tabsContainer}>
+          {tabs.map((el, i) => (
+            <NavLink to={el.to} key={i} className={styles.text}>
+              {el.navItem}
+            </NavLink>
+          ))}
         </div>
-        <div className={styles.bannerContainer}>
-          <p className={styles.text}>Banner photo</p>
-          <div className={styles.bannerImageContainer}>
-            <input
-              type="file"
-              id="banner"
-              className={styles.imageInput}
-              onChange={handleFileUpload}
-            />
-            <label htmlFor="banner" className={styles.editWrapper}>
-              <BiEditAlt className={styles.editIcon} />
-            </label>
-            <img
-              src={imageSrc ? imageSrc : banner}
-              alt="#"
-              className={styles.banner}
-            />
-          </div>
-        </div>
+        <form className={`${styles.profile} `}>
+          <div>
+            <p className={styles.text}>Profile NFT</p>
 
-        <Input
-          type="text"
-          name="username"
-          label="Username"
-          value={values["username"]}
-          onChange={onChange}
-        />
-        <div className={styles.defaultAddressContainer}>
-          <label htmlFor="address" className={`${styles.label} ${styles.text}`}>
-            Default Address{" "}
-          </label>
-          <div className={styles.inputContainer}>
-            <input
-              type="text"
-              id="address"
-              name="address"
-              value={values["defaultAddress"]}
-              className={`${styles.input} ${styles.text} ${styles.addressInput}`}
-              onChange={onChange}
-            />
-            <BsChevronDown className={styles.arrow} />
-
-            <div className={styles.addressContainer}>
-              {address.map((el, i) => (
-                <p
-                  className={`${styles.text} ${styles.address}`}
-                  key={i}
-                  onClick={() =>
-                    setValues({ ...values, defaultAddress: address[i] })
-                  }
-                >
-                  {el}
-                </p>
-              ))}
+            <div
+              className={styles.user}
+              onClick={() => setShowProfilePhotosModal((prev) => !prev)}
+            >
+              {" "}
+              <HexagonImage
+                src={selectedProfilePic ? selectedProfilePic.img : nft}
+              />
             </div>
           </div>
-        </div>
-        <Input
-          type="email"
-          name="email"
-          label="Email address"
-          value={values["email"]}
-          onChange={onChange}
+          <div className={styles.bannerContainer}>
+            <p className={styles.text}>Banner photo</p>
+            <div className={styles.bannerImageContainer}>
+              <input
+                type="file"
+                id="banner"
+                className={styles.imageInput}
+                onChange={handleFileUpload}
+              />
+              <label htmlFor="banner" className={styles.editWrapper}>
+                <BiEditAlt className={styles.editIcon} />
+              </label>
+              <img
+                src={imageSrc ? imageSrc : banner}
+                alt="#"
+                className={styles.banner}
+              />
+            </div>
+          </div>
+
+          <Input
+            type="text"
+            name="username"
+            label="Username"
+            value={values["username"]}
+            onChange={onChange}
+          />
+          <div className={styles.defaultAddressContainer}>
+            <label
+              htmlFor="address"
+              className={`${styles.label} ${styles.text}`}
+            >
+              Default Address{" "}
+            </label>
+            <div className={styles.inputContainer}>
+              <input
+                type="text"
+                id="address"
+                name="address"
+                value={values["defaultAddress"]}
+                className={`${styles.input} ${styles.text} ${styles.addressInput}`}
+                onChange={onChange}
+              />
+              <BsChevronDown className={styles.arrow} />
+
+              <div className={styles.addressContainer}>
+                {address.map((el, i) => (
+                  <p
+                    className={`${styles.text} ${styles.address}`}
+                    key={i}
+                    onClick={() =>
+                      setValues({ ...values, defaultAddress: address[i] })
+                    }
+                  >
+                    {el}
+                  </p>
+                ))}
+              </div>
+            </div>
+          </div>
+          <Input
+            type="email"
+            name="email"
+            label="Email address"
+            value={values["email"]}
+            onChange={onChange}
+          />
+          <div className={styles.textAreaContainer}>
+            <label
+              htmlFor="address"
+              className={`${styles.label} ${styles.text}`}
+            >
+              Bio
+            </label>
+            <textarea
+              className={`${styles.textArea}`}
+              name="bio"
+              id="bio"
+              cols="30"
+              rows="3"
+              placeholder="Write your bio..."
+            ></textarea>
+          </div>
+          <Input
+            type="text"
+            name="link"
+            label="Link"
+            value={values["link"]}
+            onChange={onChange}
+          />
+          <button type="submit" className={styles.button}>
+            Save changes
+          </button>
+        </form>
+      </div>
+      {showProfilePhotosModal && (
+        <SelectProfilePicture
+          setSelectedProfilePic={setSelectedProfilePic}
+          setModal={setShowProfilePhotosModal}
         />
-        <div className={styles.textAreaContainer}>
-          <label htmlFor="address" className={`${styles.label} ${styles.text}`}>
-            Bio
-          </label>
-          <textarea
-            className={`${styles.textArea}`}
-            name="bio"
-            id="bio"
-            cols="30"
-            rows="3"
-            placeholder="Write your bio..."
-          ></textarea>
-        </div>
-        <Input
-          type="text"
-          name="link"
-          label="Link"
-          value={values["link"]}
-          onChange={onChange}
-        />
-        <button type="submit" className={styles.button}>
-          Save changes
-        </button>
-      </form>
-    </div>
+      )}
+    </>
   );
 };
 

@@ -49,6 +49,7 @@
   display: flex;
   flex-direction: column;
   gap: 5px;
+  position: relative;
 }
 .user {
   width: 80px;
@@ -81,17 +82,72 @@
 .downArrow {
   color: var(--primary-color);
   cursor: pointer;
+  font-size: 20px;
 }
 .address {
   color: #fff;
 }
+.allWallets {
+  display: flex;
+  flex-direction: column;
+  gap: 3px;
+  min-width: 273px;
+  padding: 20px;
+  background: #2f3244;
+  border-radius: 10px;
+  position: absolute;
+  right: 0;
+  transform: translateX(calc(100% + 5px));
+}
+
+.wallets {
+  display: flex;
+
+  align-items: center;
+  gap: 5px;
+  padding: 2px 4px;
+  cursor: pointer;
+}
+.selectedWallet {
+  background: rgba(250, 250, 250, 0.2);
+  border-radius: 10px;
+}
+.wallet {
+  font-family: "Roboto";
+  font-style: normal;
+  font-weight: 400;
+  font-size: 16px;
+  line-height: 140%;
+  color: #fafafa;
+}
+.walletImage {
+  width: 32px;
+}
+.addAnotherWallet {
+  font-family: "Roboto";
+  font-style: normal;
+  font-weight: 600;
+  font-size: 14px;
+  line-height: 143%;
+  text-align: center;
+  color: #fafafa;
+  border: 1px solid #fafafa;
+  border-radius: 10px;
+  background: transparent;
+  outline: none;
+  width: 100%;
+  padding: 12px 8px;
+  display: block;
+  margin-top: 5px;
+  cursor: pointer;
+}
+
 .actionContainer {
   display: flex;
   align-items: center;
   gap: 8px;
   position: relative;
 }
-
 .button {
   font-family: "Roboto";
   font-style: normal;
@@ -111,6 +167,7 @@
   justify-content: center;
   align-items: center;
 }
+
 .activeButton {
   background: linear-gradient(
     89.99deg,
@@ -205,6 +262,12 @@
 
     transform: translate(0px);
   }
+  .allWallets {
+    top: 38px;
+    left: 0;
+    transform: translateX(0);
+  }
+
   .actionContainer {
     max-width: 400px;
   }
@@ -220,5 +283,15 @@
     opacity: 0.8;
     filter: blur(300.176px);
     z-index: -1;
+  }
+}
+@media only screen and (max-width: 520px) {
+  .priceAndAddress {
+    position: static;
+  }
+  .allWallets {
+    top: 85px;
+    left: 0;
+    width: 100%;
   }
 }

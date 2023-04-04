@@ -15,7 +15,7 @@ import ShareModal from "../../../MyProfile/ShareModal/ShareModal";
 import styles from "./styles.module.css";
 import HexagonImage from "../../../../Hexagon/Hexagon";
 
-const CommentsAndDetails = ({ data, setModal }) => {
+const CommentsAndDetails = ({  setModal }) => {
   const [postText, setPostText] = useState("");
 
   const [shareModal, setShareModal] = useState(false);
@@ -117,28 +117,27 @@ const CommentsAndDetails = ({ data, setModal }) => {
               <div className={styles.userImg}>
                 <HexagonImage src={user} />
               </div>
-              <p className={styles.text}>{data.userName}</p>
+              <p className={styles.text}>juanbautista.eth</p>
             </div>
           </div>
           <div className={styles.informationContainer}>
             <div className={styles.information}>
               <div className={styles.idAndbutton}>
-                <p className={styles.text}>Moonbird #{data.id}</p>
+                <p className={styles.text}>Moonbird #7789 </p>
               </div>
               <div className={styles.aboutPost}>
-                <p className={styles.text}>{data.userName} </p>
+                <p className={styles.text}>juanbautista.eth </p>
                 <p className={`${styles.text} ${styles.subText}`}>
-                  {data.postText} &nbsp;
-                  <span className={styles.time}>{data.time}</span>
+                  Look at my NFT! &nbsp;
+                  <span className={styles.time}>1d</span>
                 </p>
               </div>
             </div>
-            {data.ethAmount && (
-              <div className={styles.ethContainer}>
-                <span className={styles.eth}>{data.ethAmount}</span>
-                <img src={ethIcon} alt="#" className={styles.ethIcon} />
-              </div>
-            )}
+
+            <div className={styles.ethContainer}>
+              <span className={styles.eth}>0.038</span>
+              <img src={ethIcon} alt="#" className={styles.ethIcon} />
+            </div>
           </div>
           <div className={`${styles.commentsWrapper}  grScrollbar`}>
             {comments.map((el, i) => (
@@ -159,9 +158,7 @@ const CommentsAndDetails = ({ data, setModal }) => {
             </div>
             <div className={styles.comment}>
               <img src={comment} alt="#" className={styles.icon} />
-              <span className={styles.number}>
-                {numberFormating(data.comments)}
-              </span>
+              <span className={styles.number}>{numberFormating(200)}</span>
             </div>
 
             <img

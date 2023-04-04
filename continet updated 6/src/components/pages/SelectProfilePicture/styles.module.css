@@ -1,0 +1,81 @@
+.wrapper {
+  display: flex;
+
+  justify-content: center;
+  align-items: center;
+  min-height: calc(100vh - 101px);
+}
+
+.modalWrapp {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  align-items: center;
+  position: relative;
+  background: #0c1232;
+  border-radius: 17.7708px;
+  width: 95%;
+  max-width: 690px;
+  min-height: 60vh;
+  margin: 0 auto;
+  padding: 40px 30px;
+}
+
+.close {
+  position: absolute;
+  color: #fff;
+  right: 15px;
+  top: 15px;
+  color: #fff;
+  font-size: 30px;
+  cursor: pointer;
+}
+.title {
+  font-family: "Roboto";
+  font-style: normal;
+  font-weight: 500;
+  font-size: 22px;
+  line-height: 120%;
+  text-align: center;
+  color: #fafafa;
+}
+.text {
+  font-family: "Roboto";
+  font-style: normal;
+  font-weight: 400;
+  font-size: 16px;
+  line-height: 140%;
+  /* or 22px */
+
+  text-align: center;
+
+  color: #ffffff;
+}
+.button {
+  font-family: "Roboto";
+  font-style: normal;
+  font-weight: 500;
+  font-size: 18px;
+  line-height: 140%;
+  text-align: center;
+  color: var(--primary-color);
+  background: linear-gradient(
+    89.99deg,
+    #224dbd 0.66%,
+    #3069ff 61.01%,
+    #42ccd7 99.99%
+  );
+  border-radius: 10px;
+  padding: 10px 45px;
+  cursor: pointer;
+}
+
+@media only screen and (max-width: 991px) {
+  .wrapper {
+    display: flex;
+
+    justify-content: center;
+    align-items: center;
+    min-height: calc(100vh - 165px);
+  }
+}

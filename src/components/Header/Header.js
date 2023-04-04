@@ -19,7 +19,7 @@ import HexagonImage from "../Hexagon/Hexagon";
 import Notifications from "./Notification/Notification";
 import ProfileSetting from "./ProfileSettings/ProfileSetting";
 
-const Header = () => {
+const Header = ({ hideNavbar }) => {
   const [showSidebar, setShowSidebar] = useState(false);
   const [searchValue, setSearchValue] = useState("");
   const [searchQuery, setSearchQuery] = useState("");
@@ -99,141 +99,151 @@ const Header = () => {
     <>
       <section className={`${styles.header} container`}>
         <img src={logo} alt="#" className={styles.logo} />
-        <div className={styles.searchContainer}>
-          <div className={styles.inputContainer}>
-            <FiSearch className={styles.search} />
-            <input
-              type="text"
-              placeholder="Search items, collections, and accounts"
-              className={styles.input}
-              value={searchValue}
-              onChange={(e) => {
-                setSearchQuery(e.target.value);
-                setSearchValue(e.target.value);
-                filterData(e.target.value);
-              }}
-            />
-            {searchQuery && (
-              <div className={searchStyles.searchingContainer}>
-                {" "}
-                {filteredCollection && (
-                  <h2 className={searchStyles.searchTitle}>Collections</h2>
-                )}
-                {filteredCollection.map((item, i) => (
-                  <div className={searchStyles.details} key={i}>
-                    <div className={searchStyles.imgAndName}>
-                      <img
-                        src={item.img}
-                        alt="#"
-                        className={searchStyles.moonBirds}
-                      />
-                      <div className={searchStyles.nameAndItems}>
-                        <p
-                          className={searchStyles.name}
-                          onClick={() => {
-                            setSearchValue(item.name);
-                            setSearchQuery("");
-                          }}
-                        >
-                          {item.name}
-                        </p>
-                        <p className={searchStyles.items}>
-                          {item.items.toLocaleString()}
-                        </p>
-                      </div>
-                    </div>
-                    <p className={searchStyles.items}>{item.price} ETH</p>
-                  </div>
-                ))}
-                {filteredAccount && (
-                  <h2 className={searchStyles.searchTitle}>Accounts</h2>
-                )}
-                {filteredAccount.map((item, i) => (
-                  <div className={searchStyles.details}>
-                    <div className={`${searchStyles.imgAndName} `} key={i}>
-                      <div className={searchStyles.moonBirds}>
-                        <HexagonImage src={item.img} />
-                      </div>
-
-                      <p
-                        className={searchStyles.name}
-                        onClick={() => {
-                          setSearchValue(item.name);
-                          setSearchQuery("");
-                        }}
-                      >
-                        {item.name}
-                      </p>
-                    </div>
-                  </div>
-                ))}
-              </div>
-            )}
-          </div>
-        </div>
-        <div className={styles.userProfile}>
-          <p className={`${notifications.length !== 0 && styles.notification}`}>
-            {" "}
-            <img
-              src={notification}
-              alt=""
-              className={`${styles.icon} `}
-              onClick={() => {
-                setShowNotification((prev) => !prev);
-                setShowProfileSetting(false);
-              }}
-            />
-          </p>
-          <Link
-            to={"/messages/1"}
-            className={styles.icon}
-            onClick={() => {
-              setShowNotification(false);
-              setShowProfileSetting(false);
-            }}
-          >
-            <img src={messenger} alt="" />
-          </Link>
-          <div className={styles.userContainer}>
-            <div className={styles.userContainer}>
-              <div className={styles.userImage}>
-                <HexagonImage src={user} />
-              </div>
-              {showProfileSetting ? (
-                <BsChevronUp
-                  className={styles.arrow}
-                  onClick={() => {
-                    setShowProfileSetting((prev) => !prev);
-                    setShowNotification(false);
+        {!hideNavbar && (
+          <>
+            <div className={styles.searchContainer}>
+              <div className={styles.inputContainer}>
+                <FiSearch className={styles.search} />
+                <input
+                  type="text"
+                  placeholder="Search items, collections, and accounts"
+                  className={styles.input}
+                  value={searchValue}
+                  onChange={(e) => {
+                    setSearchQuery(e.target.value);
+                    setSearchValue(e.target.value);
+                    filterData(e.target.value);
                   }}
                 />
+                {searchQuery && (
+                  <div className={searchStyles.searchingContainer}>
+                    {" "}
+                    {filteredCollection && (
+                      <h2 className={searchStyles.searchTitle}>Collections</h2>
+                    )}
+                    {filteredCollection.map((item, i) => (
+                      <div className={searchStyles.details} key={i}>
+                        <div className={searchStyles.imgAndName}>
+                          <img
+                            src={item.img}
+                            alt="#"
+                            className={searchStyles.moonBirds}
+                          />
+                          <div className={searchStyles.nameAndItems}>
+                            <p
+                              className={searchStyles.name}
+                              onClick={() => {
+                                setSearchValue(item.name);
+                                setSearchQuery("");
+                              }}
+                            >
+                              {item.name}
+                            </p>
+                            <p className={searchStyles.items}>
+                              {item.items.toLocaleString()}
+                            </p>
+                          </div>
+                        </div>
+                        <p className={searchStyles.items}>{item.price} ETH</p>
+                      </div>
+                    ))}
+                    {filteredAccount && (
+                      <h2 className={searchStyles.searchTitle}>Accounts</h2>
+                    )}
+                    {filteredAccount.map((item, i) => (
+                      <div className={searchStyles.details}>
+                        <div className={`${searchStyles.imgAndName} `} key={i}>
+                          <div className={searchStyles.moonBirds}>
+                            <HexagonImage src={item.img} />
+                          </div>
+
+                          <p
+                            className={searchStyles.name}
+                            onClick={() => {
+                              setSearchValue(item.name);
+                              setSearchQuery("");
+                            }}
+                          >
+                            {item.name}
+                          </p>
+                        </div>
+                      </div>
+                    ))}
+                  </div>
+                )}
+              </div>
+            </div>
+            <div className={styles.userProfile}>
+              <p
+                className={`${
+                  notifications.length !== 0 && styles.notification
+                }`}
+              >
+                {" "}
+                <img
+                  src={notification}
+                  alt=""
+                  className={`${styles.icon} `}
+                  onClick={() => {
+                    setShowNotification((prev) => !prev);
+                    setShowProfileSetting(false);
+                  }}
+                />
+              </p>
+              <Link
+                to={"/messages/1"}
+                className={styles.icon}
+                onClick={() => {
+                  setShowNotification(false);
+                  setShowProfileSetting(false);
+                }}
+              >
+                <img src={messenger} alt="" />
+              </Link>
+              <div className={styles.userContainer}>
+                <div className={styles.userContainer}>
+                  <div className={styles.userImage}>
+                    <HexagonImage src={user} />
+                  </div>
+                  {showProfileSetting ? (
+                    <BsChevronUp
+                      className={styles.arrow}
+                      onClick={() => {
+                        setShowProfileSetting((prev) => !prev);
+                        setShowNotification(false);
+                      }}
+                    />
+                  ) : (
+                    <BsChevronDown
+                      className={styles.arrow}
+                      onClick={() => setShowProfileSetting((prev) => !prev)}
+                    />
+                  )}
+                </div>
+              </div>
+              {showSidebar ? (
+                <RiCloseLine
+                  color="#fafafa"
+                  className={styles.close}
+                  onClick={() => setShowSidebar((prev) => !prev)}
+                />
               ) : (
-                <BsChevronDown
-                  className={styles.arrow}
-                  onClick={() => setShowProfileSetting((prev) => !prev)}
+                <RxHamburgerMenu
+                  className={styles.hamburger}
+                  onClick={() => setShowSidebar((prev) => !prev)}
                 />
               )}
             </div>
-          </div>
-          {showSidebar ? (
-            <RiCloseLine
-              color="#fafafa"
-              className={styles.close}
-              onClick={() => setShowSidebar((prev) => !prev)}
-            />
-          ) : (
-            <RxHamburgerMenu
-              className={styles.hamburger}
-              onClick={() => setShowSidebar((prev) => !prev)}
-            />
-          )}
-        </div>
+          </>
+        )}
       </section>
       {showNotification && <Notifications data={notifications} />}{" "}
       {showProfileSetting && (
         <ProfileSetting setModal={setShowProfileSetting} />
       )}
-      <Sidebar showSidebar={showSidebar} setShowSidebar={setShowSidebar} />
+      {!hideNavbar && (
+        <Sidebar showSidebar={showSidebar} setShowSidebar={setShowSidebar} />
+      )}
     </>
   );
 };

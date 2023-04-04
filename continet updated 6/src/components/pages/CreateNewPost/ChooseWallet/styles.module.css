@@ -1,0 +1,69 @@
+.chooseWallet {
+  background: #2f3244;
+  border-radius: 16px;
+  padding: 12px 12px;
+  padding-right: 15px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  position: relative;
+}
+.allWallet {
+  position: absolute;
+  left: 0;
+  width: 100%;
+  top: 70px;
+  padding: 15px;
+  background: #2f3244;
+  backdrop-filter: blur(10px);
+  border-radius: 8px;
+}
+.wallet {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+.imageContainer {
+  height: 40px;
+  width: 40px;
+}
+
+.nameAndAddress {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+}
+.name {
+  font-family: "Work Sans";
+  font-style: normal;
+  font-weight: 500;
+  font-size: 16px;
+  line-height: 140%;
+  color: #fafafa;
+}
+
+.address {
+  font-family: "Roboto";
+  font-style: normal;
+  font-weight: 500;
+  font-size: 13px;
+  line-height: 120%;
+  color: #808080;
+}
+.arrow {
+  color: #fafafa;
+  font-size: 22px;
+  cursor: pointer;
+}
+.allWallet {
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+}
+.allWallet .wallet {
+  cursor: pointer;
+}
+.allWallet .imageContainer {
+  height: 32px;
+  width: 32px;
+}

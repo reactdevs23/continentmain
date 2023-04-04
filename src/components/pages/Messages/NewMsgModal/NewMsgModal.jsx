@@ -1,6 +1,7 @@
 import { useEffect, useState } from "react";
 import styles from "./NewMsgModal.module.css";
 import { user } from "../../../../images/image";
+import HexagonImage from "../../../Hexagon/Hexagon";
 
 const NewMsgModal = ({ setOpenNewMsgModal }) => {
   const [dummyPeople, setDummyPeople] = useState([
@@ -123,7 +124,9 @@ const NewMsgModal = ({ setOpenNewMsgModal }) => {
                   className={styles.suggestedPerson}
                 >
                   <div className={styles.leftSuggest}>
-                    <img src={elem.img} alt="" />
+                    <div className={styles.userImage}>
+                      <HexagonImage src={elem.img} />
+                    </div>
                     <p>{elem.name}</p>
                   </div>
                   <button

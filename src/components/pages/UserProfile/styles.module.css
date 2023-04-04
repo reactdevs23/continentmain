@@ -29,6 +29,26 @@
   transform: translateY(-50%);
   width: 120px;
   height: 120px;
+  cursor: pointer;
+}
+.profileImage {
+  position: absolute;
+  z-index: 3;
+  width: 355px;
+  height: 355px;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+.overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100vh;
+  z-index: 2;
+  background-color: rgba(0, 0, 0, 0.7);
+  cursor: pointer;
 }
 .name {
   font-family: "Roboto";
@@ -99,7 +119,43 @@
 .info {
   display: flex;
   align-items: center;
-  gap: 8px;
+  gap: 5px;
+  cursor: pointer;
+}
+.mutualImages {
+  position: relative;
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+  isolation: isolate;
+  margin-right: 20px;
+}
+.collectionImgages {
+  max-width: 25px;
+}
+.mutualImages .mutualImage:nth-child(2) {
+  position: absolute;
+  left: 25%;
+  top: 50%;
+  transform: translateY(-50%);
+  z-index: -1;
+}
+.mutualImages .mutualImage:nth-child(3) {
+  position: absolute;
+  left: 45%;
+  top: 50%;
+  transform: translateY(-50%);
+  z-index: -2;
+}
+
+.mutualImage {
+  min-width: 32px;
+  max-width: 32px;
+
+  object-fit: contain;
+}
+.mutualCollection {
+  border-radius: 5px;
 }
 .infoText {
   font-family: "Roboto";
@@ -109,6 +165,7 @@
   line-height: 120%;
   color: #fafafa;
 }
+
 .url {
   color: #41c5db;
 }
@@ -143,6 +200,12 @@
   background: rgba(255, 255, 255, 0.3);
   transition: 0.3s ease;
 }
+@media only screen and (max-width: 991px) {
+  .profileImage {
+    width: 250px;
+    height: 250px;
+  }
+}
 @media only screen and (max-width: 767px) {
   .profileHeader {
     grid-template-columns: 1fr;
@@ -153,6 +216,8 @@
   }
   .user {
     position: inherit;
+    width: 100px;
+    height: 100px;
 
     transform: translate(0px);
   }
@@ -176,5 +241,10 @@
 @media only screen and (max-width: 520px) {
   .postCategoryContainer {
     flex-direction: column;
+  }
+
+  .profileImage {
+    width: 200px;
+    height: 200px;
   }
 }

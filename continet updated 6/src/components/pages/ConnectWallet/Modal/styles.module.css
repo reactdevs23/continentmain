@@ -1,0 +1,203 @@
+.overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  background-color: rgba(0, 0, 0);
+  opacity: 0.6;
+  z-index: 12;
+  width: 100vw;
+  height: 100%;
+  cursor: pointer;
+}
+.modalWrapper {
+  max-width: 480px;
+  width: 90%;
+
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: var(--primary-bg);
+
+  box-shadow: 0px 4px 5px rgba(0, 0, 0, 0.7);
+  border-radius: 10px;
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  z-index: 91;
+}
+
+.smallModal {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  gap: 25px;
+  padding: 25px 0;
+  text-align: center;
+  max-width: 320px;
+  width: 100%;
+}
+.connectUnsuccessFull {
+  max-width: 390px;
+  width: 100%;
+  padding: 25px 0;
+  padding-top: 45px;
+  position: relative;
+}
+.close {
+  position: absolute;
+  right: -25px;
+  top: 15px;
+  color: #fff;
+  font-size: 24px;
+  z-index: 1;
+  cursor: pointer;
+}
+.heading {
+  font-family: "Roboto";
+  font-style: normal;
+  font-weight: 500;
+  font-size: 18px;
+  line-height: 125%px;
+  text-align: center;
+
+  /* Continent Full Moon */
+
+  color: #fafafa;
+}
+.title {
+  padding: 15px 0;
+}
+.profileInfo {
+  max-width: 252px;
+  width: 100%;
+  border: 1.5px solid rgba(250, 250, 250, 0.72);
+  border-radius: 16px;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  padding: 8px 12px;
+}
+
+.prifilePic {
+  width: 40px;
+  height: 42px;
+  object-fit: contain;
+  object-position: center;
+}
+
+.nameAndAddress {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+}
+.name {
+  font-family: "Roboto";
+  font-style: normal;
+  font-weight: 400;
+  font-size: 16px;
+  line-height: 140%;
+
+  color: var(--primary-color);
+}
+.address,
+.text {
+  font-family: "Roboto";
+  font-style: normal;
+  font-weight: 400;
+  font-size: 14px;
+  line-height: 120%;
+  display: flex;
+  align-items: center;
+  color: rgba(250, 250, 250, 0.72);
+}
+
+.btnDiv {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 20px;
+}
+.invertBtn {
+  font-family: "Roboto";
+  font-style: normal;
+  font-weight: 500;
+  font-size: 18px;
+  line-height: 140%;
+  text-align: center;
+  color: var(--primary-color);
+  background-color: transparent;
+  border-radius: 10px;
+  border: 1px solid white;
+  padding: 10px 45px;
+  cursor: pointer;
+  transition: all 0.3s ease-in-out;
+}
+.invertBtn:hover {
+  background-color: white;
+  color: black;
+}
+.button {
+  font-family: "Roboto";
+  font-style: normal;
+  font-weight: 500;
+  font-size: 18px;
+  line-height: 140%;
+  text-align: center;
+  color: var(--primary-color);
+  background: linear-gradient(
+    89.99deg,
+    #224dbd 0.66%,
+    #3069ff 61.01%,
+    #42ccd7 99.99%
+  );
+  border-radius: 10px;
+  padding: 8px 45px;
+  cursor: pointer;
+  width: 100%;
+}
+.subsCribe {
+  width: auto;
+  padding: 8px 15px;
+}
+.subsCribeContainer {
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 10px;
+}
+.input {
+  width: 100%;
+  outline: none;
+  border: 1px solid rgba(250, 250, 250, 0.72);
+  border-radius: 10px;
+  padding: 8px 15px;
+  background: transparent;
+  font-family: "Roboto";
+  font-style: normal;
+  font-weight: 400;
+  font-size: 16px;
+  line-height: 150%;
+  color: #ffff;
+}
+@media only screen and (max-width: 520px) {
+  .title {
+    padding: 0;
+  }
+  .button {
+    font-size: 16px;
+  }
+}
+@media only screen and (max-width: 400px) {
+  .modalWrapper {
+    padding: 20px 20px;
+  }
+  .connectUnsuccessFull {
+    width: 100%;
+  }
+  .subsCribeContainer {
+    flex-direction: column;
+  }
+}

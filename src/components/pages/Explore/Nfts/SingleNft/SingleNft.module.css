@@ -1,0 +1,12 @@
+.nft {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.image {
+  width: 100%;
+  border-radius: 8px;
+  cursor: pointer;
+}

@@ -241,4 +241,7 @@
   .roomChat {
     max-height: 600px;
   }
+  .messageRooms {
+    top: 165px;
+  }
 }

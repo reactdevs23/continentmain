@@ -1,14 +1,33 @@
 import React, { useState } from "react";
-import { copy, friends, collection, user } from "../../../images/image";
+import { Routes, Route } from "react-router-dom";
+
+import {
+  copy,
+  friends,
+  collection,
+  user,
+  mutualCollection,
+} from "../../../images/image";
 import Banner from "../../Banner/Banner";
 import HexagonImage from "../../Hexagon/Hexagon";
 import ForSale from "./Posts/ForSale/ForSale";
-import NftPosts from "./Posts/NftPosts";
+import NftPosts from "./Posts/NftPost/NftPosts";
 import styles from "./styles.module.css";
+import NewMsgModal from "./MutualFriendModal/MutualFriendModal";
+import MutualFriendModal from "./MutualFriendModal/MutualFriendModal";
+import MutualCollectionModal from "./MutualCollectionModal/MutualCollectionModal";
 
 const UserProfile = () => {
+  const [profileImage, setProfileImage] = useState("");
   const [nftPosts, setNftPosts] = useState(true);
   const [friend, setFriend] = useState(false);
+  const [mutualFriendModal, setMutualFriendModal] = useState(false);
+  const [mutualCollectionModal, setMutualCollectionModal] = useState(false);
+  const showProfileImage = (event) => {
+    const imgSrc = event.target.getAttribute("src");
+    setProfileImage(imgSrc);
+  };
+
   return (
     <>
       <Banner />
@@ -16,7 +35,7 @@ const UserProfile = () => {
         <div className={styles.profileHeader}>
           <div className={styles.userInfo}>
             <div className={styles.user}>
-              <HexagonImage src={user} />
+              <HexagonImage src={user} onClick={showProfileImage} />
             </div>
             <p className={styles.name}>juanbautista.eth</p>
             <div className={styles.addressContainer}>
@@ -57,15 +76,70 @@ const UserProfile = () => {
             )}{" "}
             <button className={`${styles.button} `}>Message</button>
             <div className={styles.infoContainer}>
-              <div className={styles.info}>
-                <img src={friends} alt="#" className={styles.mutualImage} />
+              <div
+                className={styles.info}
+                onClick={() => setMutualFriendModal((prev) => !prev)}
+              >
+                <div className={styles.mutualImages}>
+                  <div className={styles.mutualImage}>
+                    <HexagonImage src={user} />
+                  </div>
+                  <div className={styles.mutualImage}>
+                    <HexagonImage src={user} />
+                  </div>
+                  <div className={styles.mutualImage}>
+                    <HexagonImage src={user} />
+                  </div>
+                </div>
+
                 <p className={styles.infoText}>61 mutual friends</p>
               </div>
-              <div className={styles.info}>
-                <img src={collection} alt="#" className={styles.mutualImage} />
+              <div
+                className={styles.info}
+                onClick={() => setMutualCollectionModal((prev) => !prev)}
+              >
+                <div
+                  className={[
+                    styles.mutualImages,
+                    styles.collectionImgages,
+                  ].join(" ")}
+                >
+                  <img
+                    src={mutualCollection}
+                    alt="#"
+                    className={[
+                      styles.mutualImage,
+                      styles.mutualCollection,
+                    ].join(" ")}
+                  />
+                  <img
+                    src={mutualCollection}
+                    alt="#"
+                    className={[
+                      styles.mutualImage,
+                      styles.mutualCollection,
+                    ].join(" ")}
+                  />
+                  <img
+                    src={mutualCollection}
+                    alt="#"
+                    className={[
+                      styles.mutualImage,
+                      styles.mutualCollection,
+                    ].join(" ")}
+                  />
+                </div>
                 <p className={styles.infoText}>4 mutual collections</p>
               </div>
             </div>
+            {mutualFriendModal && (
+              <MutualFriendModal setMutualFriendModal={setMutualFriendModal} />
+            )}
+            {mutualCollectionModal && (
+              <MutualCollectionModal
+                setMutualCollectionModal={setMutualCollectionModal}
+              />
+            )}
           </div>
         </div>
         <div className={styles.postCategoryContainer}>
@@ -87,6 +161,17 @@ const UserProfile = () => {
             <button className={styles.button}>Visit marketplace</button>
           )}
         </div>{" "}
+        {profileImage && (
+          <>
+            <div className={styles.profileImage}>
+              <HexagonImage src={profileImage} />
+            </div>
+            <div
+              className={styles.overlay}
+              onClick={() => setProfileImage("")}
+            ></div>
+          </>
+        )}
         {nftPosts ? <NftPosts /> : <ForSale />}
       </div>
     </>

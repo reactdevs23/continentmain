@@ -1,18 +1,18 @@
 import React, { useState } from "react";
-import { useNavigate, useParams } from "react-router-dom";
+import { useNavigate } from "react-router-dom";
 import { HiOutlineArrowNarrowLeft } from "react-icons/hi";
 import { ethIcon, nft } from "../../../../../images/image";
-import Modal from "../../../../Modal/Modal";
+
 import PostBuy from "../PostBuy/PostBuy";
 import Description from "./DetailsDescriptionAndProperties/Description";
 import Details from "./DetailsDescriptionAndProperties/Details";
 import Properties from "./DetailsDescriptionAndProperties/Properties";
 import styles from "./styles.module.css";
 
-const PostDetails = ({ data }) => {
+const PostDetails = () => {
   const navigate = useNavigate();
   const [showBuyModal, setShowBuyModal] = useState(false);
-  const { id } = useParams();
+
   return (
     <>
       <div className={`${styles.wrapper} marginTop`}>
@@ -45,11 +45,7 @@ const PostDetails = ({ data }) => {
           </div>
         </div>
       </div>
-      {showBuyModal && (
-        <Modal setModal={setShowBuyModal}>
-          <PostBuy setModal={setShowBuyModal} {...data[id - 1]} />
-        </Modal>
-      )}
+      {showBuyModal && <PostBuy setModal={setShowBuyModal} />}
     </>
   );
 };
