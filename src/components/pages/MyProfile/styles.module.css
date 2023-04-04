@@ -89,6 +89,9 @@
 .address {
   color: #fff;
 }
+.copyIcon {
+  cursor: pointer;
+}
 .actionContainer {
   display: flex;
   align-items: center;

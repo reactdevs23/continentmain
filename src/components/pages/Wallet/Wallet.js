@@ -73,7 +73,7 @@ const Wallet = () => {
                         setShowallWallet(false);
                       }}
                     >
-                      Add another wallet
+                      Link a new wallet
                     </button>
                   </div>
                 )}

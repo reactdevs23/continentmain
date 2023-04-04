@@ -11,7 +11,7 @@ import {
 } from "../../../../../../../images/image";
 import Comment from "./Comment/Comment";
 import Modal from "../../../../../../Modal/Modal";
-import ShareModal from "../../../../../MyProfile/ShareModal/ShareModal";
+import ShareWithModal from "../ShareWithModal/ShareWithModal";
 import styles from "./styles.module.css";
 import HexagonImage from "../../../../../../Hexagon/Hexagon";
 import { Link } from "react-router-dom";
@@ -195,11 +195,7 @@ const CommentsAndDetails = ({ setModal }) => {
         className={styles.close}
         onClick={() => setModal(false)}
       />
-      {shareModal && (
-        <Modal setModal={setShareModal}>
-          <ShareModal setModal={setShareModal} />
-        </Modal>
-      )}
+      {shareModal && <ShareWithModal setModal={setShareModal} />}
       <div className={styles.overlay} onClick={() => setModal(false)}></div>
     </>
   );

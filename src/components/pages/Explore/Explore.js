@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useState } from "react";
 import styles from "./Explore.module.css";
 import {
   user,
@@ -20,6 +20,7 @@ import { Link } from "react-router-dom";
 import HexagonImage from "../../Hexagon/Hexagon";
 
 const Explore = () => {
+  const [addFriend, setAddFriend] = useState(false);
   const collections = [
     {
       img: collection1,
@@ -59,8 +60,8 @@ const Explore = () => {
         <div>
           {" "}
           <div className={styles.header}>
-            <h3 className={styles.title}>Top users</h3>
-            <Link to="topUser" className={styles.button}>
+            <h3 className={styles.title}>Find Friends</h3>
+            <Link to="findFriends" className={styles.button}>
               See more
             </Link>
           </div>
@@ -73,7 +74,12 @@ const Explore = () => {
                     <HexagonImage src={el.img} />
                   </div>
                   <p className={styles.userName}>{el.name}</p>
-                  <button className={styles.addFriend}>AddFriend</button>
+                  <button
+                    className={styles.addFriend}
+                    onClick={() => setAddFriend((prev) => !prev)}
+                  >
+                    {addFriend ? "Request Send" : "Add Friend"}
+                  </button>
                 </div>
               ))}
           </div>

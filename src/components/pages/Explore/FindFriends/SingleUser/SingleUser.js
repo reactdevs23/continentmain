@@ -15,7 +15,7 @@ const SingleUser = ({ img, name }) => {
         className={styles.addFriend}
         onClick={() => setAddFriend((prev) => !prev)}
       >
-        {addFriend ? "Request Send" : "AddFriend"}
+        {addFriend ? "Request Send" : "Add Friend"}
       </button>
     </div>
   );

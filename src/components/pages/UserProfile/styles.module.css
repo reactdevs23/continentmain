@@ -75,6 +75,9 @@
 .address {
   color: #fff;
 }
+.copyIcon {
+  cursor: pointer;
+}
 .actionContainer {
   display: grid;
   grid-template-columns: 1fr 1fr;

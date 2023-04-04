@@ -1,7 +1,8 @@
 import React, { useState } from "react";
+import { CopyToClipboard } from "react-copy-to-clipboard";
 import { Link } from "react-router-dom";
 
-import { user } from "../../../images/image";
+import { copy, user } from "../../../images/image";
 import { BsShare } from "react-icons/bs";
 
 import ForSale from "./Posts/ForSale/ForSale";
@@ -21,6 +22,7 @@ const MyProfile = () => {
     const imgSrc = event.target.getAttribute("src");
     setProfileImage(imgSrc);
   };
+
   return (
     <>
       <Banner />
@@ -32,9 +34,14 @@ const MyProfile = () => {
             </div>
             <p className={styles.name}>juanbautista.eth</p>
             <div className={styles.addressContainer}>
-              <span className={`${styles.text} ${styles.address}`}>
+              <p className={`${styles.text} ${styles.address}`}>
                 0xe0c6...1db9
-              </span>
+              </p>
+
+              <CopyToClipboard text="0xe0c6...1db9">
+                <img src={copy} alt="#" className={styles.copyIcon} />
+              </CopyToClipboard>
+
               {/* <BiChevronDown className={styles.downArrow} /> */}
             </div>
             <p className={styles.text}>
@@ -80,9 +87,6 @@ const MyProfile = () => {
               <span className={styles.text}>For sale</span>
             </div>
           </div>
-          {!nftPosts && (
-            <button className={styles.button}>Visit marketplace</button>
-          )}
         </div>{" "}
         {profileImage && (
           <>

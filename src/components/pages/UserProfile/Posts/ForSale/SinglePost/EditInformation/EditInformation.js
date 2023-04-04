@@ -14,7 +14,6 @@ import SetPrice from "./SetPrice/SetPrice";
 import styles from "./styles.module.css";
 
 const EditInformation = ({ setModal }) => {
-  const [addNftINfo, setAddNftINfo] = useState("Look at my new NFT!");
   const [notForSale, setNotForSale] = useState(true);
   const [listForSale, setListForSale] = useState(false);
 
@@ -45,16 +44,6 @@ const EditInformation = ({ setModal }) => {
                   <HexagonImage src={user} />
                 </div>{" "}
                 <p className={styles.text}>juanbautista.eth</p>
-              </div>
-              <div className={styles.edits}>
-                <img src={edit} alt="#" className={styles.edit} />
-                <textarea
-                  name="addCaption"
-                  value={addNftINfo}
-                  placeholder="Edit nft info..."
-                  onChange={(e) => setAddNftINfo(e.target.value)}
-                  className={`${styles.text} ${styles.textArea} ${styles.editText}`}
-                ></textarea>
               </div>
 
               <div className={styles.listForSaleContainer}>

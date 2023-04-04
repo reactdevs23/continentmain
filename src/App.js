@@ -3,6 +3,7 @@ import { Routes, Route, useLocation } from "react-router-dom";
 import Header from "./components/Header/Header";
 
 import MyProfile from "./components/pages/MyProfile/MyProfile";
+import MyProfilePostDetails from "./components/pages/MyProfile/Posts/PostDetails/PostDetails";
 
 import Message from "./components/pages/Messages/Message";
 
@@ -19,10 +20,11 @@ import NftDetails from "./components/pages/Wallet/Posts/NftDetails/NftDetails";
 import UserProfile from "./components/pages/UserProfile/UserProfile";
 import UserProfilePostDetails from "./components/pages/UserProfile/Posts/PostDetails/PostDetails";
 import Explore from "./components/pages/Explore/Explore";
-import TopUser from "./components/pages/Explore/TopUser/TopUser";
+import FindFriends from "./components/pages/Explore/FindFriends/FindFriend";
 import AllCollections from "./components/pages/Explore/Collections/AllCollections";
 import NFTs from "./components/pages/Explore/Nfts/Nfts";
 import Collection from "./components/pages/Explore/Collections/Collection/Collection";
+import MarketPlace from "./components/pages/MarketPlace/MarketPlace";
 function App() {
   const { posts } = useDataContext();
   const location = useLocation();
@@ -45,7 +47,10 @@ function App() {
             <Route path="/userProfile" element={<UserProfile />}></Route>
             <Route path="/messages/:id" element={<Message />} />
             <Route path="/explore" element={<Explore />}></Route>{" "}
-            <Route path="/explore/topUser" element={<TopUser />}></Route>
+            <Route
+              path="/explore/findFriends"
+              element={<FindFriends />}
+            ></Route>
             <Route path="/explore/Nfts" element={<NFTs />}></Route>
             <Route
               path="/explore/collections"
@@ -55,6 +60,7 @@ function App() {
               path="/explore/collections/collection"
               element={<Collection />}
             ></Route>
+            <Route path="/marketplace" element={<MarketPlace />}></Route>
           </Routes>
         </div>
         <Routes>
@@ -62,6 +68,10 @@ function App() {
           <Route
             path="/userProfile/postDetails"
             element={<UserProfilePostDetails />}
+          ></Route>{" "}
+          <Route
+            path="/profile/postDetails"
+            element={<MyProfilePostDetails />}
           ></Route>
         </Routes>
         {/* <Header />

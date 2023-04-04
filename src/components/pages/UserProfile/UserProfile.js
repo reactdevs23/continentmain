@@ -1,4 +1,5 @@
 import React, { useState } from "react";
+import { CopyToClipboard } from "react-copy-to-clipboard";
 import { Routes, Route } from "react-router-dom";
 
 import {
@@ -39,10 +40,15 @@ const UserProfile = () => {
             </div>
             <p className={styles.name}>juanbautista.eth</p>
             <div className={styles.addressContainer}>
-              <span className={`${styles.text} ${styles.address}`}>
+              <p className={`${styles.text} ${styles.address}`}>
                 0xe0c6...1db9
-              </span>
-              <img src={copy} alt="#" className={styles.copyIcon} />
+              </p>
+
+              <CopyToClipboard text="0xe0c6...1db9">
+                <img src={copy} alt="#" className={styles.copyIcon} />
+              </CopyToClipboard>
+
+              {/* <BiChevronDown className={styles.downArrow} /> */}
             </div>
             <p className={styles.text}>
               Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do

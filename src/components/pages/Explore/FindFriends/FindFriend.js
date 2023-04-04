@@ -1,15 +1,15 @@
 import React from "react";
 
-import styles from "./TopUser.module.css";
+import styles from "./FindFriends.module.css";
 
 import { user } from "../../../../images/image";
 import SingleUser from "./SingleUser/SingleUser";
 
-const TopUser = () => {
+const FindFriends = () => {
   return (
-    <div className={styles.topUserContainer}>
+    <div className={styles.findFriendsContainer}>
       <div className={`marginTop wrapper`}>
-        <h3 className={styles.title}>Top users</h3>
+        <h3 className={styles.title}>Find Friends</h3>
         <div className={`${styles.wrapper} `}>
           {Array(25)
             .fill({ img: user, name: "juanbautista.eth" })
@@ -22,4 +22,4 @@ const TopUser = () => {
   );
 };
 
-export default TopUser;
+export default FindFriends;
