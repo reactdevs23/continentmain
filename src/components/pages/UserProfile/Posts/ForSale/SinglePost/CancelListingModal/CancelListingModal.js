@@ -1,7 +1,7 @@
 import React from "react";
-import styles from "./DelistModal.module.css";
+import styles from "./CancelListingModal.module.css";
 
-const DelistModal = ({ setModal }) => {
+const CancelListingModal = ({ setModal }) => {
   return (
     <>
       <div onClick={() => setModal(false)} className={styles.overlay}></div>
@@ -20,4 +20,4 @@ const DelistModal = ({ setModal }) => {
   );
 };
 
-export default DelistModal;
+export default CancelListingModal;

@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-
+import { BiDotsVerticalRounded } from "react-icons/bi";
 import { MdOutlineClose } from "react-icons/md";
 import {
   commentNft,
@@ -11,11 +11,13 @@ import {
 } from "../../../../../images/image";
 import Comment from "./Comment/Comment";
 import Modal from "../../../../Modal/Modal";
-import ShareModal from "../../../MyProfile/ShareModal/ShareModal";
+import ShareModal from "../ShareModal/ShareWithModal";
 import styles from "./styles.module.css";
 import HexagonImage from "../../../../Hexagon/Hexagon";
+import NftMore from "../NftMore/NftMore";
 
-const CommentsAndDetails = ({  setModal }) => {
+const CommentsAndDetails = ({ setModal }) => {
+  const [nftMore, setNftMore] = useState(false);
   const [postText, setPostText] = useState("");
 
   const [shareModal, setShareModal] = useState(false);
@@ -119,6 +121,11 @@ const CommentsAndDetails = ({  setModal }) => {
               </div>
               <p className={styles.text}>juanbautista.eth</p>
             </div>
+            <BiDotsVerticalRounded
+              className={styles.more}
+              onClick={() => setNftMore((prev) => !prev)}
+            />
+            {nftMore && <NftMore author={true} setNftMore={setNftMore} />}
           </div>
           <div className={styles.informationContainer}>
             <div className={styles.information}>
@@ -191,11 +198,7 @@ const CommentsAndDetails = ({  setModal }) => {
         className={styles.close}
         onClick={() => setModal(false)}
       />
-      {shareModal && (
-        <Modal setModal={setShareModal}>
-          <ShareModal setModal={setShareModal} />
-        </Modal>
-      )}
+      {shareModal && <ShareModal setModal={setShareModal} />}
       <div className={styles.overlay} onClick={() => setModal(false)}></div>
     </>
   );

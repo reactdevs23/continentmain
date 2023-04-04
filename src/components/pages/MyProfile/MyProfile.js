@@ -18,6 +18,7 @@ const MyProfile = () => {
   const [profileImage, setProfileImage] = useState("");
   const [nftPosts, setNftPosts] = useState(true);
   const [shareModal, setShareModal] = useState(false);
+
   const showProfileImage = (event) => {
     const imgSrc = event.target.getAttribute("src");
     setProfileImage(imgSrc);

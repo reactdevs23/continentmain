@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-
+import { BiDotsVerticalRounded } from "react-icons/bi";
 import { MdOutlineClose } from "react-icons/md";
 import {
   commentNft,
@@ -10,15 +10,16 @@ import {
   love,
 } from "../../../../../../../images/image";
 import Comment from "./Comment/Comment";
-import Modal from "../../../../../../Modal/Modal";
+
 import ShareWithModal from "../ShareWithModal/ShareWithModal";
 import styles from "./styles.module.css";
 import HexagonImage from "../../../../../../Hexagon/Hexagon";
 import { Link } from "react-router-dom";
+import NftMore from "../../../../../Home/Posts/NftMore/NftMore";
 
 const CommentsAndDetails = ({ setModal }) => {
   const [postText, setPostText] = useState("");
-
+  const [nftMore, setNftMore] = useState(false);
   const [shareModal, setShareModal] = useState(false);
   const comments = [
     {
@@ -120,6 +121,11 @@ const CommentsAndDetails = ({ setModal }) => {
               </div>
               <p className={styles.text}>juanbautista.eth</p>
             </div>
+            <BiDotsVerticalRounded
+              className={styles.more}
+              onClick={() => setNftMore((prev) => !prev)}
+            />
+            {nftMore && <NftMore author={true} setNftMore={setNftMore} />}
           </div>
           <div className={styles.informationContainer}>
             <div className={styles.information}>

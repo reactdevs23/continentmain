@@ -3,7 +3,7 @@ import { BsChevronDown, BsChevronUp } from "react-icons/bs";
 import styles from "./styles.module.css";
 
 const Properties = () => {
-  const [showDetails, setShowDetails] = useState();
+  const [showDetails, setShowDetails] = useState(true);
   const data = [
     { title: "Property 1", details: "Property name" },
     { title: "Property 1", details: "Property name" },

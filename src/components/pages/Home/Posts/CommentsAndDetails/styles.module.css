@@ -48,6 +48,7 @@
   justify-content: space-between;
   align-items: center;
   padding: 10px 20px;
+  position: relative;
 }
 .userContainer {
   display: flex;
@@ -74,6 +75,7 @@
 .more {
   color: var(--primary-color);
   font-size: 24px;
+  cursor: pointer;
 }
 .informationContainer {
   display: flex;

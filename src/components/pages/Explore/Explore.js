@@ -17,10 +17,10 @@ import {
   nft6,
 } from "../../../images/image";
 import { Link } from "react-router-dom";
-import HexagonImage from "../../Hexagon/Hexagon";
+
+import SingleUser from "./FindFriends/SingleUser/SingleUser";
 
 const Explore = () => {
-  const [addFriend, setAddFriend] = useState(false);
   const collections = [
     {
       img: collection1,
@@ -69,18 +69,7 @@ const Explore = () => {
             {Array(6)
               .fill({ img: user, name: "juanbautista.eth" })
               .map((el, i) => (
-                <div className={styles.topUser} key={i}>
-                  <div className={styles.userImage}>
-                    <HexagonImage src={el.img} />
-                  </div>
-                  <p className={styles.userName}>{el.name}</p>
-                  <button
-                    className={styles.addFriend}
-                    onClick={() => setAddFriend((prev) => !prev)}
-                  >
-                    {addFriend ? "Request Send" : "Add Friend"}
-                  </button>
-                </div>
+                <SingleUser {...el} key={i} />
               ))}
           </div>
         </div>

@@ -1,9 +1,9 @@
 import React, { useState } from "react";
 import { BiDotsVerticalRounded } from "react-icons/bi";
-import BuyNow from "../BuyNow/BuyNow";
+
 import { eth } from "../../../../../../images/image";
 import Modal from "../../../../../Modal/Modal";
-import DelistModal from "./DelistModal/DelistModal";
+import DelistModal from "./CancelListingModal/CancelListingModal";
 
 import EditInformation from "./EditInformation/EditInformation";
 import styles from "./SinglePost.module.css";
@@ -18,12 +18,11 @@ const SinglePost = ({
   owner,
   purchasePrice,
 }) => {
-  const [buyNowModal, setBuyNowModal] = useState(false);
   const [moreButton, setMoreButton] = useState(false);
-  const [delistModal, setDelistModal] = useState(false);
+  const [cancelListingModal, setCancelListingModal] = useState(false);
   const [editInformationModal, setEditInformationModal] = useState(false);
   const handleDelist = () => {
-    setDelistModal(true);
+    setCancelListingModal(true);
   };
   return (
     <div className={styles.post}>
@@ -49,7 +48,7 @@ const SinglePost = ({
                   handleDelist();
                 }}
               >
-                Deslist NFT
+                Cancel Listing
               </p>
               <p
                 className={styles.moreButton}
@@ -63,26 +62,13 @@ const SinglePost = ({
             </div>
           )}
         </div>
-        <div
-          className={styles.valueContainer}
-          onClick={() => setBuyNowModal(true)}
-        >
+        <div className={styles.valueContainer}>
           <span className={styles.value}>{value}</span>
           <img src={eth} alt="#" className={styles.ethIcon} />
         </div>
         <p className={styles.lastSale}>Las sale: {lastSale} ETH</p>
       </div>
-      {buyNowModal && (
-        <BuyNow
-          img={img}
-          name={name}
-          owner={owner}
-          value={value}
-          purchasePrice={purchasePrice}
-          setModal={setBuyNowModal}
-        />
-      )}
-      {delistModal && <DelistModal setModal={setDelistModal} />}
+      {cancelListingModal && <DelistModal setModal={setCancelListingModal} />}
       {editInformationModal && (
         <Modal setModal={setEditInformationModal}>
           <EditInformation setModal={setEditInformationModal} />

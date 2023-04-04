@@ -19,6 +19,7 @@ import MutualFriendModal from "./MutualFriendModal/MutualFriendModal";
 import MutualCollectionModal from "./MutualCollectionModal/MutualCollectionModal";
 
 const UserProfile = () => {
+  const [addFriend, setAddFriend] = useState(false);
   const [profileImage, setProfileImage] = useState("");
   const [nftPosts, setNftPosts] = useState(true);
   const [friend, setFriend] = useState(false);
@@ -70,7 +71,7 @@ const UserProfile = () => {
                 className={`${styles.button} ${styles.activeButton}`}
                 onClick={() => setFriend((prev) => !prev)}
               >
-                Unfriend
+                Request Sent
               </button>
             ) : (
               <button

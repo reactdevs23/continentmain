@@ -3,7 +3,7 @@
 }
 .profileHeader {
   display: grid;
-  grid-template-columns: 1fr 278px;
+  grid-template-columns: 1fr 320px;
   align-items: start;
   gap: 50px;
   padding-top: 65px;
@@ -97,7 +97,7 @@
   border: 1px solid #fafafa;
   border-radius: 10px;
   background: transparent;
-  padding: 9px 25px;
+  padding: 9px 20px;
   cursor: pointer;
 }
 .activeButton {
@@ -204,16 +204,19 @@
   transition: 0.3s ease;
 }
 @media only screen and (max-width: 991px) {
-  .profileImage {
-    width: 250px;
-    height: 250px;
-  }
-}
-@media only screen and (max-width: 767px) {
   .profileHeader {
     grid-template-columns: 1fr;
     padding: 30px 0;
   }
+  .profileImage {
+    width: 250px;
+    height: 250px;
+  }
+  .actionContainer {
+    max-width: 400px;
+  }
+}
+@media only screen and (max-width: 767px) {
   .profileHeader::before {
     display: none;
   }
@@ -224,9 +227,7 @@
 
     transform: translate(0px);
   }
-  .actionContainer {
-    max-width: 400px;
-  }
+
   .actionContainer::before {
     content: "";
     position: absolute;
