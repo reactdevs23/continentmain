@@ -1,0 +1,86 @@
+.wrapper {
+  display: flex;
+  flex-wrap: wrap;
+
+  gap: 8px;
+  width: 100%;
+  padding-left: 25px;
+  padding-top: 15px;
+}
+
+.text {
+  font-family: "Roboto";
+  font-style: normal;
+  font-weight: 400;
+  font-size: 16px;
+  line-height: 140%;
+  color: #fafafa;
+}
+.inputContainerAndUsdValue {
+  display: flex;
+  flex-direction: column;
+  gap: 5px;
+}
+.inputContainer {
+  background: rgba(250, 250, 250, 0.1);
+  border: 1px solid rgba(250, 250, 250, 0.72);
+  border-radius: 10px;
+  width: 100%;
+  max-width: 291px;
+  display: grid;
+  grid-template-columns: 1fr 60px;
+}
+.input,
+.valueText {
+  font-family: "Roboto";
+  font-style: normal;
+  font-weight: 400;
+  font-size: 16px;
+  line-height: 140%;
+  text-transform: uppercase;
+  color: #fafafa;
+}
+.input {
+  padding: 4px 10px;
+  background: none;
+  border: none;
+  outline: none;
+  width: 100%;
+  text-transform: none;
+}
+.valueTypeContainer {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: relative;
+  padding: 4px 10px;
+  border-left: 1px solid rgba(250, 250, 250, 0.72);
+}
+.arrow {
+  color: #fff;
+  cursor: pointer;
+}
+.allValueText {
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+  position: absolute;
+  top: 35px;
+  left: 0;
+  width: 100%;
+  padding: 10px;
+  background: rgba(250, 250, 250, 0.1);
+  border-radius: 10px;
+}
+.allValueText .valueText {
+  cursor: pointer;
+}
+.usdValue {
+  font-family: "Roboto";
+  font-style: normal;
+  font-weight: 400;
+  font-size: 14px;
+  line-height: 120%;
+
+  color: rgba(250, 250, 250, 0.72);
+}

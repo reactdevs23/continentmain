@@ -14,7 +14,7 @@ import PostDetails from "./components/pages/Home/Posts/PostDetails/PostDetails";
 import EditProfile from "./components/pages/EditProfile/EditProfile";
 import { useDataContext } from "./components/Context";
 import CreateNewPost from "./components/pages/CreateNewPost/CreateNewPost";
-import ConnectWallet from "./components/pages/ConnectWallet/ConnectWallet";
+
 import Wallet from "./components/pages/Wallet/Wallet";
 import NftDetails from "./components/pages/Wallet/Posts/NftDetails/NftDetails";
 import UserProfile from "./components/pages/UserProfile/UserProfile";
@@ -37,7 +37,7 @@ function App() {
         <div className={`${!hideNavbar && "rightSide"}`}>
           <Routes>
             {" "}
-            <Route path="/connectWallet" element={<ConnectWallet />} />
+            {/* <Route path="/connectWallet" element={<ConnectWallet />} /> */}
             <Route path="/" element={<Posts data={posts} />}></Route>
             <Route path="/createNewPost" element={<CreateNewPost />}></Route>
             <Route path="/wallet" element={<Wallet />}></Route>
