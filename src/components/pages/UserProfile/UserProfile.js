@@ -16,11 +16,13 @@ import styles from "./styles.module.css";
 
 import MutualFriendModal from "./MutualFriendModal/MutualFriendModal";
 import MutualCollectionModal from "./MutualCollectionModal/MutualCollectionModal";
+import CancelRequest from "./CancelRequestModal/CancelRequest";
 
 const UserProfile = () => {
   const [profileImage, setProfileImage] = useState("");
   const [nftPosts, setNftPosts] = useState(true);
   const [friend, setFriend] = useState(false);
+  const [cancelRequest, setCancelRequest] = useState(false);
   const [mutualFriendModal, setMutualFriendModal] = useState(false);
   const [mutualCollectionModal, setMutualCollectionModal] = useState(false);
   const showProfileImage = (event) => {
@@ -67,7 +69,10 @@ const UserProfile = () => {
             {friend ? (
               <button
                 className={`${styles.button} ${styles.activeButton}`}
-                onClick={() => setFriend((prev) => !prev)}
+                onClick={() => {
+                  setFriend((prev) => !prev);
+                  setCancelRequest(true);
+                }}
               >
                 Request Sent
               </button>
@@ -175,6 +180,7 @@ const UserProfile = () => {
           </>
         )}
         {nftPosts ? <NftPosts /> : <ForSale />}
+        {cancelRequest && <CancelRequest setModal={setCancelRequest} />}
       </div>
     </>
   );
