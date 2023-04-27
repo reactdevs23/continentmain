@@ -1,12 +1,13 @@
 import styles from "./ChatRoom.module.css";
 
 import { useParams } from "react-router-dom";
-import React, { useEffect, useState } from "react";
+import React, { useEffect, useState, useRef } from "react";
 import GroupPhoto from "../GroupPhoto/GroupPhoto";
 import AddMemberModal from "../AddMemberModal/AddMemberModal";
 import Waveform from "../Waveform/Waveform";
 import HexagonImage from "../../../Hexagon/Hexagon";
 import { testImg, user } from "../../../../images/image";
+import Loader from "../../../Loader/Loader";
 
 const ChatRoom = ({ isRecording, DUMMY_MSGS, setShowInput }) => {
   const DUMMY__MEMBERS = [
@@ -51,6 +52,8 @@ const ChatRoom = ({ isRecording, DUMMY_MSGS, setShowInput }) => {
   const [deleteGroupModal, setDeleteGroupModal] = useState(false);
   const [removeMemberModal, setRemoveMemberModal] = useState(false);
   const [adminUser, setAdminUser] = useState();
+  const [isLoading, setIsLoading] = useState(false);
+  const contentRef = useRef();
   const { id } = useParams();
   useEffect(() => {
     if (id == 3 || id == 4) {
@@ -76,6 +79,24 @@ const ChatRoom = ({ isRecording, DUMMY_MSGS, setShowInput }) => {
     }
     setShowInput(!groupSettingsToggle);
   }, [groupSettingsToggle]);
+  const handleScroll = () => {
+    const { scrollTop } = contentRef.current;
+
+    if (scrollTop === 0) {
+      setIsLoading(true);
+      setTimeout(() => {
+        setIsLoading(false);
+      }, 3000);
+    }
+  };
+  useEffect(() => {
+    const current = contentRef.current;
+    current.addEventListener("scroll", handleScroll);
+
+    return () => {
+      current.removeEventListener("scroll", handleScroll);
+    };
+  }, []);
   return (
     <>
       {exitGroupModal && <ExitGroup setModal={setExitGroupModal} />}
@@ -264,7 +285,11 @@ const ChatRoom = ({ isRecording, DUMMY_MSGS, setShowInput }) => {
           </div>
         ) : (
           //settings end --------------------
-          <div className={`${styles.chatMsgs} chatMsgs grScrollbar`}>
+          <div
+            className={`${styles.chatMsgs} chatMsgs grScrollbar`}
+            ref={contentRef}
+          >
+            {isLoading && <Loader />}
             {id &&
               DUMMY_MSGS.map((elem, idx) => {
                 return <ChatMsg key={idx + new Date()} {...elem} />;
