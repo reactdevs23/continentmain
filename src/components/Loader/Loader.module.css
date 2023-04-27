@@ -10,7 +10,7 @@
   display: flex;
   justify-content: center;
   align-items: center;
-  padding-top: 20px;
+  padding: 10px 0;
 }
 .loadingSpinner {
   width: 60px;

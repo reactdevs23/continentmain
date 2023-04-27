@@ -19,6 +19,7 @@ const Posts = ({ data }) => {
   const [currentIndex, setCurrentIndex] = useState(0);
   const contentRef = useRef(null);
   const [isLoading, setIsLoading] = useState(false);
+  const [topLoader, setTopLoader] = useState(false);
 
   useEffect(() => {
     setMyData(data.slice(0, currentIndex + 4));
@@ -27,11 +28,10 @@ const Posts = ({ data }) => {
   const handleScroll = () => {
     const { scrollTop, scrollHeight, clientHeight } = contentRef.current;
 
-    if (scrollTop === 0 && currentIndex > 0) {
-      setIsLoading(true);
+    if (scrollTop === 0) {
+      setTopLoader(true);
       setTimeout(() => {
-        setCurrentIndex(currentIndex - 4);
-        setIsLoading(false);
+        setTopLoader(false);
       }, 3000);
     } else if (
       scrollTop + clientHeight === scrollHeight &&
@@ -60,6 +60,7 @@ const Posts = ({ data }) => {
         <div className={`${styles.postsWrapper} `}>
           {!cancelUploading && <UploadingNft />}
           <div className={`${styles.posts} `} ref={contentRef}>
+            {topLoader && <Loader />}
             {myData.map((el, i) => (
               <SinglePost data={el} i={i + 1} key={i} />
             ))}
