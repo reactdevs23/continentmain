@@ -37,8 +37,8 @@ function App() {
         <div className={`${!hideNavbar && "rightSide"}`}>
           <Routes>
             {" "}
-            <Route path="/connectWallet" element={<ConnectWallet />} />
             <Route path="/" element={<Posts data={posts} />}></Route>
+            <Route path="/connectWallet" element={<ConnectWallet />} />
             <Route path="/createNewPost" element={<CreateNewPost />}></Route>
             <Route path="/wallet" element={<Wallet />}></Route>
             <Route path="nfts/:id" element={<NftDetails />}></Route>
