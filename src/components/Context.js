@@ -3,6 +3,8 @@ import { postImage } from "../images/image";
 const StateData = createContext();
 
 export const ContextProvider = ({ children }) => {
+  const [login, setLogin] = useState(false);
+  const [showConnectWalletModal, setShowConnectWalletModal] = useState(false);
   const [selectedProfilePicture, setSelectedProfilePicture] = useState(false);
   const [userName, setUserName] = useState("");
   const [existingUserName, setExistingUserName] = useState("juanbautista.eth");
@@ -528,6 +530,10 @@ export const ContextProvider = ({ children }) => {
     }
     return number;
   };
+  const scrollToTop = () => {
+    window.scrollTo({ top: 0, behavior: "instant" });
+  };
+
   return (
     <StateData.Provider
       value={{
@@ -543,6 +549,11 @@ export const ContextProvider = ({ children }) => {
         setCancelUploading,
         uploadingProgress,
         setUploadingProgress,
+        login,
+        setLogin,
+        showConnectWalletModal,
+        setShowConnectWalletModal,
+        scrollToTop,
       }}
     >
       {children}

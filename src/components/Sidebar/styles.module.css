@@ -65,6 +65,9 @@
   margin-top: 30px;
   cursor: pointer;
 }
+.buttonWithNotLogin {
+  opacity: 0.4;
+}
 @media only screen and (max-width: 991px) {
   .sidebar {
     top: 165px;

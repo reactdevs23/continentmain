@@ -25,8 +25,12 @@ import AllCollections from "./components/pages/Explore/Collections/AllCollection
 import NFTs from "./components/pages/Explore/Nfts/Nfts";
 import Collection from "./components/pages/Explore/Collections/Collection/Collection";
 import MarketPlace from "./components/pages/MarketPlace/MarketPlace";
+import NotLoginHome from "./components/WhenNotLogin/NotLoginHome/NotLoginHome";
+import NotLoginWallet from "./components/WhenNotLogin/NotLoginWallet/NotLoginWallet";
+import NotLoginExplore from "./components/WhenNotLogin/NotLoginExplore/NotLoginExplore";
+import TopUsers from "./components/WhenNotLogin/NotLoginExplore/TopUser/TopUser";
 function App() {
-  const { posts } = useDataContext();
+  const { posts, login } = useDataContext();
   const location = useLocation();
   const hideNavbar = location.pathname === "/connectWallet"; // here you have to use connectWallet page path for sidebar hiding if not wallet is connected
 
@@ -37,20 +41,30 @@ function App() {
         <div className={`${!hideNavbar && "rightSide"}`}>
           <Routes>
             {" "}
-            <Route path="/" element={<Posts data={posts} />}></Route>
+            <Route
+              path="/"
+              element={login ? <Posts data={posts} /> : <NotLoginHome />}
+            ></Route>
             <Route path="/connectWallet" element={<ConnectWallet />} />
             <Route path="/createNewPost" element={<CreateNewPost />}></Route>
-            <Route path="/wallet" element={<Wallet />}></Route>
+            <Route
+              path="/wallet"
+              element={login ? <Wallet /> : <NotLoginWallet />}
+            ></Route>
             <Route path="nfts/:id" element={<NftDetails />}></Route>
             <Route path="/profile" element={<MyProfile />}></Route>
             <Route path="/editprofile" element={<EditProfile />}></Route>
             <Route path="/userProfile" element={<UserProfile />}></Route>
             <Route path="/messages/:id" element={<Message />} />
-            <Route path="/explore" element={<Explore />}></Route>{" "}
+            <Route
+              path="/explore"
+              element={login ? <Explore /> : <NotLoginExplore />}
+            ></Route>{" "}
             <Route
               path="/explore/findFriends"
               element={<FindFriends />}
             ></Route>
+            <Route path="/explore/topUsers" element={<TopUsers />}></Route>
             <Route path="/explore/Nfts" element={<NFTs />}></Route>
             <Route
               path="/explore/collections"

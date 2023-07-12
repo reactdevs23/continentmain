@@ -1,0 +1,20 @@
+.connectWalletButton {
+  color: #fafafa;
+  text-align: center;
+  font-family: "Work Sans", sans-serif;
+  font-size: 14px;
+  font-style: normal;
+  font-weight: 700;
+  line-height: 20px;
+  border-radius: 25px;
+  background: #3069ff;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  gap: 8px;
+  padding: 8px 14px;
+  cursor: pointer;
+  border: none;
+  outline: none;
+}

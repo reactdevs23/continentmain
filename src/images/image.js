@@ -62,6 +62,8 @@ import collection3 from "./collections/collection3.png";
 import collection4 from "./collections/collection4.png";
 import collection5 from "./collections/colloection5.png";
 import collection6 from "./collections/collection6.png";
+import connectWalletIcon from "./connectWalletIcon.png";
+import connectWalletModalLogo from "./connectWalletModalLogo.png";
 
 export {
   logo,
@@ -128,4 +130,6 @@ export {
   collection4,
   collection5,
   collection6,
+  connectWalletIcon,
+  connectWalletModalLogo,
 };
