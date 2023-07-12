@@ -1,9 +1,14 @@
 import React from "react";
 
 import { connectWalletIcon } from "../../../images/image";
+import ConnectWalletButton from "../ConnectWalletButton/ConnectWalletButton";
+
+import ConnectWalletModal from "../ConnectWalletModal/ConnectWalletModal";
+import { useDataContext } from "../../Context";
 import styles from "./NotLoginWallet.module.css";
 
 const NotLoginWallet = () => {
+  const { showConnectWalletModal } = useDataContext();
   return (
     <>
       <div className={`marginTop `}>
@@ -15,13 +20,11 @@ const NotLoginWallet = () => {
             <p className={styles.text}>
               Start building your personal feed by connecting your wallet.
             </p>
-            <button className={styles.connectWalletButton}>
-              <img src={connectWalletIcon} alt="#" className={styles.icon} />{" "}
-              Connect with wallet
-            </button>
+            <ConnectWalletButton />
           </div>
         </div>
       </div>
+      {showConnectWalletModal && <ConnectWalletModal />}
     </>
   );
 };

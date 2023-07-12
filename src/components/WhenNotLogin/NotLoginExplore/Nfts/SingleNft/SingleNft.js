@@ -10,7 +10,7 @@ const SingleNft = ({ img }) => {
 
   return (
     <>
-      <div className={styles.nft}>
+      <div className={styles.nft} onClick={() => setShowCommentModal(true)}>
         <img src={img} alt="#" className={styles.image} />
       </div>
       {showCommentModal && (

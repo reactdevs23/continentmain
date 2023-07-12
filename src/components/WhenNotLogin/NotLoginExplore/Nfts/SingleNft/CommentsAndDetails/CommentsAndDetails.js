@@ -15,10 +15,12 @@ import ShareModal from "../ShareModal/ShareWithModal";
 import styles from "./styles.module.css";
 import HexagonImage from "../../../../../Hexagon/Hexagon";
 import { Link } from "react-router-dom";
-import NftMore from "../../../../Home/Posts/NftMore/NftMore";
+
+import { useDataContext } from "../../../../../Context";
 
 const CommentsAndDetails = ({ setModal }) => {
-  const [nftMore, setNftMore] = useState(false);
+  const { showConnectWalletModal, setShowConnectWalletModal } =
+    useDataContext();
   const [postText, setPostText] = useState("");
 
   const [shareModal, setShareModal] = useState(false);
@@ -99,6 +101,7 @@ const CommentsAndDetails = ({ setModal }) => {
 
   const handleSubmit = (e) => {
     e.preventDefault();
+    setShowConnectWalletModal(true);
   };
 
   const numberFormating = (number) => {
@@ -124,9 +127,8 @@ const CommentsAndDetails = ({ setModal }) => {
             </div>
             <BiDotsVerticalRounded
               className={styles.more}
-              onClick={() => setNftMore((prev) => !prev)}
+              onClick={() => setShowConnectWalletModal(true)}
             />
-            {nftMore && <NftMore setNftMore={setNftMore} />}
           </div>
           <div className={styles.informationContainer}>
             <div className={styles.information}>
@@ -156,7 +158,10 @@ const CommentsAndDetails = ({ setModal }) => {
             ))}
           </div>{" "}
           <div className={styles.likeCommentSend}>
-            <div className={styles.like}>
+            <div
+              className={styles.like}
+              onClick={() => setShowConnectWalletModal(true)}
+            >
               <img
                 // src={like ? lovefill : love}
                 src={love}
@@ -167,7 +172,10 @@ const CommentsAndDetails = ({ setModal }) => {
 
               <span className={styles.number}>{numberFormating(1)}</span>
             </div>
-            <div className={styles.comment}>
+            <div
+              className={styles.comment}
+              onClick={() => setShowConnectWalletModal(true)}
+            >
               <img src={comment} alt="#" className={styles.icon} />
               <span className={styles.number}>{numberFormating(200)}</span>
             </div>
@@ -176,7 +184,7 @@ const CommentsAndDetails = ({ setModal }) => {
               src={send}
               alt="#"
               className={styles.icon}
-              onClick={() => setShareModal((prev) => !prev)}
+              onClick={() => setShowConnectWalletModal(true)}
             />
           </div>
           <form className={styles.postInputContainer}>

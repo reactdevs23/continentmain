@@ -29,6 +29,7 @@ import NotLoginHome from "./components/WhenNotLogin/NotLoginHome/NotLoginHome";
 import NotLoginWallet from "./components/WhenNotLogin/NotLoginWallet/NotLoginWallet";
 import NotLoginExplore from "./components/WhenNotLogin/NotLoginExplore/NotLoginExplore";
 import TopUsers from "./components/WhenNotLogin/NotLoginExplore/TopUser/TopUser";
+import NotLoginNft from "./components/WhenNotLogin/NotLoginExplore/Nfts/Nfts";
 function App() {
   const { posts, login } = useDataContext();
   const location = useLocation();
@@ -65,7 +66,10 @@ function App() {
               element={<FindFriends />}
             ></Route>
             <Route path="/explore/topUsers" element={<TopUsers />}></Route>
-            <Route path="/explore/Nfts" element={<NFTs />}></Route>
+            <Route
+              path="/explore/Nfts"
+              element={login ? <NFTs /> : <NotLoginNft />}
+            ></Route>
             <Route
               path="/explore/collections"
               element={<AllCollections />}
