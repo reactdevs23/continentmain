@@ -19,10 +19,8 @@ import HexagonImage from "../Hexagon/Hexagon";
 import Notifications from "./Notification/Notification";
 import ProfileSetting from "./ProfileSettings/ProfileSetting";
 import ConnectWalletButton from "../WhenNotLogin/ConnectWalletButton/ConnectWalletButton";
-import { useDataContext } from "../Context";
 
 const Header = ({ hideNavbar }) => {
-  const { login } = useDataContext();
   const [showSidebar, setShowSidebar] = useState(false);
   const [searchValue, setSearchValue] = useState("");
   const [searchQuery, setSearchQuery] = useState("");
@@ -177,83 +175,76 @@ const Header = ({ hideNavbar }) => {
                 )}
               </div>
             </div>
-            {login ? (
-              <div className={styles.userProfile}>
-                <p
-                  className={`${
-                    notifications.length !== 0 && styles.notification
-                  }
+
+            <div className={styles.userProfile}>
+              <p
+                className={`${notifications.length !== 0 && styles.notification}
                 ${showNotification && styles.notificationIcon}`}
-                >
-                  {" "}
-                  <img
-                    src={notification}
-                    alt=""
-                    className={`${styles.icon}
+              >
+                {" "}
+                <img
+                  src={notification}
+                  alt=""
+                  className={`${styles.icon}
                  
                     `}
-                    onClick={() => {
-                      setShowNotification((prev) => !prev);
-                      setShowProfileSetting(false);
-                    }}
-                  />
-                </p>
-                <NavLink
-                  className={({ isActive }) =>
-                    isActive
-                      ? [styles.icon, styles.iconActive].join(" ")
-                      : styles.icon
-                  }
-                  to={"/messages/1"}
                   onClick={() => {
-                    setShowNotification(false);
+                    setShowNotification((prev) => !prev);
                     setShowProfileSetting(false);
                   }}
-                >
-                  <p className={styles.messageIcon}>
-                    {" "}
-                    <img src={messenger} alt="" />
-                  </p>
-                </NavLink>
+                />
+              </p>
+              <NavLink
+                className={({ isActive }) =>
+                  isActive
+                    ? [styles.icon, styles.iconActive].join(" ")
+                    : styles.icon
+                }
+                to={"/messages/1"}
+                onClick={() => {
+                  setShowNotification(false);
+                  setShowProfileSetting(false);
+                }}
+              >
+                <p className={styles.messageIcon}>
+                  {" "}
+                  <img src={messenger} alt="" />
+                </p>
+              </NavLink>
+              <div className={styles.userContainer}>
                 <div className={styles.userContainer}>
-                  <div className={styles.userContainer}>
-                    <div className={styles.userImage}>
-                      <HexagonImage src={user} />
-                    </div>
-                    {showProfileSetting ? (
-                      <BsChevronUp
-                        className={styles.arrow}
-                        onClick={() => {
-                          setShowProfileSetting((prev) => !prev);
-                          setShowNotification(false);
-                        }}
-                      />
-                    ) : (
-                      <BsChevronDown
-                        className={styles.arrow}
-                        onClick={() => setShowProfileSetting((prev) => !prev)}
-                      />
-                    )}
+                  <div className={styles.userImage}>
+                    <HexagonImage src={user} />
                   </div>
+                  {showProfileSetting ? (
+                    <BsChevronUp
+                      className={styles.arrow}
+                      onClick={() => {
+                        setShowProfileSetting((prev) => !prev);
+                        setShowNotification(false);
+                      }}
+                    />
+                  ) : (
+                    <BsChevronDown
+                      className={styles.arrow}
+                      onClick={() => setShowProfileSetting((prev) => !prev)}
+                    />
+                  )}
                 </div>
-                {showSidebar ? (
-                  <RiCloseLine
-                    color="#fafafa"
-                    className={styles.close}
-                    onClick={() => setShowSidebar((prev) => !prev)}
-                  />
-                ) : (
-                  <RxHamburgerMenu
-                    className={styles.hamburger}
-                    onClick={() => setShowSidebar((prev) => !prev)}
-                  />
-                )}
               </div>
-            ) : (
-              <div className={styles.connectWalletButtonContainer}>
-                <ConnectWalletButton />
-              </div>
-            )}
+              {showSidebar ? (
+                <RiCloseLine
+                  color="#fafafa"
+                  className={styles.close}
+                  onClick={() => setShowSidebar((prev) => !prev)}
+                />
+              ) : (
+                <RxHamburgerMenu
+                  className={styles.hamburger}
+                  onClick={() => setShowSidebar((prev) => !prev)}
+                />
+              )}
+            </div>
           </>
         )}
       </section>

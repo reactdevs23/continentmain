@@ -6,11 +6,17 @@ import { useDataContext } from "../../../../Context";
 
 const SingleNft = ({ img }) => {
   const [showCommentModal, setShowCommentModal] = useState(false);
-  const { showConnectWalletModal } = useDataContext();
+  const { showConnectWalletModal, scrollToTop } = useDataContext();
 
   return (
     <>
-      <div className={styles.nft} onClick={() => setShowCommentModal(true)}>
+      <div
+        className={styles.nft}
+        onClick={() => {
+          setShowCommentModal(true);
+          scrollToTop();
+        }}
+      >
         <img src={img} alt="#" className={styles.image} />
       </div>
       {showCommentModal && (

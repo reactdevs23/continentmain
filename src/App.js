@@ -30,6 +30,8 @@ import NotLoginWallet from "./components/WhenNotLogin/NotLoginWallet/NotLoginWal
 import NotLoginExplore from "./components/WhenNotLogin/NotLoginExplore/NotLoginExplore";
 import TopUsers from "./components/WhenNotLogin/NotLoginExplore/TopUser/TopUser";
 import NotLoginNft from "./components/WhenNotLogin/NotLoginExplore/Nfts/Nfts";
+import NotLoginHeader from "./components/WhenNotLogin/NotLoginHeader/WhenNotLoginHeader";
+import WhenNotLoginUserProfile from "./components/WhenNotLogin/WhenNotLoginUserProfile/WhenNotLoginUserProfile";
 function App() {
   const { posts, login } = useDataContext();
   const location = useLocation();
@@ -38,7 +40,11 @@ function App() {
   return (
     <>
       <div className="container ">
-        <Header hideNavbar={hideNavbar} />
+        {login ? (
+          <Header hideNavbar={hideNavbar} />
+        ) : (
+          <NotLoginHeader hideNavbar={hideNavbar} />
+        )}
         <div className={`${!hideNavbar && "rightSide"}`}>
           <Routes>
             {" "}
@@ -56,6 +62,10 @@ function App() {
             <Route path="/profile" element={<MyProfile />}></Route>
             <Route path="/editprofile" element={<EditProfile />}></Route>
             <Route path="/userProfile" element={<UserProfile />}></Route>
+            <Route
+              path="/users/:name"
+              element={<WhenNotLoginUserProfile />}
+            ></Route>
             <Route path="/messages/:id" element={<Message />} />
             <Route
               path="/explore"

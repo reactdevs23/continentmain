@@ -17,4 +17,18 @@
   cursor: pointer;
   border: none;
   outline: none;
+  white-space: nowrap;
+}
+.icon {
+  width: 14px;
+}
+@media only screen and (max-width: 380px) {
+  .connectWalletButton {
+    font-size: 12px;
+    padding: 6px 10px;
+    gap: 5px;
+  }
+  .icon {
+    width: 12px;
+  }
 }

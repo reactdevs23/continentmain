@@ -8,22 +8,18 @@ import {
   comment,
   send,
   love,
-} from "../../../../../../images/image";
+} from "../../../../../../../images/image";
 import Comment from "./Comment/Comment";
 
-import ShareModal from "../ShareModal/ShareWithModal";
 import styles from "./styles.module.css";
-import HexagonImage from "../../../../../Hexagon/Hexagon";
+import HexagonImage from "../../../../../../Hexagon/Hexagon";
 import { Link } from "react-router-dom";
-
-import { useDataContext } from "../../../../../Context";
+import { useDataContext } from "../../../../../../Context";
 
 const CommentsAndDetails = ({ setModal }) => {
-  const { showConnectWalletModal, setShowConnectWalletModal } =
-    useDataContext();
+  const { setShowConnectWalletModal } = useDataContext();
   const [postText, setPostText] = useState("");
 
-  const [shareModal, setShareModal] = useState(false);
   const comments = [
     {
       userImg: user,
@@ -199,9 +195,9 @@ const CommentsAndDetails = ({ setModal }) => {
               onChange={(e) => setPostText(e.target.value)}
             />
             <button
+              onClick={() => setShowConnectWalletModal(true)}
               type="submit"
               className={styles.postButton}
-              onClick={() => setShowConnectWalletModal(true)}
             >
               Post
             </button>
@@ -212,7 +208,7 @@ const CommentsAndDetails = ({ setModal }) => {
         className={styles.close}
         onClick={() => setModal(false)}
       />
-      {shareModal && <ShareModal setModal={setShareModal} />}
+
       <div className={styles.overlay} onClick={() => setModal(false)}></div>
     </>
   );
