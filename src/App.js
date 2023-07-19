@@ -32,8 +32,9 @@ import TopUsers from "./components/WhenNotLogin/NotLoginExplore/TopUser/TopUser"
 import NotLoginNft from "./components/WhenNotLogin/NotLoginExplore/Nfts/Nfts";
 import NotLoginHeader from "./components/WhenNotLogin/NotLoginHeader/WhenNotLoginHeader";
 import WhenNotLoginUserProfile from "./components/WhenNotLogin/WhenNotLoginUserProfile/WhenNotLoginUserProfile";
+import ConnectWalletModal from "./components/WhenNotLogin/ConnectWalletModal/ConnectWalletModal";
 function App() {
-  const { posts, login } = useDataContext();
+  const { posts, login, showConnectWalletModal } = useDataContext();
   const location = useLocation();
   const hideNavbar = location.pathname === "/connectWallet"; // here you have to use connectWallet page path for sidebar hiding if not wallet is connected
 
@@ -114,6 +115,7 @@ function App() {
         <Route path="/shreNft" element={<ShareNft />}></Route>
       </Routes> */}
       </div>{" "}
+      {showConnectWalletModal && <ConnectWalletModal />}
     </>
   );
 }

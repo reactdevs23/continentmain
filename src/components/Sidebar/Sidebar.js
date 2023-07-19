@@ -8,14 +8,14 @@ import {
   profile,
 } from "../../images/image.js";
 import { useDataContext } from "../Context.js";
-import ConnectWalletModal from "../WhenNotLogin/ConnectWalletModal/ConnectWalletModal.js";
+
 import styles from "./styles.module.css";
 
 const Sidebar = ({ showSidebar, setShowSidebar }) => {
   const {
     setUploadingProgress,
     login,
-    showConnectWalletModal,
+
     setShowConnectWalletModal,
   } = useDataContext();
   const navItems = [
@@ -72,7 +72,6 @@ const Sidebar = ({ showSidebar, setShowSidebar }) => {
           </div>
         )}
       </div>
-      {showConnectWalletModal && <ConnectWalletModal />}
     </>
   );
 };

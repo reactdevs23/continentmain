@@ -1,13 +1,12 @@
 import React from "react";
 
 import HexagonImage from "../../../../Hexagon/Hexagon";
-import { useState } from "react";
+
 import { useDataContext } from "../../../../Context";
-import ConnectWalletModal from "../../../ConnectWalletModal/ConnectWalletModal";
+
 import styles from "./SingleUser.module.css";
 const SingleUser = ({ img, name }) => {
-  const { showConnectWalletModal, setShowConnectWalletModal, scrollToTop } =
-    useDataContext();
+  const { setShowConnectWalletModal, scrollToTop } = useDataContext();
   return (
     <>
       <div className={styles.topUser}>
@@ -25,7 +24,6 @@ const SingleUser = ({ img, name }) => {
           Add Friend
         </button>
       </div>
-      {showConnectWalletModal && <ConnectWalletModal />}
     </>
   );
 };

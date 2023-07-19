@@ -3,17 +3,14 @@ import {
   BsFillCaretRightSquareFill,
   BsFillCaretLeftSquareFill,
 } from "react-icons/bs";
-import { useDataContext } from "../../Context";
+
 import WhoToFollow from "./WhatToFollow/WhatToFollow";
 
 import styles from "./NotLoginHome.module.css";
 import BuildYourFeed from "./BuildYourFeed/BuildYourFeed";
 import TrendingCollection from "./TrendingCollection/TrendingCollection";
-import ConnectWalletModal from "../ConnectWalletModal/ConnectWalletModal";
 
 const NotLoginHome = () => {
-  const { showConnectWalletModal } = useDataContext();
-
   const [
     showWhotoFollowAndTrendingCollection,
     setShowWhotoFollowAndTrendingCollection,
@@ -51,7 +48,6 @@ const NotLoginHome = () => {
           </div>
         </div>{" "}
       </div>
-      {showConnectWalletModal && <ConnectWalletModal />}
     </>
   );
 };

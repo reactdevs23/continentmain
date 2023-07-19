@@ -64,6 +64,9 @@ import collection5 from "./collections/colloection5.png";
 import collection6 from "./collections/collection6.png";
 import connectWalletIcon from "./connectWalletIcon.png";
 import connectWalletModalLogo from "./connectWalletModalLogo.png";
+import ethereum from "./ethereum.png";
+import cardano from "./cardano.png";
+import eternl from "./eternl.png";
 
 export {
   logo,
@@ -132,4 +135,7 @@ export {
   collection6,
   connectWalletIcon,
   connectWalletModalLogo,
+  ethereum,
+  cardano,
+  eternl,
 };

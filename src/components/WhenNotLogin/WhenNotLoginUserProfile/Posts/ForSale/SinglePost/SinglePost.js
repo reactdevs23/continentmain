@@ -5,7 +5,6 @@ import { eth } from "../../../../../../images/image";
 import styles from "./SinglePost.module.css";
 import { Link } from "react-router-dom";
 import { useDataContext } from "../../../../../Context";
-import ConnectWalletModal from "../../../../ConnectWalletModal/ConnectWalletModal";
 
 const SinglePost = ({
   img,
@@ -16,8 +15,7 @@ const SinglePost = ({
   owner,
   purchasePrice,
 }) => {
-  const { showConnectWalletModal, setShowConnectWalletModal, scrollToTop } =
-    useDataContext();
+  const { setShowConnectWalletModal, scrollToTop } = useDataContext();
   return (
     <>
       <div
@@ -42,7 +40,6 @@ const SinglePost = ({
           <p className={styles.lastSale}>Las sale: {lastSale} ETH</p>
         </div>
       </div>
-      {showConnectWalletModal && <ConnectWalletModal />}
     </>
   );
 };

@@ -1,12 +1,12 @@
 import React, { useState } from "react";
 import CommentsAndDetails from "./CommentsAndDetails/CommentsAndDetails";
-import ConnectWalletModal from "../../../ConnectWalletModal/ConnectWalletModal";
+
 import styles from "./SingleNft.module.css";
 import { useDataContext } from "../../../../Context";
 
 const SingleNft = ({ img }) => {
   const [showCommentModal, setShowCommentModal] = useState(false);
-  const { showConnectWalletModal, scrollToTop } = useDataContext();
+  const { scrollToTop } = useDataContext();
 
   return (
     <>
@@ -22,7 +22,6 @@ const SingleNft = ({ img }) => {
       {showCommentModal && (
         <CommentsAndDetails setModal={setShowCommentModal} />
       )}{" "}
-      {showConnectWalletModal && <ConnectWalletModal />}
     </>
   );
 };

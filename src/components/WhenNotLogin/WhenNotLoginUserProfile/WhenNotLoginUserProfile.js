@@ -14,12 +14,10 @@ import ForSale from "./Posts/ForSale/ForSale";
 import NftPosts from "./Posts/NftPost/NftPosts";
 import styles from "./styles.module.css";
 import { useDataContext } from "../../Context";
-import ConnectWalletModal from "../ConnectWalletModal/ConnectWalletModal";
 
 const WhenNotLoginUserProfile = () => {
   const [nftPosts, setNftPosts] = useState(true);
-  const { showConnectWalletModal, setShowConnectWalletModal, scrollToTop } =
-    useDataContext();
+  const { setShowConnectWalletModal, scrollToTop } = useDataContext();
 
   return (
     <>
@@ -146,7 +144,6 @@ const WhenNotLoginUserProfile = () => {
         </div>{" "}
         {nftPosts ? <NftPosts /> : <ForSale />}
       </div>
-      {showConnectWalletModal && <ConnectWalletModal />}
     </>
   );
 };

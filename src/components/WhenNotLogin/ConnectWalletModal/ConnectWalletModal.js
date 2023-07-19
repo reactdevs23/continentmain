@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useState } from "react";
 import { MdClose } from "react-icons/md";
 
 import { useDataContext } from "../../Context";
@@ -8,11 +8,17 @@ import {
   metamask,
   walletConnect,
   connectWalletModalLogo,
+  ethIcon,
+  eth,
+  ethereum,
+  cardano,
+  eternl,
 } from "../../../images/image";
 import styles from "./ConnectWalletModal.module.css";
 
 const ConnectWalletModal = () => {
   const { setShowConnectWalletModal } = useDataContext();
+  const [activeTab, setActiveTab] = useState("ethereum");
   return (
     <>
       <div className={[styles.modal, styles.wrapper, "grScrollbar"].join(" ")}>
@@ -26,21 +32,57 @@ const ConnectWalletModal = () => {
 
         <div className={styles.walletContainer}>
           <p className={styles.tagline}>Choose a wallet</p>
-          <div className={styles.wallet}>
-            <img src={metamask} alt="#" className={styles.icon} />
-            <p className={styles.name}>Metamask</p>
-            <p className={styles.text}>Connect to your Metamask Wallet</p>
-          </div>{" "}
-          <div className={styles.wallet}>
-            <img src={coinbase} alt="#" className={styles.icon} />
-            <p className={styles.name}>Coinbase Wallet</p>
-            <p className={styles.text}>Connect to your Coinbase Wallet</p>
-          </div>{" "}
-          <div className={styles.wallet}>
-            <img src={walletConnect} alt="#" className={styles.icon} />
-            <p className={styles.name}>WalletConnect</p>
-            <p className={styles.text}>Connect to your WalletConnect Wallet</p>
+          <div className={styles.tabContainer}>
+            <button
+              className={[
+                styles.tab,
+                activeTab.toLocaleLowerCase() === "ethereum" &&
+                  styles.activeTab,
+              ].join(" ")}
+              onClick={() => setActiveTab("ethereum")}
+            >
+              <img src={ethereum} alt="#" className={styles.currencyIcon} />
+              Ethereum
+            </button>
+            <button
+              className={[
+                styles.tab,
+                activeTab.toLocaleLowerCase() === "cardano" && styles.activeTab,
+              ].join(" ")}
+              onClick={() => setActiveTab("cardano")}
+            >
+              <img src={cardano} alt="#" className={styles.currencyIcon} />
+              Cardano
+            </button>
           </div>
+          {activeTab.toLowerCase() === "ethereum" && (
+            <>
+              <div className={styles.wallet}>
+                <img src={metamask} alt="#" className={styles.icon} />
+                <p className={styles.name}>Metamask</p>
+                <p className={styles.text}>Connect to your Metamask Wallet</p>
+              </div>{" "}
+              <div className={styles.wallet}>
+                <img src={coinbase} alt="#" className={styles.icon} />
+                <p className={styles.name}>Coinbase Wallet</p>
+                <p className={styles.text}>Connect to your Coinbase Wallet</p>
+              </div>{" "}
+              <div className={styles.wallet}>
+                <img src={walletConnect} alt="#" className={styles.icon} />
+                <p className={styles.name}>WalletConnect</p>
+                <p className={styles.text}>
+                  Connect to your WalletConnect Wallet
+                </p>
+              </div>
+            </>
+          )}
+          {activeTab.toLowerCase() === "cardano" && (
+            <div className={styles.wallet}>
+              <img src={eternl} alt="#" className={styles.icon} />
+              <p className={styles.name}>Eternl</p>
+              <p className={styles.text}>Connect to your Eternl Wallet</p>
+            </div>
+          )}
         </div>
 
         <p className={styles.info}>
