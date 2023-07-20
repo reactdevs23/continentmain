@@ -1,0 +1,55 @@
+.wrapper {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  gap: 8px;
+  height: calc(100vh - 142px);
+  padding: 0 10px;
+}
+.title {
+  color: #fafafa;
+  font-family: Roboto;
+  font-size: 22px;
+  font-style: normal;
+  font-weight: 500;
+  line-height: normal;
+  text-align: center;
+}
+.text {
+  color: #fafafa;
+  font-family: Roboto;
+  font-size: 16px;
+  font-style: normal;
+  font-weight: 400;
+  line-height: 140%;
+  text-align: center;
+  margin-bottom: 20px;
+}
+.connectWalletButton {
+  color: #fafafa;
+  text-align: center;
+  font-family: "Work Sans", sans-serif;
+  font-size: 14px;
+  font-style: normal;
+  font-weight: 700;
+  line-height: 20px;
+  border-radius: 25px;
+  background: #3069ff;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  padding: 8px 14px;
+  cursor: pointer;
+  border: none;
+  outline: none;
+  margin-top: 20px;
+}
+.icon {
+  width: 16px;
+}
+@media only screen and (max-width: 991px) {
+  .wrapper {
+    height: calc(100vh - 205px);
+  }
+}

@@ -15,10 +15,16 @@ import {
   eternl,
 } from "../../../images/image";
 import styles from "./ConnectWalletModal.module.css";
+import { useNavigate } from "react-router-dom";
 
 const ConnectWalletModal = () => {
   const { setShowConnectWalletModal } = useDataContext();
+  const navigate = useNavigate();
   const [activeTab, setActiveTab] = useState("ethereum");
+  const goToSetUpyourProfile = () => {
+    navigate("/connectWallet/setupProfile");
+    setShowConnectWalletModal(false);
+  };
   return (
     <>
       <div className={[styles.modal, styles.wrapper, "grScrollbar"].join(" ")}>
@@ -57,17 +63,17 @@ const ConnectWalletModal = () => {
           </div>
           {activeTab.toLowerCase() === "ethereum" && (
             <>
-              <div className={styles.wallet}>
+              <div className={styles.wallet} onClick={goToSetUpyourProfile}>
                 <img src={metamask} alt="#" className={styles.icon} />
                 <p className={styles.name}>Metamask</p>
                 <p className={styles.text}>Connect to your Metamask Wallet</p>
               </div>{" "}
-              <div className={styles.wallet}>
+              <div className={styles.wallet} onClick={goToSetUpyourProfile}>
                 <img src={coinbase} alt="#" className={styles.icon} />
                 <p className={styles.name}>Coinbase Wallet</p>
                 <p className={styles.text}>Connect to your Coinbase Wallet</p>
               </div>{" "}
-              <div className={styles.wallet}>
+              <div className={styles.wallet} onClick={goToSetUpyourProfile}>
                 <img src={walletConnect} alt="#" className={styles.icon} />
                 <p className={styles.name}>WalletConnect</p>
                 <p className={styles.text}>
@@ -77,7 +83,7 @@ const ConnectWalletModal = () => {
             </>
           )}
           {activeTab.toLowerCase() === "cardano" && (
-            <div className={styles.wallet}>
+            <div className={styles.wallet} onClick={goToSetUpyourProfile}>
               <img src={eternl} alt="#" className={styles.icon} />
               <p className={styles.name}>Eternl</p>
               <p className={styles.text}>Connect to your Eternl Wallet</p>

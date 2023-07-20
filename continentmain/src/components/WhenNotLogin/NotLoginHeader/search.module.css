@@ -1,0 +1,62 @@
+.searchingContainer {
+  position: absolute;
+  left: 0;
+  background: #0c1232;
+  border-radius: 8px;
+  min-width: 100%;
+
+  z-index: 1;
+}
+
+.searchTitle {
+  font-family: "Roboto";
+  font-style: normal;
+  font-weight: 500;
+  font-size: 14px;
+  line-height: 120%;
+  color: rgba(250, 250, 250, 0.7);
+  padding: 15px;
+}
+.details {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  border-top: 1px solid rgba(250, 250, 250, 0.2);
+  padding: 5px 0;
+  padding: 15px;
+}
+
+.imgAndName {
+  display: flex;
+  align-items: center;
+  gap: 5px;
+  cursor: pointer;
+}
+.moonBirds {
+  width: 30px;
+  height: 30px;
+  border-radius: 8px;
+}
+.nameAndItems {
+  display: flex;
+  flex-direction: column;
+  gap: 0px;
+}
+.name {
+  font-family: "Roboto";
+  font-style: normal;
+  font-weight: 500;
+  font-size: 14px;
+  line-height: 120%;
+
+  color: #fafafa;
+}
+.items {
+  font-family: "Roboto";
+  font-style: normal;
+  font-weight: 400;
+  font-size: 14px;
+  line-height: 120%;
+
+  color: rgba(250, 250, 250, 0.72);
+}

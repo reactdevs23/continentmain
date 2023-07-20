@@ -1,4 +1,4 @@
-import { Routes, Route, useLocation } from "react-router-dom";
+import { Routes, Route, useLocation, useNavigate } from "react-router-dom";
 
 import Header from "./components/Header/Header";
 
@@ -33,10 +33,17 @@ import NotLoginNft from "./components/WhenNotLogin/NotLoginExplore/Nfts/Nfts";
 import NotLoginHeader from "./components/WhenNotLogin/NotLoginHeader/WhenNotLoginHeader";
 import WhenNotLoginUserProfile from "./components/WhenNotLogin/WhenNotLoginUserProfile/WhenNotLoginUserProfile";
 import ConnectWalletModal from "./components/WhenNotLogin/ConnectWalletModal/ConnectWalletModal";
+import SetUpYourProfile from "./components/WhenNotLogin/SetUpYourProfile/SetUpYourProfile";
+
+import ShareNft from "./components/WhenNotLogin/SetUpYourProfile/StartSharingYourNft/ShareNft";
+
+// import NoNftInWallet from "./components/WhenNotLogin/SetUpYourProfile/NoNftInWallet/NoNftInWallet";
+
 function App() {
   const { posts, login, showConnectWalletModal } = useDataContext();
   const location = useLocation();
-  const hideNavbar = location.pathname === "/connectWallet"; // here you have to use connectWallet page path for sidebar hiding if not wallet is connected
+
+  const hideNavbar = location.pathname.startsWith("/connectWallet/"); // here you have to use connectWallet page path for sidebar hiding if not wallet is connected
 
   return (
     <>
@@ -53,7 +60,7 @@ function App() {
               path="/"
               element={login ? <Posts data={posts} /> : <NotLoginHome />}
             ></Route>
-            <Route path="/connectWallet" element={<ConnectWallet />} />
+            {/* <Route path="/connectWallet" element={<NotLoginHome />} /> */}
             <Route path="/createNewPost" element={<CreateNewPost />}></Route>
             <Route
               path="/wallet"
@@ -89,7 +96,7 @@ function App() {
               path="/explore/collections/collection"
               element={<Collection />}
             ></Route>
-            <Route path="/marketplace" element={<MarketPlace />}></Route>
+            <Route path="/marketplace" element={<MarketPlace />}></Route>{" "}
           </Routes>
         </div>
         <Routes>
@@ -103,17 +110,19 @@ function App() {
             element={<MyProfilePostDetails />}
           ></Route>
         </Routes>
-        {/* <Header />
+        {/* <Header /> */}
 
-      <Routes>
-        <Route path="/" element={<ConnectWallet />} />{" "}
-        <Route path="/setupProfile" element={<SetUpYourProfile />}></Route>
-        <Route
-          path="/selectProfilePicture"
-          element={<SelectProfilePicture />}
-        ></Route>
-        <Route path="/shreNft" element={<ShareNft />}></Route>
-      </Routes> */}
+        <Routes>
+          <Route
+            path="/connectWallet/setupProfile"
+            element={<SetUpYourProfile />}
+          ></Route>
+          {/* <Route
+            path="/connectWallet/noNftInWallet"
+            element={<NoNftInWallet />}
+          ></Route> */}
+          <Route path="/connectWallet/shreNft" element={<ShareNft />}></Route>
+        </Routes>
       </div>{" "}
       {showConnectWalletModal && <ConnectWalletModal />}
     </>

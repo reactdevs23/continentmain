@@ -37,7 +37,22 @@ const Sidebar = ({ showSidebar, setShowSidebar }) => {
         className={` ${styles.sidebar} ${showSidebar && styles.showSidebar}`}
       >
         {login
-          ? navItems
+          ? navItems.map((el, i) => (
+              <NavLink
+                to={el.to}
+                className={({ isActive }) =>
+                  isActive
+                    ? [styles.navItemContainer, styles.navActive].join(" ")
+                    : styles.navItemContainer
+                }
+                onClick={() => setShowSidebar(false)}
+                key={i}
+              >
+                {" "}
+                <img src={el.icon} alt={el.navItem} className={styles.icon} />
+                <p className={styles.navItem}>{el.navItem}</p>
+              </NavLink>
+            ))
           : withoutLoginNavItems.map((el, i) => (
               <NavLink
                 to={el.to}
@@ -50,7 +65,7 @@ const Sidebar = ({ showSidebar, setShowSidebar }) => {
                 key={i}
               >
                 {" "}
-                <img src={el.icon} alt={el.name} className={styles.icon} />
+                <img src={el.icon} alt={el.navItem} className={styles.icon} />
                 <p className={styles.navItem}>{el.navItem}</p>
               </NavLink>
             ))}

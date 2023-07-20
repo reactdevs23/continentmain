@@ -67,6 +67,7 @@ import connectWalletModalLogo from "./connectWalletModalLogo.png";
 import ethereum from "./ethereum.png";
 import cardano from "./cardano.png";
 import eternl from "./eternl.png";
+import setupYourProfileImage from "./setupYourProfileImage.png";
 
 export {
   logo,
@@ -138,4 +139,5 @@ export {
   ethereum,
   cardano,
   eternl,
+  setupYourProfileImage,
 };

@@ -1,0 +1,25 @@
+.nfts {
+  padding: 40px 0;
+  padding-bottom: 70px;
+}
+.title {
+  font-family: "Roboto";
+  font-style: normal;
+  font-weight: 700;
+  font-size: 32px;
+  line-height: 125%;
+  letter-spacing: -0.02em;
+  text-align: left;
+  width: 100%;
+  color: #ffffff;
+  padding: 20px 0;
+}
+.wrapper {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+
+  gap: 10px;
+
+  width: 100%;
+  overflow-y: auto;
+}
