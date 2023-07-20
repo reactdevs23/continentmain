@@ -46,7 +46,10 @@ const SetUpYourProfile = ({ setShowShareYourNft, setShowSetupYourProfile }) => {
                 <HexagonImage src={selectedProfilePicture.img} />
               </div>
             ) : (
-              <div className={styles.profilePhoto}>
+              <div
+                className={styles.profilePhoto}
+                onClick={() => setProfilePicutersModal(true)}
+              >
                 {" "}
                 <HexagonImage src={setupYourProfileImage} />
               </div>

@@ -74,6 +74,7 @@
 .profilePhoto {
   width: 100px;
   height: 105px;
+  cursor: pointer;
 }
 .userNameContainer {
   display: flex;
