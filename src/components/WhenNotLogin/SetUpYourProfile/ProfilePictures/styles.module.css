@@ -9,7 +9,7 @@
   height: 100%;
   background-color: black;
   opacity: 0.6;
-  z-index: 88;
+  z-index: 93;
 }
 .modalWrapp {
   position: fixed;
@@ -20,7 +20,7 @@
   max-width: 700px;
   max-height: 490px;
   overflow-y: auto;
-  z-index: 90;
+
   display: flex;
   justify-content: flex-start;
   align-items: center;
@@ -30,6 +30,7 @@
   border-radius: 8px;
   height: 90%;
   background-color: var(--primary-bg);
+  z-index: 94;
 }
 .modalHeader {
   display: flex;
