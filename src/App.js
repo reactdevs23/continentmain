@@ -33,9 +33,6 @@ import NotLoginNft from "./components/WhenNotLogin/NotLoginExplore/Nfts/Nfts";
 import NotLoginHeader from "./components/WhenNotLogin/NotLoginHeader/WhenNotLoginHeader";
 import WhenNotLoginUserProfile from "./components/WhenNotLogin/WhenNotLoginUserProfile/WhenNotLoginUserProfile";
 import ConnectWalletModal from "./components/WhenNotLogin/ConnectWalletModal/ConnectWalletModal";
-import SetUpYourProfile from "./components/WhenNotLogin/SetUpYourProfile/SetUpYourProfile";
-
-import ShareNft from "./components/WhenNotLogin/SetUpYourProfile/StartSharingYourNft/ShareNft";
 
 // import NoNftInWallet from "./components/WhenNotLogin/SetUpYourProfile/NoNftInWallet/NoNftInWallet";
 
@@ -113,15 +110,10 @@ function App() {
         {/* <Header /> */}
 
         <Routes>
-          <Route
-            path="/connectWallet/setupProfile"
-            element={<SetUpYourProfile />}
-          ></Route>
           {/* <Route
             path="/connectWallet/noNftInWallet"
             element={<NoNftInWallet />}
           ></Route> */}
-          <Route path="/connectWallet/shreNft" element={<ShareNft />}></Route>
         </Routes>
       </div>{" "}
       {showConnectWalletModal && <ConnectWalletModal />}

@@ -7,7 +7,7 @@ import ProfilePicures from "./ProfilePictures/ProfilePictures";
 import styles from "./styles.module.css";
 import { setupYourProfileImage } from "../../../images/image";
 
-const SetUpYourProfile = () => {
+const SetUpYourProfile = ({ setShowShareYourNft, setShowSetupYourProfile }) => {
   const {
     selectedProfilePicture,
     setSelectedProfilePicture,
@@ -26,9 +26,15 @@ const SetUpYourProfile = () => {
 
   return (
     <>
-      <div className={styles.wrapper}>
-        <div className={`marginTop ${styles.setUpProfile}`}>
-          <div className={styles.backButton} onClick={() => previous("/")}>
+      <div className={`${styles.wrapper} `}>
+        <div className={` ${styles.setUpProfile}`}>
+          <div
+            className={styles.backButton}
+            onClick={() => {
+              previous("/");
+              setShowSetupYourProfile(false);
+            }}
+          >
             <BiArrowBack className={styles.backArrow} />
             <p className={styles.backButtonText}>Back</p>
           </div>
@@ -89,9 +95,10 @@ const SetUpYourProfile = () => {
               </span>
             )}
             <button
-              onClick={() =>
-                active ? navigate("/connectWallet/shreNft") : null
-              }
+              onClick={() => {
+                setShowShareYourNft(true);
+                setShowSetupYourProfile(false);
+              }}
               className={`${styles.button} ${!active && styles.disableStyle}  ${
                 existingUserName === userName && styles.disableStyle
               }`}
@@ -101,6 +108,10 @@ const SetUpYourProfile = () => {
           </form>
         </div>
       </div>
+      <div
+        className={styles.overlay}
+        onClick={() => setShowSetupYourProfile(false)}
+      ></div>
       {profilePicturesModal && (
         <ProfilePicures
           setModal={setProfilePicutersModal}
