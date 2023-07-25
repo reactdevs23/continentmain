@@ -65,9 +65,12 @@ import collection6 from "./collections/collection6.png";
 import connectWalletIcon from "./connectWalletIcon.png";
 import connectWalletModalLogo from "./connectWalletModalLogo.png";
 import ethereum from "./ethereum.png";
+import solana from "./solana.png";
 import cardano from "./cardano.png";
 import eternl from "./eternl.png";
 import setupYourProfileImage from "./setupYourProfileImage.png";
+import coinbaseWallet from "./coinbase.png";
+import phantomWallet from "./phantomWallet.png";
 
 export {
   logo,
@@ -137,6 +140,9 @@ export {
   connectWalletIcon,
   connectWalletModalLogo,
   ethereum,
+  coinbaseWallet,
+  solana,
+  phantomWallet,
   cardano,
   eternl,
   setupYourProfileImage,

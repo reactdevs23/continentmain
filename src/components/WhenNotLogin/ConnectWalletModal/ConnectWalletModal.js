@@ -3,7 +3,6 @@ import { MdClose } from "react-icons/md";
 
 import { useDataContext } from "../../Context";
 import {
-  coinbase,
   logo,
   metamask,
   walletConnect,
@@ -13,15 +12,18 @@ import {
   ethereum,
   cardano,
   eternl,
+  solana,
+  coinbaseWallet,
+  phantomWallet,
 } from "../../../images/image";
 import styles from "./ConnectWalletModal.module.css";
-import { useNavigate } from "react-router-dom";
+
 import SetUpYourProfile from "../SetUpYourProfile/SetUpYourProfile";
 import ShareNft from "../SetUpYourProfile/StartSharingYourNft/ShareNft";
 
 const ConnectWalletModal = () => {
   const { setShowConnectWalletModal } = useDataContext();
-  const navigate = useNavigate();
+
   const [activeTab, setActiveTab] = useState("ethereum");
   const goToSetUpyourProfile = () => {
     setShowSetupYourProfile(true);
@@ -60,7 +62,16 @@ const ConnectWalletModal = () => {
                   onClick={() => setActiveTab("ethereum")}
                 >
                   <img src={ethereum} alt="#" className={styles.currencyIcon} />
-                  Ethereum
+                </button>
+                <button
+                  className={[
+                    styles.tab,
+                    activeTab.toLocaleLowerCase() === "solana" &&
+                      styles.activeTab,
+                  ].join(" ")}
+                  onClick={() => setActiveTab("solana")}
+                >
+                  <img src={solana} alt="#" className={styles.currencyIcon} />
                 </button>
                 <button
                   className={[
@@ -71,7 +82,6 @@ const ConnectWalletModal = () => {
                   onClick={() => setActiveTab("cardano")}
                 >
                   <img src={cardano} alt="#" className={styles.currencyIcon} />
-                  Cardano
                 </button>
               </div>
               {activeTab.toLowerCase() === "ethereum" && (
@@ -84,7 +94,7 @@ const ConnectWalletModal = () => {
                     </p>
                   </div>{" "}
                   <div className={styles.wallet} onClick={goToSetUpyourProfile}>
-                    <img src={coinbase} alt="#" className={styles.icon} />
+                    <img src={coinbaseWallet} alt="#" className={styles.icon} />
                     <p className={styles.name}>Coinbase Wallet</p>
                     <p className={styles.text}>
                       Connect to your Coinbase Wallet
@@ -98,6 +108,13 @@ const ConnectWalletModal = () => {
                     </p>
                   </div>
                 </>
+              )}
+              {activeTab.toLowerCase() === "solana" && (
+                <div className={styles.wallet} onClick={goToSetUpyourProfile}>
+                  <img src={phantomWallet} alt="#" className={styles.icon} />
+                  <p className={styles.name}>Phantom</p>
+                  <p className={styles.text}>Connect to your Phantom Wallet</p>
+                </div>
               )}
               {activeTab.toLowerCase() === "cardano" && (
                 <div className={styles.wallet} onClick={goToSetUpyourProfile}>
